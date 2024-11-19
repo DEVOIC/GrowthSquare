@@ -44,14 +44,14 @@ export default function Home() {
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Unlock Your <span className="text-blue-500">Potential</span> with a Community
           <br />
-          That's Got Your <span className="border-b-4 border-blue-500">Back</span>
+          That&#39;s Got Your <span className="border-b-4 border-blue-500">Back</span>
         </h1>
         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
           Collaborate, innovate, and level up with experts in design,
           development, content, and more
         </p>
         <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6">
-          let's grow together <ArrowRight className="ml-2" />
+          let&#39;s grow together <ArrowRight className="ml-2" />
         </Button>
         <div className="mt-12 flex justify-center space-x-4">
           {[1, 2, 3, 4].map((_, index) => (
@@ -136,7 +136,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "Dico is finally addressing a long time problem we had when building UIs. It's ease of use and workflow seems really intuitive. Promising!"
+                  Dico is finally addressing a long time problem we had when building UIs. It&#39;s ease of use and workflow seems really intuitive. Promising!
                 </p>
               </CardContent>
             </Card>
@@ -240,7 +240,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">Let's work together</h2>
+        <h2 className="text-4xl font-bold text-white mb-6">Let&#39;s work together</h2>
         <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6">
           Get Started <ArrowRight className="ml-2" />
         </Button>
