@@ -1,15 +1,16 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+// box-shadow: 12px 32px 80px -20px rgba(32, 32, 32, 0.05);
 
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <div style={{ boxShadow: '12px 32px 80px -20px rgba(32, 32, 32, 0.05)' }}
     ref={ref}
     className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
+      " z-10 bg-card text-card-foreground shadow drop-shadow-lg shadow-gray-500",
       className
     )}
     {...props}

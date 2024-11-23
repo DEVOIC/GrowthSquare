@@ -1,11 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+.ellipse {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #015AFF;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+
+}
+.customnav{
+  backdrop-filter: blur(100px);
+  background-color: #00123370;
+  z-index: 100;
 }
 
+.top-right {
+  top: -10px;
+  right: -20px;
+}
+.mid-left{
+  top: 50%;
+  left: -20px;
+}
+.mid-right{
+  top: 50%;
+  right: -20px;
+}
+.bottom-right {
+  bottom: -20px;
+  right: -40px;
+}
+.top-left {
+  top: -10px;
+  left: -20px;
+}
+
+.bottom-left {
+  bottom: -20px;
+  left: -40px;
+} 
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -66,7 +110,37 @@ body {
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+  
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}@keyframes marquee1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}@keyframes marqueey {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s  linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee1 30s  linear infinite;
+}
+.animate-marquee-y {
+  animation: marqueey 30s  linear infinite;
 }

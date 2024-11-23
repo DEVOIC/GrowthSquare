@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import { fontFamily } from "tailwindcss/defaultTheme";
 export default {
     darkMode: ["class"],
     content: [
@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily:{
+			transforma: ['var(--font-transforma)'],
+
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -16,6 +20,9 @@ export default {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
   			},
+			darkblue:'#001233',
+			white : '#ffffff',
+			lightblue:'#015AFF',
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
