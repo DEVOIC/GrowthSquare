@@ -3,12 +3,19 @@ import React from 'react'
 
 const Faqs = () => {
   return (
-    <div><section className="container mx-auto px-4 py-20">
+    <div className='w-screen bg-white text-black relative'>
+          <div className="ellipse top-right"></div>
+      <div className="ellipse mid-left"></div>
+
+        <section className="container mx-auto px-4 py-20">
     <div className="flex flex-col md:flex-row gap-12">
-      <div className="md:w-1/2">
-        <h2 className="text-3xl font-bold text-white mb-12">Lorem ipsum dolor sit amet consectetur lit FAQs</h2>
+      <div className="md:w-1/3">
+      <h2 className="text-3xl z-20 font-bold text-darkblue font-transforma mb-12">
+          <p>Lorem ipsum dolor sit amet,</p>
+          adipiscing lit FAQs
+        </h2>
       </div>
-      <div className="md:w-1/2">
+      <div className="md:w-2/3">
         <Accordion type="single" collapsible className="w-full">
           {[
             "What is Webflow and why is it the best website builder?",
@@ -17,11 +24,11 @@ const Faqs = () => {
             "Why is BRIX Templates the best Webflow agency out there?",
             "Why is BRIX Templates the best Webflow agency out there?",
           ].map((question, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700">
-              <AccordionTrigger className="text-white hover:text-blue-500">
+            <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700 p-4 bg-lightblue my-4">
+              <AccordionTrigger className="text-white ">
                 {question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-400">
+              <AccordionContent className="text-white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </AccordionContent>
