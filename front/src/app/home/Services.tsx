@@ -12,7 +12,7 @@ const Services = () => {
           <p>Lorem ipsum dolor sit amet,</p>
           adipiscing lit Services
         </h2>
-        <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-8 z-20 relative">
           {[
             "Skill Building",
             "Design & Content Services",
