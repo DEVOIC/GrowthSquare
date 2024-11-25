@@ -10,7 +10,7 @@ const Card = React.forwardRef<
   <div style={{ boxShadow: '12px 32px 80px -20px rgba(32, 32, 32, 0.05)' }}
     ref={ref}
     className={cn(
-      " z-10 bg-card text-card-foreground shadow drop-shadow-lg shadow-gray-500",
+      " z-20 bg-card text-card-foreground shadow drop-shadow-lg shadow-gray-500",
       className
     )}
     {...props}

@@ -25,7 +25,9 @@ const Hero = () => {
           <p className='text-xl font-bold'>
             let&#39;s grow together
           </p>
-          <MoveUpRight  className="ml-2 font-bold" size={40}  />
+          <div>
+            <MoveUpRight  className="ml-2 " size={60}  />
+            </div>
         </Button>
         <div className='absolute left-12 bottom-36'>
 
