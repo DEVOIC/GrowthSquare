@@ -17,34 +17,34 @@ export default function Home() {
 
 
       {/* Navigation */}
-      <Navbar/>
-      
+      <Navbar />
+
 
       {/* Hero Section */}
-      <Hero/>
+      <Hero />
 
-<Courses/>
+      <Courses />
 
-<Stats/>
+      <Stats />
 
-      
+
       {/* Testimonials */}
-      <Testimonial/>
+      <Testimonial />
 
       {/* Services Section */}
-      <Services/>
+      <Services />
 
       {/* Event Gallery */}
-    <Galley/>
+      <Galley />
 
       {/* Exclusive Squares */}
-      <Gsmarque/>
-      <Initiaitive/>
+      <Gsmarque />
+      <Initiaitive />
 
       {/* FAQ Section */}
-      <Faqs/>
-<Footer/>
-     
+      <Faqs />
+      <Footer />
+
     </div>
   )
 }
