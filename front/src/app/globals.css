@@ -28,7 +28,6 @@ body {
   filter: blur(200px);
   opacity: calc(100% - 30%);
   z-index: 0;
-
 }
 .customnav{
   backdrop-filter: blur(100px);

@@ -10,8 +10,12 @@ import { PanelsTopLeft, StarHalf } from 'lucide-react'
 export default function PaymentSuccessPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* Navigation */}
+
       <Navbar />
-      <div className="ellipse2 top-right mt-28 opacity-50 "></div>
+
+      {/* Ellipses */}
+      <div className="ellipse2 md:top-right mt-28 opacity-50  "></div>
       <div className="ellipse2 -bottom-52 opacity-55"></div>
 
       {/* Success Message */}
@@ -53,14 +57,14 @@ export default function PaymentSuccessPage() {
 
       </div>
       {/* Recommended Courses */}
-      <section className="mt-48 px-0 ">
+      <section className="mt-48 px-8 ">
         <div className="max-w-7xl mx-auto">
 
           <h2 className="text-5xl font-bold mb-12">Recommended Courses</h2>
 
-          {/* no-scrollbar is used to hide scrollbar */}
+          {/* no-scrollbar is used to hide scrollbar and also width is increased to 110% */}
 
-          <div className="grid grid-cols-1 md:mt-[100px] md:grid-cols-3 overflow-x-scroll no-scrollbar  gap-10 w-[110%] ">
+          <div className="grid grid-cols-1 md:mt-[100px] grid-col-1 md:grid-cols-3 overflow-x-scroll no-scrollbar  gap-10 md:w-[110%] ">
             {[1, 2, 3].map((course) => (
 
               <Card key={course} className="bg-white mb-40 ">
