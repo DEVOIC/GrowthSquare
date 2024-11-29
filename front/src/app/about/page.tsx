@@ -1,77 +1,20 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronDown, Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
+import Navbar from "@/components/parts/navbar"
+import Hero from "./hero"
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-600">
+    <div className="min-h-screen bg-darkblue ">
       {/* Navigation */}
-      <nav className="flex items-center justify-between p-4 bg-transparent">
-        <div className="flex items-center">
-          <Image src="/placeholder.svg" alt="Devoic Logo" width={32} height={32} className="mr-2" />
-          <span className="text-white text-2xl font-bold">Devoic</span>
-        </div>
-        <div className="hidden md:flex gap-6">
-          <Link href="/explore" className="text-white hover:text-blue-200">Explore</Link>
-          <Link href="/about" className="text-white hover:text-blue-200">About</Link>
-          <Link href="/courses" className="text-white hover:text-blue-200">Courses</Link>
-          <Link href="/blog" className="text-white hover:text-blue-200">Blog</Link>
-        </div>
-        <div className="flex gap-2">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Become A Member</button>
-          <button className="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-blue-600 transition-colors">Login</button>
-        </div>
-      </nav>
+     <Navbar/>
 
       {/* Hero Section */}
-      <section className="text-center py-20 px-4">
-        <h1 className="text-5xl font-bold text-white mb-4">
-          Our Vision, Your <span className="text-blue-400">Growth</span>
-        </h1>
-        <p className="text-white/80 text-xl mb-8">
-          We&#39;re a hub for creatives, developers, and dreamers
-          <br />who believe in <span className="underline decoration-blue-400">growing together</span>
-        </p>
-        <div className="max-w-4xl mx-auto">
-          <Image
-            src="/placeholder.svg"
-            alt="Team photo"
-            width={1000}
-            height={400}
-            className="rounded-lg shadow-xl"
-          />
-        </div>
-      </section>
+      <Hero/>
 
       {/* Timeline Sections */}
-      <section className="bg-blue-600 py-20 px-4">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
-          <div className="relative">
-            <div className="absolute left-0 top-0 w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-xl">?</span>
-            </div>
-            <div className="ml-20">
-              <h2 className="text-3xl font-bold text-white mb-4">What Are We</h2>
-              <p className="text-white/80">
-                GrowthSquare is a network where students, mentors, and startups combine to turn potential into real-world impact,
-                fostering a culture of hands-on learning and peer support.
-              </p>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute left-0 top-0 w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-xl">!</span>
-            </div>
-            <div className="ml-20">
-              <h2 className="text-3xl font-bold text-white mb-4">What We Do</h2>
-              <p className="text-white/80">
-                We connect students with real-world experiences and a supportive community, guiding them to become skilled
-                professionals who contribute meaningfully to industry needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Why It Matters & Wha&#39; Next */}
       <section className="bg-blue-600 py-20 px-4">
