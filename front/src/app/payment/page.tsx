@@ -3,94 +3,112 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, ChevronRight, Clock, Star, Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
+import { Check, ChevronRight, SquareCheckBig, Clock, Star, Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import Navbar from '@/components/parts/navbar'
+import Footer from '@/components/parts/footer'
+import Recommended from '@/components/parts/recommended'
+import { log } from 'console'
 
 export default function PaymentPage() {
   const [step, setStep] = useState(1)
   const [selectedCourse, setSelectedCourse] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('card')
-console.log(selectedCourse);
-useEffect(() => {
+
+  console.log(selectedCourse);
+
+  useEffect(() => {
     if (selectedCourse) setStep(2)
-    }
-    ,[selectedCourse])
-    
+  }
+    , [selectedCourse])
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+
       {/* Navigation */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <Image src="/placeholder.svg" alt="Devoic Logo" width={32} height={32} />
-                <span className="ml-2 text-2xl font-bold text-blue-600">Devoic</span>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                <Link href="/explore" className="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Explore
-                </Link>
-                <Link href="/about" className="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  About
-                </Link>
-                <Link href="/courses" className="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Courses
-                </Link>
-                <Link href="/blog" className="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Blog
-                </Link>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <Button variant="ghost" className="flex items-center">
-                <Image src="/placeholder.svg" alt="Profile" width={32} height={32} className="rounded-full" />
-                <span className="ml-2">Name</span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <div className="px-4 sm:px-6 lg:px-8 py-12 bg-white">
+
+        {/* Ellipses */}
+        <div className="ellipse2 top-right -mr-4 opacity-50  "></div>
+        <div className="ellipse2 bottom-left -mb-32 opacity-55"></div>
+
+        <div className="flex justify-between px-12 gap-8">
+
           {/* Payment Steps */}
-          <div className="lg:col-span-2">
-            <h1 className="text-2xl font-bold mb-8">Lorem ipsum</h1>
+
+          <div className=" md:w-[700px] mt-16 ml-8">
+            <h1 className="text-4xl text-darkblue font-bold mb-8">Lorem ipsum</h1>
 
             {/* Step 1: Course Selection */}
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
-                  {step > 1 ? <Check className="w-5 h-5" /> : '1'}
+
+            <div className="mb-8 flex flex-col gap-8">
+              <div className='flex gap-8 items-center justify-center'>
+                { step > 1 ?
+                  <div className="w-[40px] h-[40px] bg-[#00B200] rounded-full flex items-center justify-center p-2 ">
+                  <Check size={48} color="#ffffff" strokeWidth={3} />
                 </div>
-                <span className="ml-3 font-medium">Select Course</span>
-                <ChevronRight className="ml-auto w-5 h-5 text-gray-400" />
+                :
+                <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center p-2 border-4 border-lightblue ">
+                  <div className='rounded-full bg-lightblue w-[10px] h-[10px]'></div>
+                </div>
+                }
+                
+                <div className=" w-full flex items-center text-xl text-darkblue  border-[1px] border-lightblue px-10 bg-white z-10 relative py-4 ">
+
+                  {/* {step > 1 ? <Check className="w-5 h-5" /> : '1'} */}
+
+                  <span className="ml-3 font-semibold">1. Select Course</span>
+                  <div className="ml-auto w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    <ChevronRight />
+                  </div>
+                </div>
               </div>
-              {step === 1 && (
-                <div className="space-y-4">
-                  {[1, 2].map((course) => (
-                    <div
-                      key={course}
-                      className="border rounded-lg p-4 cursor-pointer hover:border-blue-500"
-                      onClick={() => setSelectedCourse(`course-${course}`)}
-                    >
-                      <h3 className="font-medium mb-2">Lorem ipsum dolor sit amet sit amet sit dolor</h3>
-                      <p className="text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor
-                      </p>
-                    </div>
-                  ))}
+              <div className='flex gap-8 items-center justify-center'>
+                <div className="w-[40px] invisible h-[40px] bg-[#00B200] rounded-full flex items-center justify-center p-2 ">
+                  <Check size={48} color="#ffffff" strokeWidth={3} />
                 </div>
-              )}
+
+                <div className=" w-full flex items-center text-xl text-darkblue  border-[1px] border-lightblue px-10 bg-white z-10 relative py-4 ">
+
+                  {step === 1 && (
+                    <div className="mt-4 space-y-6">
+                      {[1, 2].map((course) => (
+                        <div
+                          key={course}
+                          className=" flex gap-4 p-6  hover:border-blue-500 hover:shadow-md transition-all"
+                        >
+                          {/* course details here */}
+                          <div>
+                            <h3 className="text-xl font-semibold text-darkblue mb-3">
+                              Course {course}: Lorem ipsum dolor sit amet
+                            </h3>
+                            <p className="text-sm text-gray-600">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eros vitae augue ultrices sollicitudin.
+                            </p>
+                          </div>
+
+                          {/* select course radio button */}
+                          <input type="radio" className='scale-150 cursor-pointer border-lightblue fill-black'
+                            checked={selectedCourse === `course-${course}`}
+                            onChange={() => setSelectedCourse(`course-${course}`)} />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
 
             {/* Step 2: Payment Method */}
+
             <div className="mb-8">
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
@@ -99,6 +117,7 @@ useEffect(() => {
                 <span className="ml-3 font-medium">Select Payment Method</span>
                 <ChevronRight className="ml-auto w-5 h-5 text-gray-400" />
               </div>
+
               {step === 2 && (
                 <div className="space-y-4">
                   <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
@@ -147,7 +166,7 @@ useEffect(() => {
 
             {/* Step 3: Confirmation */}
             <div>
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-4 ">
                 <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
                   {step > 3 ? <Check className="w-5 h-5" /> : '3'}
                 </div>
@@ -173,165 +192,102 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-lg font-bold mb-4">ORDER SUMMARY - #07111124</h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">Lorem ipsum dolor sit amet sit amet sit dolor</h3>
-                  <p className="text-sm text-gray-500">
-                    Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor
-                  </p>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Course Price</span>
+          {/* Order Summary side bar in large and medium screens */}
+
+          <div className="lg:col-span-1 mt-6">
+            <div className="bg-white  border-[1px] border-lightblue md:w-[550px] z-10 relative">
+              <div>
+                <h2 className="text-md pl-10 font-bold  text-darkblue py-6">ORDER SUMMARY - #07111124</h2>
+              </div>
+
+              {/* order details  */}
+
+              <div className='border-t-[1px] border-lightblue px-10'>
+
+                <div className='mt-8 flex gap-20 items-center text-xl font-semibold text-lightblue'>
+                  <h3 className=" mb-2">Lorem ipsum dolor sit amet sit amet sit dolor</h3>
                   <span>₹999</span>
                 </div>
-                <div>
-                  <Label htmlFor="coupon">Apply Coupon</Label>
-                  <div className="flex gap-2">
-                    <Input id="coupon" placeholder="Enter coupon code" />
-                    <Button>Apply</Button>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Est. Tax 5%</span>
-                  <span>₹50</span>
-                </div>
-                <div className="flex justify-between items-center font-bold">
-                  <span>Total Amount</span>
-                  <span>₹1049</span>
-                </div>
-                <div className="text-center text-sm text-gray-500">
-                  Sunday
-                  <br />
-                  10 November 2024 | 4:00 pm
-                </div>
-                <Button className="w-full" size="lg">
-                  Purchase Now
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Recommended Courses */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Recommended Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((course) => (
-              <div key={course} className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Image
-                      src="/placeholder.svg"
-                      alt="Instructor"
-                      width={40}
-                      height={40}
-                      className="rounded-full"
-                    />
-                    <div className="ml-3">
-                      <h3 className="font-medium">Martin Goutry</h3>
-                      <p className="text-sm text-gray-500">UI/UX Designer</p>
-                    </div>
-                  </div>
-                  <h4 className="font-medium mb-2">Lorem ipsum dolor sit amet sit</h4>
-                  <p className="text-sm text-gray-500 mb-4">
-                    Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet
+                {/* course description */}
+
+                <div className="mt-2  flex justify-between items-center">
+                  <p className="text-sm text-darkblue">
+                    Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit
                   </p>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 text-gray-400 mr-1" />
-                      <span className="text-sm text-gray-500">Time duration</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-gray-400 mr-1" />
-                      <span className="text-sm text-gray-500">4.5</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <span className="text-sm line-through text-gray-400">@1999</span>
-                      <span className="ml-2 font-medium">@499</span>
-                    </div>
-                    <Button variant="outline">Enroll Now</Button>
-                  </div>
+                </div>
+                <div className='flex flex-wrap gap-4 mt-6 mb-12'>
+                  {
+                    [1, 2, 3, 4].map((item) => (
+                      <div key={item} className=" flex gap-4 items-center text-darkblue ">
+                        <SquareCheckBig size={15} strokeWidth={2} className='text-[#00B200]' />
+                        <span className='text-darkblue text-sm' >Lorem ipsum dolor sit</span>
+                      </div>
+                    ))
+                  }
+
                 </div>
               </div>
-            ))}
+
+              <div className="border-t-[1px] border-lightblue px-10 py-4">
+                <div className='flex justify-between'>
+                  <label
+                    htmlFor="coupon"
+                    className="text-md font-semibold"
+                  >
+                    Apply Coupon
+                  </label>
+                  <div className="flex items-center gap-3">
+                    <input
+                      id="coupon"
+                      type="text"
+                      placeholder="Enter coupon code"
+                      className="w-full border-[2px] border-lightblue px-4 py-2 text-darkblue text-sm focus:outline-none focus:ring-1 focus:ring-lightblue"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-4 flex justify-between items-center text-darkblue">
+                  <span className="text-md font-semibold">Est. Tax 5%</span>
+                  <span className="text-xl font-semibold text-lightblue">₹50</span>
+                </div>
+                <div className="mt-6 flex justify-between items-center text-darkblue font-bold">
+                  <span className="text-md font-semibold">Total Amount</span>
+                  <span className="text-xl font-semibold text-lightblue">₹1049</span>
+                </div>
+              </div>
+
+              <div className="text-center text-sm mt-4 py-5 text-gray-500 border-t-[1px] border-lightblue">
+                <span className='text-darkblue text-lg font-semibold'>
+
+                  {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
+
+                </span>
+                <br />
+                <span className='text-darkblue font-medium'> {Date().slice(3, 16)} | {new Date().getHours()} : {new Date().getMinutes()} </span>
+
+
+              </div>
+              {/* <Button className="w-full" size="lg">
+                  Purchase Now
+                </Button> */}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Let&#39;s work together</h2>
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <h3 className="font-medium mb-4">Explore</h3>
-                  <ul className="space-y-2">
-                    <li><Link href="/about" className="text-gray-400 hover:text-white">About</Link></li>
-                    <li><Link href="/services" className="text-gray-400 hover:text-white">Services</Link></li>
-                    <li><Link href="/contact" className="text-gray-400 hover:text-white">Contact Us</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-4">Courses</h3>
-                  <ul className="space-y-2">
-                    <li><Link href="/courses/ui-ux" className="text-gray-400 hover:text-white">UI/UX Design</Link></li>
-                    <li><Link href="/courses/web-dev" className="text-gray-400 hover:text-white">Web Dev</Link></li>
-                    <li><Link href="/courses/app-dev" className="text-gray-400 hover:text-white">App Dev</Link></li>
-                    <li><Link href="/courses/video" className="text-gray-400 hover:text-white">Video Editing</Link></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-medium mb-4">FAQs</h3>
-              <ul className="space-y-2">
-                <li><Link href="/blog" className="text-gray-400 hover:text-white">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-gray-400 italic">
-                Most Quote To Inspire Ppl Lorem ipsum Dolor Sit Amet Amet, Consectetur Adipiscing elit
-                <br />~ Lorem ipsum
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-sm text-gray-400 mb-4 md:mb-0">©2024 Copyright - All Rights Reserved</p>
-              <div className="flex space-x-4">
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Instagram className="w-6 h-6" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Twitter className="w-6 h-6" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Linkedin className="w-6 h-6" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Mail className="w-6 h-6" />
-                </Link>
-              </div>
-            </div>
-            <div className="mt-4 flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4">
-              <Link href="/terms" className="text-sm text-gray-400 hover:text-white">Terms & Conditions</Link>
-              <Link href="/privacy" className="text-sm text-gray-400 hover:text-white">Privacy Policy</Link>
-              <Link href="/refund" className="text-sm text-gray-400 hover:text-white">Refund Policy</Link>
-            </div>
-          </div>
-        </div>
-            
-        </footer>
-        </div>
-        )
-        }
+      {/* Recommended Courses imported form components/parts  */}
+      <div className="h-[1px]  w-full bg-[#001233] mt-40">
+
+      </div>
+      <Recommended />
+
+      {/* Footer is imported from components/parts */}
+
+      <div className=" bg-darkblue">
+        <Footer />
+      </div>
+
+    </div>
+  )
+}
