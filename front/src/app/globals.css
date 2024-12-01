@@ -9,6 +9,7 @@ body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
+
 .ellipse {
   position: absolute;
   width: 200px;
@@ -19,17 +20,30 @@ body {
   z-index: 0;
 
 }
+
 .ellipse2 {
   position: absolute;
   width: 300px;
   height: 300px;
   background-color: #015AFF;
   border-radius: 50%;
-  filter: blur(200px);
-  opacity: calc(100% - 30%);
+  filter: blur(150px);
+  opacity: calc(100% - 10%);
   z-index: 0;
 }
-.customnav{
+
+@media (max-width: 1200px) {
+  .ellipse2 {
+    display: none;
+    /* Hide decorative ellipses for smaller screens */
+  }
+
+  .ellipse {
+    display: none;
+  }
+}
+
+.customnav {
   backdrop-filter: blur(100px);
   background-color: #00123370;
   z-index: 100;
@@ -39,18 +53,22 @@ body {
   top: -10px;
   right: -20px;
 }
-.mid-left{
+
+.mid-left {
   top: 50%;
   left: -20px;
 }
-.mid-right{
+
+.mid-right {
   top: 50%;
   right: -20px;
 }
+
 .bottom-right {
   bottom: -20px;
   right: -40px;
 }
+
 .top-left {
   top: -10px;
   left: -20px;
@@ -59,7 +77,8 @@ body {
 .bottom-left {
   bottom: -20px;
   left: -40px;
-} 
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -88,6 +107,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -120,39 +140,49 @@ body {
   * {
     @apply border-border;
   }
-  
+
 }
+
 @keyframes marquee {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
-}@keyframes marquee1 {
+}
+
+@keyframes marquee1 {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
-}@keyframes marqueey {
+}
+
+@keyframes marqueey {
   0% {
     transform: translateY(0%);
   }
+
   100% {
     transform: translateY(-50%);
   }
 }
 
 .animate-marquee {
-  animation: marquee 30s  linear infinite;
+  animation: marquee 30s linear infinite;
 }
+
 .animate-marquee-reverse {
-  animation: marquee1 30s  linear infinite;
+  animation: marquee1 30s linear infinite;
 }
+
 .animate-marquee-y {
-  animation: marqueey 30s  linear infinite;
+  animation: marqueey 30s linear infinite;
 }
 
 
@@ -160,10 +190,11 @@ body {
 /* hiding scrollbar for cards  */
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
+
   .no-scrollbar {
-      -ms-overflow-style: none;  
-      scrollbar-width: none;  
-}
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import Navbar from '@/components/parts/navbar'
 import Footer from '@/components/parts/footer'
 import Recommended from '@/components/parts/recommended'
-import { Confirmationsummary } from '@/components/ui/confirmationsummary'
+import { Confirmationsummary } from '@/app/payment/confirmationsummary'
 import { CheckMark, PendingMark } from '@/components/ui/checkmark'
 
 export default function PaymentPage() {

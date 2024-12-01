@@ -75,8 +75,6 @@ export const Confirmationsummary = () => {
                         </span>
                         <br />
                         <span className='text-darkblue font-medium'> {Date().slice(3, 16)} | {new Date().getHours()} : {new Date().getMinutes()} </span>
-
-
                     </div>
                     {/* <Button className="w-full" size="lg">
                   Purchase Now
