@@ -1,6 +1,6 @@
 import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
+import photo from './mentor.jpg';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,7 +25,7 @@ export const Mentors = () => {
               >
                 <div className="h-[240px] sm:h-[360px] w-full sm:w-72 overflow-hidden flex items-start justify-center">
                   <Image
-                    src="https://s3-alpha-sig.figma.com/img/579a/0efd/e273d026a7ead90372ffab771cf218a7?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=X2Hz-qvTu26VZTEovzqOtNbGGKqnBJlhKzsBAIalv9e2E7hFjSwUduioXJ1N~RL0BMP17ha8qgPM5wUmwx7LJ8~0maIBdAPxTftCnqXVxsgB3l5~30n83d8X9FDOHrpjYuV9AvFjvFMMcQZUcIQgubGm7Jp1sP1-XQ4WQu-hU3zRy9WJkWdEvw-SVimhXNxwxrQ3CaeVUn7QQTVDqWjxTyVPPm0HJCRixHV52Tr8DBl2MHMoz~CXfu2mmzp7w9vHZ632pWzV-EDVdmc1Thm8z-VLFDKDBu9pWMgj6Iy~CBD9uyDy-SFYf7zcWIxrl3kCD4qk9zMF4V0EaGLeC7toYQ__"
+                    src={photo}
                     alt="Mentor Image"
                     width={288}
                     height={360}
