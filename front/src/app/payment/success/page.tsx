@@ -19,7 +19,7 @@ export default function PaymentSuccessPage() {
       {/* Success Message */}
       <div className="max-w-4xl mx-auto md:mt-[170px] px-4 text-center">
 
-        <div className="flex items-center md:flex-col flex-row  justify-center gap-10">
+        <div className="flex items-center md:flex-row flex-col mt-40 mdmt-0   justify-center gap-10">
 
           <div className="w-[72px] h-[72px] bg-[#00B200] rounded-full flex items-center justify-center ">
             <Check size={48} color="#ffffff" strokeWidth={3} />
@@ -55,7 +55,7 @@ export default function PaymentSuccessPage() {
 
       </div>
       {/* Recommended Courses */}
-      
+
       <Recommended />
 
       {/* Footer */}
