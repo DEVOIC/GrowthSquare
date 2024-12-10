@@ -9,46 +9,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import Navbar from '@/components/parts/navbar'
+import Footer from '@/components/parts/footer'
+import Faqs from '@/components/parts/faqs'
 
 export default function CoursePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <Image src="/placeholder.svg" alt="Devoic Logo" width={32} height={32} />
-                <span className="ml-2 text-2xl font-bold text-blue-600">Devoic</span>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                <Link href="/explore" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Explore
-                </Link>
-                <Link href="/about" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  About
-                </Link>
-                <Link href="/courses" className="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Courses
-                </Link>
-                <Link href="/blog" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Blog
-                </Link>
-              </div>
-            </div>
-            <div className="hidden sm:ml-6 sm:flex sm:items-center">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium mr-2">
-                Become A Member
-              </button>
-              <button className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md text-sm font-medium">
-                Login
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+      <Navbar />
       {/* Course Hero */}
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -191,87 +160,13 @@ export default function CoursePage() {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Lorem ipsum dolor sit amet consectetur lit FAQs</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {[
-              "What is Webflow and why is it the best website builder?",
-              "What is your favorite template from BRIX Templates?",
-              "How do you clone a Webflow Template from the Showcase?",
-              "Why is BRIX Templates the best Webflow agency out there?",
-              "Why is BRIX Templates the best Webflow agency out there?",
-            ].map((question, index) => (
-              <AccordionItem key={index} value={`item-${index + 1}`}>
-                <AccordionTrigger className="text-left">
-                  {question}
-                </AccordionTrigger>
-                <AccordionContent>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+      <div className='px-10 py-20'>
+        <Faqs />
       </div>
-
       {/* Footer */}
-      <footer className="bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-8">
-            <div className="mb-8 md:mb-0">
-              <h2 className="text-3xl font-bold text-white mb-4">Let&#39;s work together</h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Explore</h3>
-                  <ul className="space-y-2">
-                    <li><Link href="#" className="text-gray-400 hover:text-white">About</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Services</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Contact Us</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Courses</h3>
-                  <ul className="space-y-2">
-                    <li><Link href="#" className="text-gray-400 hover:text-white">UI/UX Design</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Web Dev</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">App Dev</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Video Editing</Link></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">FAQs</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-400 hover:text-white">Blog</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 md:mb-0">©2024 Copyright - All Rights Reserved</p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Twitter className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Linkedin className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Mail className="h-6 w-6" />
-              </Link>
-            </div>
-          </div>
-          <div className="mt-4 text-center md:text-left">
-            <Link href="#" className="text-sm text-gray-400 hover:text-white mr-4">Terms & Conditions</Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-white mr-4">Privacy Policy</Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-white">Refund Policy</Link>
-          </div>
-        </div>
-      </footer>
+      <div className="bg-darkblue">
+        <Footer />
+      </div>
     </div>
   )
 }
