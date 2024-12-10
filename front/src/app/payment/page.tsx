@@ -1,25 +1,31 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Check, ChevronRight, SquareCheckBig, Clock, Star, Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
+import { Check, ChevronRight } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/components/ui/button"
 import Navbar from '@/components/parts/navbar'
 import Footer from '@/components/parts/footer'
 import Recommended from '@/components/parts/recommended'
-import { log } from 'console'
+import { Confirmationsummary } from '@/app/payment/confirmationsummary'
+import { CheckMark, PendingMark } from '@/components/ui/checkmark'
 
 export default function PaymentPage() {
   const [step, setStep] = useState(1)
   const [selectedCourse, setSelectedCourse] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('card')
 
-  console.log(selectedCourse);
+
+  // Payment Methods
+  const paymentMethods = [
+    { value: "wallet", label: "Wallets (Paytm, Google Pay, etc.)" },
+    { value: "card", label: "Credit/Debit Card (Visa, Mastercard, etc.)" },
+    { value: "upi", label: "UPI" },
+    { value: "netbanking", label: "Net Banking" }
+  ]
 
   useEffect(() => {
     if (selectedCourse) setStep(2)
@@ -27,6 +33,7 @@ export default function PaymentPage() {
     , [selectedCourse])
 
   return (
+
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
 
       {/* Navigation */}
@@ -50,35 +57,35 @@ export default function PaymentPage() {
             {/* Step 1: Course Selection */}
 
             <div className="mb-8 flex flex-col gap-8">
-              <div className='flex gap-8 items-center justify-center'>
-                { step > 1 ?
-                  <div className="w-[40px] h-[40px] bg-[#00B200] rounded-full flex items-center justify-center p-2 ">
-                  <Check size={48} color="#ffffff" strokeWidth={3} />
-                </div>
-                :
-                <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center p-2 border-4 border-lightblue ">
-                  <div className='rounded-full bg-lightblue w-[10px] h-[10px]'></div>
-                </div>
+              <div className='flex gap-8 justify-center'>
+                {step > 1 ?
+
+                  //mark checked symbol
+                  <CheckMark className='mt-2' >
+                    <Check size={48} color="#ffffff" strokeWidth={3} />
+                  </CheckMark>
+                  :
+                  //mark pending symbol
+                  <PendingMark className='mt-2'>
+                    <div className='rounded-full bg-lightblue w-[10px] h-[10px]'></div>
+                  </PendingMark>
                 }
-                
+
                 <div className=" w-full flex items-center text-xl text-darkblue  border-[1px] border-lightblue px-10 bg-white z-10 relative py-4 ">
-
-                  {/* {step > 1 ? <Check className="w-5 h-5" /> : '1'} */}
-
-                  <span className="ml-3 font-semibold">1. Select Course</span>
+                  <span className=" font-semibold">1. Select Course</span>
                   <div className="ml-auto w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
                     <ChevronRight />
                   </div>
                 </div>
               </div>
+
               <div className='flex gap-8 items-center justify-center'>
                 <div className="w-[40px] invisible h-[40px] bg-[#00B200] rounded-full flex items-center justify-center p-2 ">
                   <Check size={48} color="#ffffff" strokeWidth={3} />
                 </div>
 
-                <div className=" w-full flex items-center text-xl text-darkblue  border-[1px] border-lightblue px-10 bg-white z-10 relative py-4 ">
-
-                  {step === 1 && (
+                {step === 1 ? (
+                  <div className=" w-full flex items-center text-xl text-darkblue  border-[1px] border-lightblue px-10 bg-white z-10 relative py-4 ">
                     <div className="mt-4 space-y-6">
                       {[1, 2].map((course) => (
                         <div
@@ -96,183 +103,150 @@ export default function PaymentPage() {
                           </div>
 
                           {/* select course radio button */}
+
                           <input type="radio" className='scale-150 cursor-pointer border-lightblue fill-black'
                             checked={selectedCourse === `course-${course}`}
                             onChange={() => setSelectedCourse(`course-${course}`)} />
                         </div>
                       ))}
                     </div>
-                  )}
-                </div>
+
+                  </div>
+                )
+                  :
+                  <div className='hidden'></div>
+                }
               </div>
             </div>
 
             {/* Step 2: Payment Method */}
 
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
-                  {step > 2 ? <Check className="w-5 h-5" /> : '2'}
-                </div>
-                <span className="ml-3 font-medium">Select Payment Method</span>
-                <ChevronRight className="ml-auto w-5 h-5 text-gray-400" />
-              </div>
+            <div>
+              <div className='flex gap-8 mb-8'>
+                {step > 1 ? (
+                  // Mark checked symbol
+                  <CheckMark className='mt-2'>
+                    <Check size={48} color="#ffffff" strokeWidth={3} />
+                  </CheckMark>
+                ) : (
+                  // Mark pending symbol
+                  <PendingMark className='mt-2'>
+                    <div className='rounded-full bg-lightblue w-[10px] h-[10px]' />
+                  </PendingMark>
+                )}
 
-              {step === 2 && (
-                <div className="space-y-4">
-                  <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="wallet" id="wallet" />
-                      <Label htmlFor="wallet">Wallets (Paytm, Google Pay, etc.)</Label>
+                <div className="w-full flex flex-col text-xl text-darkblue border-[1px] border-lightblue px-10 bg-white z-10 relative py-4">
+                  <div className='flex items-center justify-between'>
+                    <span className="font-semibold">2. Select Payment Method</span>
+                    <div className="ml-auto w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                      <ChevronRight />
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="card" id="card" />
-                      <Label htmlFor="card">Credit/Debit Card (Visa, Mastercard, etc.)</Label>
-                    </div>
-                    {paymentMethod === 'card' && (
-                      <div className="mt-4 space-y-4">
-                        <div>
-                          <Label htmlFor="cardNumber">Card Number</Label>
-                          <Input id="cardNumber" placeholder="1234 5678 9012 3456" />
-                        </div>
-                        <div>
-                          <Label htmlFor="cardName">Card Holder Name</Label>
-                          <Input id="cardName" placeholder="John Doe" />
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <Label htmlFor="expiry">Expiry Date</Label>
-                            <Input id="expiry" placeholder="MM/YY" />
+                  </div>
+
+                  {step === 2 && (
+                    <div className="mt-8 space-y-4">
+                      <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
+                        {/* Mapping through the payment methods array */}
+                        {paymentMethods.map((payment) => (
+                          <div key={payment.value} className="flex items-center space-x-4 mb-4">
+                            <RadioGroupItem value={payment.value} id={payment.value} />
+                            <Label htmlFor={payment.value} className="text-lg text-darkblue">{payment.label}</Label>
                           </div>
-                          <div>
-                            <Label htmlFor="cvv">CVV Number</Label>
-                            <Input id="cvv" placeholder="123" />
+                        ))}
+
+                        {/* Conditionally rendering card payment details */}
+                        {paymentMethod === "card" && (
+                          <div className="py-4 mb-8 px-8 space-y-8 border-[1px] border-lightblue">
+                            <div className='flex gap-4 w-full'>
+                              <Label htmlFor="cardNumber" className="text-lg w-[70%] font-medium">Card Number</Label>
+                              <Input id="cardNumber" placeholder="1234 - 5678 - 9012 - 3456" className="border-[2px] border-lightblue  rounded-none  pl-4 font-semibold" />
+                            </div>
+                            <div className='flex gap-4 w-full'>
+                              <Label htmlFor="cardName" className="text-lg w-[70%] font-medium">Card Holder Name</Label>
+                              <Input id="cardName" placeholder="John Doe" className="border-[2px] border-lightblue  rounded-none  pl-4  font-semibold" />
+                            </div>
+
+                            <div className='flex gap-4 w-full'>
+                              <Label htmlFor="expiry" className="text-lg w-[70%] font-medium">Expiry Date</Label>
+                              <Input id="expiry" placeholder="MM/YY" className="border-[2px] border-lightblue  rounded-none  pl-4  font-semibold" />
+                            </div>
+                            <div className='flex gap-4 w-full'>
+                              <Label htmlFor="cvv" className="text-lg w-[70%] font-medium">CVV Number</Label>
+                              <Input id="cvv" placeholder="123" className="border-[2px] border-lightblue  rounded-none  pl-4  font-semibold" />
+                            </div>
+
+
+                            {/* Save & Continue Button using custom Button component */}
+                            <div className="">
+                              <Button
+                                variant="default"  // You can change this based on your design preference
+                                size="default"     // You can choose the button size as well (e.g., 'sm', 'lg')
+                                className="w-full mt-4"
+                              >
+                                Save & Continue
+                              </Button>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    )}
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="upi" id="upi" />
-                      <Label htmlFor="upi">UPI</Label>
+
+                        )}
+                      </RadioGroup>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="netbanking" id="netbanking" />
-                      <Label htmlFor="netbanking">Net Banking</Label>
-                    </div>
-                  </RadioGroup>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
+
 
             {/* Step 3: Confirmation */}
             <div>
-              <div className="flex items-center mb-4 ">
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
-                  {step > 3 ? <Check className="w-5 h-5" /> : '3'}
+              <div className='flex gap-8'>
+                {step > 1 ?
+                  //mark checked symbol
+                  <CheckMark className='mt-2' >
+                    <Check size={48} color="#ffffff" strokeWidth={3} />
+                  </CheckMark>
+                  :
+                  //mark pending symbol
+                  <PendingMark className='mt-2'>
+                    <div className='rounded-full bg-lightblue w-[10px] h-[10px]'></div>
+                  </PendingMark>
+                }
+
+                <div className=" w-full flex flex-col text-xl text-darkblue  border-[1px] border-lightblue px-10 bg-white z-10 relative py-4 ">
+                  <div className='flex items-center justify-between'>
+                    <span className="font-semibold">3. Confirmation</span>
+                    <div className="ml-auto w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                      <ChevronRight />
+                    </div>
+                  </div>
+                  {step > 1 && (
+                    <div className="mt-8 space-y-4">
+                      <div className="flex items-center gap-4">
+                        <Checkbox
+                          id="terms"
+                          className="appearance-none h-4 w-4 border-2  bg-white checked:border-0 checked:z-10  checked:content-['✔']  flex items-center justify-center"
+                        />
+                        <label htmlFor="terms" className="text-sm">
+                          I agree to the Terms & Conditions and Refund Policy
+                        </label>
+                      </div>
+                      <div className='flex  items-center gap-4 pb-4'>
+                        <div className="w-[20px] h-[20px] bg-[#00B200] rounded-full flex items-center justify-center">
+                          <Check size={12} color="#ffffff" strokeWidth={4} />
+                        </div>
+                        <p className='text-lg'>Your payment is 100% secured with ABC encryption
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <span className="ml-3 font-medium">Confirmation</span>
-                <ChevronRight className="ml-auto w-5 h-5 text-gray-400" />
               </div>
-              {step === 3 && (
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-2">
-                    <Checkbox id="terms" />
-                    <label htmlFor="terms" className="text-sm">
-                      I agree to the Terms & Conditions and Refund Policy
-                    </label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Checkbox id="secure" />
-                    <label htmlFor="secure" className="text-sm">
-                      Your payment is 100% secured with ABC encryption
-                    </label>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
 
           {/* Order Summary side bar in large and medium screens */}
 
-          <div className="lg:col-span-1 mt-6">
-            <div className="bg-white  border-[1px] border-lightblue md:w-[550px] z-10 relative">
-              <div>
-                <h2 className="text-md pl-10 font-bold  text-darkblue py-6">ORDER SUMMARY - #07111124</h2>
-              </div>
-
-              {/* order details  */}
-
-              <div className='border-t-[1px] border-lightblue px-10'>
-
-                <div className='mt-8 flex gap-20 items-center text-xl font-semibold text-lightblue'>
-                  <h3 className=" mb-2">Lorem ipsum dolor sit amet sit amet sit dolor</h3>
-                  <span>₹999</span>
-                </div>
-
-                {/* course description */}
-
-                <div className="mt-2  flex justify-between items-center">
-                  <p className="text-sm text-darkblue">
-                    Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit
-                  </p>
-                </div>
-                <div className='flex flex-wrap gap-4 mt-6 mb-12'>
-                  {
-                    [1, 2, 3, 4].map((item) => (
-                      <div key={item} className=" flex gap-4 items-center text-darkblue ">
-                        <SquareCheckBig size={15} strokeWidth={2} className='text-[#00B200]' />
-                        <span className='text-darkblue text-sm' >Lorem ipsum dolor sit</span>
-                      </div>
-                    ))
-                  }
-
-                </div>
-              </div>
-
-              <div className="border-t-[1px] border-lightblue px-10 py-4">
-                <div className='flex justify-between'>
-                  <label
-                    htmlFor="coupon"
-                    className="text-md font-semibold"
-                  >
-                    Apply Coupon
-                  </label>
-                  <div className="flex items-center gap-3">
-                    <input
-                      id="coupon"
-                      type="text"
-                      placeholder="Enter coupon code"
-                      className="w-full border-[2px] border-lightblue px-4 py-2 text-darkblue text-sm focus:outline-none focus:ring-1 focus:ring-lightblue"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4 flex justify-between items-center text-darkblue">
-                  <span className="text-md font-semibold">Est. Tax 5%</span>
-                  <span className="text-xl font-semibold text-lightblue">₹50</span>
-                </div>
-                <div className="mt-6 flex justify-between items-center text-darkblue font-bold">
-                  <span className="text-md font-semibold">Total Amount</span>
-                  <span className="text-xl font-semibold text-lightblue">₹1049</span>
-                </div>
-              </div>
-
-              <div className="text-center text-sm mt-4 py-5 text-gray-500 border-t-[1px] border-lightblue">
-                <span className='text-darkblue text-lg font-semibold'>
-
-                  {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
-
-                </span>
-                <br />
-                <span className='text-darkblue font-medium'> {Date().slice(3, 16)} | {new Date().getHours()} : {new Date().getMinutes()} </span>
-
-
-              </div>
-              {/* <Button className="w-full" size="lg">
-                  Purchase Now
-                </Button> */}
-            </div>
-          </div>
+          <Confirmationsummary />
         </div>
       </div>
 
@@ -291,3 +265,7 @@ export default function PaymentPage() {
     </div>
   )
 }
+
+
+
+

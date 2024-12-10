@@ -8,8 +8,9 @@ import Services from "./Services"
 import Galley from "./galley"
 import Gsmarque from "./gsmarque"
 import Initiaitive from "./Initiaitive"
-import Faqs from "./Faqs"
+import Faqs from "@/components/parts/faqs"
 import Footer from "@/components/parts/footer"
+import FaqContainer from "@/components/ui/faqcontainer"
 
 export default function Home() {
   return (
@@ -18,7 +19,6 @@ export default function Home() {
 
       {/* Navigation */}
       <Navbar />
-
 
       {/* Hero Section */}
       <Hero />
@@ -42,7 +42,11 @@ export default function Home() {
       <Initiaitive />
 
       {/* FAQ Section */}
-      <Faqs />
+      <FaqContainer>
+        <Faqs />
+      </FaqContainer>
+
+      {/* Footer */}
       <Footer />
 
     </div>
