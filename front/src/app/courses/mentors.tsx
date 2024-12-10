@@ -9,7 +9,7 @@ export const Mentors = () => {
     <>
       <div className="bg-darkblue py-16 px-8 sm:px-16 md:px-28 pb-28 relative">
         <div className="ellipse2 top-right "></div>
-        <div className="ellipse2 mid-left"></div>
+        <div className="ellipse2 mid-left  "></div>
         <div className="ellipse2 bottom-right "></div>
 
         <div>

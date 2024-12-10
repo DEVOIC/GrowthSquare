@@ -4,9 +4,9 @@ import React from 'react'
 
 const Faqs = () => {
     return (
-        <div className=''>
-            <div className="ellipse top-right"></div>
-            <div className="ellipse mid-left"></div>
+        <div className='relative'>
+            <div className="ellipse2 top-right"></div>
+            <div className="ellipse2 mid-left"></div>
 
             <section className="container mx-auto px-4 py-20 ">
                 <div className="flex flex-col md:flex-row gap-12">
