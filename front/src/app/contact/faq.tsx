@@ -25,11 +25,11 @@ const Faqs = () => {
                                 "Why is BRIX Templates the best Webflow agency out there?",
                                 "Why is BRIX Templates the best Webflow agency out there?",
                             ].map((question, index) => (
-                                <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700 px-10  py-6  bg-lightblue my-4">
-                                    <AccordionTrigger className="text-white text-[22px] font-semibold">
+                                <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700 px-10  py-2  bg-lightblue my-4">
+                                    <AccordionTrigger className="text-white text-lg font-semibold">
                                         {question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="text-darkblue text-lg font-medium">
+                                    <AccordionContent className="text-darkblue text-md font-medium">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     </AccordionContent>
                                 </AccordionItem>

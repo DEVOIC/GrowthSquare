@@ -1,18 +1,24 @@
 'use client'
 
 import { useState } from 'react'
-import Image from "next/image"
 import Link from "next/link"
+import Image from 'next/image'
 import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-import Faqs from './Faqs'
-import Gsmarque from './gsmarque'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import Footer from '@/components/parts/footer'
 import Navbar from '@/components/parts/navbar'
-import Hero from './hero'
+import Faqs from './faq'
+import Gsmarque from './gsmarque'
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -30,25 +36,54 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-darkblue">
       {/* Navigation */}
-     <Navbar/>
-     <Hero/>
 
+
+      <Navbar />
+
+      <div className="ellipse2 top-right"></div>
+      <div className="ellipse2 mid-left"></div>
+
+      {/* Hero Section */}
+      
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center mt-28">
+          <h1 className="text-8xl md:text-5xl z-30 font-bold text-white mb-4">
+            We&#39;d Love to Hear From <span className="text-lightblue">You</span>
+          </h1>
+          <p className="text-gray-300 text-2xl mt-10 mb-16">
+            Got questions? Ideas? We&#39;d love to hear from you—
+            <br />
+            reach out and let&#39;s get the{" "}
+            <span className="underline underline-offset-8 decoration-lightblue decoration-8">
+              conversation started
+            </span>
+          </p>
+        </div>
+      </section>
 
       {/* Contact Form Section */}
-      <section className="px-4 mb-2">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white  shadow-xl overflow-hidden">
+      <section className="px-4 pb-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white rounded-none px-16 shadow-xl overflow-hidden">
             <div className="grid md:grid-cols-2">
-              <div className="bg-blue-600 m-8 text-white">
-                <h2 className="text-2xl font-bold mb-4">lorem ipsum dolor set amet adipiscing</h2>
-                <Image
-                  src="/placeholder.svg"
-                  alt="Contact illustration"
-                  width={400}
-                  height={300}
-                  className="rounded-lg mb-6"
-                />
-                <div className="flex space-x-4">
+
+              <div className="bg-lightblue w-[80%] m-8 text-white">
+                <div className="relative  text-center h-[80%]">
+                  <div className="absolute inset-0 opacity-30">
+                    <Image
+                      src="https://s3-alpha-sig.figma.com/img/8cd1/5b08/7e0ae7c6261d4858ec6f1442bd293012?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fgvrFnJ228v516wiAueGPQoec4hwoVArIWJJAjMzTa4675I~hf~jFvlS97jGvHIxGkqp97~e918Dgqcd-HrsiKjHjc13NTAD7qTZRrmfZ8QmGTAyWicRXruHAopFXq8Btr39Tx14YKt-rUB5ujJPAy2QckJ2zaBFUVSjym28sjCC0CDJYu9rcIr0AdIgjVwZ009bBB3AeGXs0fl5ZwWBxsKDGbRDEBDy9JmybvEJu5xYJC2BOwanS~onHZfMBL0GpU1K2rifw9~obozYvAeY54HUGT17qIqB8ZSmTBtfzcFRnb04dcZ7zAxkFm9AlQb5nG~linE-vAL~L0s4-1GTQw__"
+                      layout="fill"
+                      objectFit="cover"
+                      alt="Contact Us"
+                    />
+                  </div>
+                  <h2 className="relative z-10 text-2xl font-bold py-10 px-6 text-white">
+                    lorem ipsum dolor set amet
+                    <span className="text-darkblue"> adipiscing</span>
+                  </h2>
+                </div>
+
+                <div className="flex space-x-8 bg-darkblue py-4 my-6 justify-center max-w-2xl mx-10">
                   <Link href="#" className="hover:text-blue-200">
                     <Instagram className="w-6 h-6" />
                   </Link>
@@ -63,47 +98,50 @@ export default function ContactPage() {
                   </Link>
                 </div>
               </div>
-              <div className="p-8">
+
+              <div className="py-16 px-4">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="name" className="block text-sm font-medium text-lightblue pb-1">
                       Name
                     </label>
                     <Input
                       id="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="John Doe"
+                      className='rounded-none border-2 text-darkblue font-semibold text-xl border-lightblue '
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="email" className="block text-sm font-medium text-lightblue pb-1">
                       Email ID
                     </label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className='rounded-none border-2 border-lightblue   text-darkblue font-semibold text-xl '
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="johndoe@gmail.com"
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="message" className="block text-sm font-medium text-lightblue pb-1">
                       Message
                     </label>
                     <Textarea
                       id="message"
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Hi! 👋"
-                      className="min-h-[150px]"
+                      className="min-h-[150px] rounded-none border-2 border-lightblue  text-darkblue font-semibold text-xl "
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Button type="submit" className="py-6 bg-blue-600 hover:bg-blue-700">
                     Send Message
                   </Button>
                 </form>
@@ -113,10 +151,24 @@ export default function ContactPage() {
         </div>
       </section>
 
+
+      {/* gsmarque  */}
+      <div>
+        <Gsmarque />
+      </div>
+
       {/* FAQ Section */}
-      <Gsmarque/>
-      <Faqs/>
-      <Footer/> 
+
+
+      <div className='bg-white px-10'>
+        <Faqs />
+      </div>
+      {/* Footer */}
+
+      <div className='bg-darkblue'>
+        <Footer />
+      </div>
+
     </div>
   )
 }
