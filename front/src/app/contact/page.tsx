@@ -134,7 +134,7 @@ export default function ContactPage() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="py-6 bg-blue-600 hover:bg-blue-700">
+                  <Button type="submit" className="py-6 bg-lightblue hover:bg-blue-700">
                     Send Message
                   </Button>
                 </form>

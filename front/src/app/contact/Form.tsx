@@ -25,7 +25,7 @@ const Form = () => {
     <div className="max-w-4xl mx-auto">
       <div className="bg-white  shadow-xl p-8 overflow-hidden">
         <div className="grid md:grid-cols-2">
-          <div className="bg-blue-600  text-white">
+          <div className="bg-lightblue  text-white">
             <h2 className="text-2xl font-bold ">lorem ipsum dolor set amet adipiscing</h2>
             <Image
               src="/placeholder.svg"
@@ -89,7 +89,7 @@ const Form = () => {
                   required
                 />
               </div>
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button type="submit" className="w-full bg-lightblue hover:bg-blue-700">
                 Send Message
               </Button>
             </form>

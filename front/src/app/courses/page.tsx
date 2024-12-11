@@ -11,7 +11,7 @@ import LearnAtYourPace from "./learnatownpeace"
 export default function CoursesPage() {
   return (
 
-    <div className="bg-gradient-to-b from-darkblue to-blue-600 ">
+    <div className="bg-gradient-to-b from-darkblue to-lightblue ">
       {/* Navigation */}
       <Navbar />
       {/* Hero Section */}
