@@ -1,6 +1,5 @@
 import React from "react";
 import { Star, Clock, Video } from 'lucide-react';
-import { Badge } from "@/components/ui/badge";
 import { Courseadvan } from './courseadv';
 import { Button } from "@/components/ui/button";
 

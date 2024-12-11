@@ -7,13 +7,6 @@ import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import Footer from '@/components/parts/footer'
 import Navbar from '@/components/parts/navbar'
 import Faqs from './faq'

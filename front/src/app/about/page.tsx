@@ -1,6 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ChevronDown, Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import Navbar from "@/components/parts/navbar"
 import Hero from "./hero"
 import Footer from "@/components/parts/footer"
