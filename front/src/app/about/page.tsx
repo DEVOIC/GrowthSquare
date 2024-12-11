@@ -3,6 +3,9 @@ import Link from "next/link"
 import { ChevronDown, Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import Navbar from "@/components/parts/navbar"
 import Hero from "./hero"
+import Footer from "@/components/parts/footer"
+import Faqs from "./Faqs"
+import Gsmarque from "./gsmarque"
 
 export default function AboutPage() {
   return (
@@ -122,86 +125,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <Gsmarque/>
+
       {/* FAQ Section */}
-      <section className="bg-gradient-to-b from-white to-gray-900 py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-blue-600">Lorem ipsum dolor sit amet consectetur lit FAQs</h2>
-          <div className="space-y-4">
-            {[
-              "What is Webflow and why is it the best website builder?",
-              "What is your favorite template from BRIX Templates?",
-              "How do you clone a Webflow Template from the Showcase?",
-              "Why is BRIX Templates the best Webflow agency out there?",
-              "Why is BRIX Templates the best Webflow agency out there?",
-            ].map((question, index) => (
-              <div key={index} className="border-b border-gray-200 pb-4">
-                <button className="flex justify-between items-center w-full text-left">
-                  <span className="text-lg font-medium text-white">{question}</span>
-                  <ChevronDown className="w-5 h-5 text-white" />
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Faqs/>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between mb-8">
-            <div className="mb-8 md:mb-0">
-              <h2 className="text-3xl font-bold mb-4">Le&#39; work together</h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <h3 className="font-bold mb-2">Explore</h3>
-                  <ul className="space-y-2">
-                    <li><Link href="#" className="text-gray-400 hover:text-white">About</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Services</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Contact Us</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-bold mb-2">Courses</h3>
-                  <ul className="space-y-2">
-                    <li><Link href="#" className="text-gray-400 hover:text-white">UI/UX Design</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Web Dev</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">App Dev</Link></li>
-                    <li><Link href="#" className="text-gray-400 hover:text-white">Video Editing</Link></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-bold mb-2">FAQs</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-400 hover:text-white">Blog</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 md:mb-0">©2024 Copyright - All Rights Reserved</p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Mail className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-          <div className="mt-4 text-center md:text-left">
-            <Link href="#" className="text-sm text-gray-400 hover:text-white mr-4">Terms & Conditions</Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-white mr-4">Privacy Policy</Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-white">Refund Policy</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }
