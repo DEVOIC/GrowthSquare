@@ -129,7 +129,7 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex space-x-4 mt-12  justify-center items-center my-auto">
+              <div className="flex space-x-4 py-4 lg:py-0 lg:mt-12  justify-center items-center my-auto">
                 <Link href="#" className="hover:text-white">
                   <Instagram className="h-6 w-6" />
                 </Link>
@@ -150,10 +150,11 @@ const Footer = () => {
         </div>
       </footer>
       <div className=" font-medium  border-t text-white bg-lightblue border-gray-800 p-5 flex flex-col md:flex-row justify-between items-center">
-        <div className="mx-auto w-10/12 container flex justify-between">
+        <div className="mx-auto w-10/12 container flex lg:flex-row flex-col-reverse items-center gap-4 lg:gap-0 lg:justify-between">
 
 
           <p>&copy; 2024 Copyright. All Rights Reserved</p>
+
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-white">
               Terms & Conditions
