@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Mentors = () => {
   return (
     <>
-      <div className="bg-darkblue py-16 px-8 sm:px-16 md:px-28 pb-28 relative">
+      <div className="bg-darkblue lg:py-16 px-8 sm:px-16 md:px-28 pb-28 relative">
         <div className="ellipse2 top-right "></div>
         <div className="ellipse2 mid-left  "></div>
         <div className="ellipse2 bottom-right "></div>
@@ -17,11 +17,11 @@ export const Mentors = () => {
             Meet your Mentors
           </h2>
 
-          <div className="flex flex-wrap gap-12 mt-24">
+          <div className="flex flex-wrap lg:gap-4  mt-24">
             {[1, 2, 3, 4, 5, 6].map((mentor) => (
               <div
                 key={mentor}
-                className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-6 sm:gap-10 z-10 relative mb-8"
+                className="flex flex-col sm:flex-row w-full  xl:w-[48%]  gap-6 sm:gap-10 z-10 relative mb-8"
               >
                 <div className="h-[240px] sm:h-[360px] w-full sm:w-72 overflow-hidden flex items-start justify-center">
                   <Image
