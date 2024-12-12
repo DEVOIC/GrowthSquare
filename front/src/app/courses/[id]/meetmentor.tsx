@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Mentors = () => {
     return (
         <>
-            <div className="bg-darkblue lg:py-44 py-24 px-8 sm:px-16 md:px-28 pb-28 relative">
+            <div className=" lg:py-44 py-24 px-8 sm:px-16 md:px-28 pb-28 relative">
                 <div className="ellipse2 top-right "></div>
                 <div className="ellipse2 mid-left"></div>
                 <div className="ellipse2 bottom-right "></div>
