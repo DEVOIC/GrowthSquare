@@ -7,6 +7,7 @@ import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +18,7 @@ import Footer from '@/components/parts/footer'
 import Navbar from '@/components/parts/navbar'
 import Faqs from './faq'
 import Gsmarque from './gsmarque'
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -34,6 +36,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-darkblue">
       {/* Navigation */}
+
 
       <Navbar />
 
@@ -156,6 +159,7 @@ export default function ContactPage() {
 
       {/* FAQ Section */}
 
+
       <div className='bg-white px-10'>
         <Faqs />
       </div>
@@ -164,6 +168,7 @@ export default function ContactPage() {
       <div className='bg-darkblue'>
         <Footer />
       </div>
+
     </div>
   )
 }
