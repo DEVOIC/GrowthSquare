@@ -6,8 +6,8 @@ import student from './mentor.jpg'
 const StudentReview = () => {
     return (
         <div className="bg-lightblue">
-            <div className=" mx-auto px-4 sm:px-6 lg:px-20 py-28 gap-20 flex flex-col lg:flex-row">
-                <h2 className="text-5xl font-semibold text-white mt-16 lg:w-[45%] ">Lorem ipsum dolor sit amet consectetur lit amet</h2>
+            <div className=" mx-auto px-8 pb-8 sm:px-6 lg:px-20  md:py-28 gap-20 flex flex-col lg:flex-row">
+                <h2 className="text-3xl md:text-5xl font-semibold text-white mt-16 lg:w-[45%]  ">Lorem ipsum dolor sit amet consectetur lit amet</h2>
                 <div className="space-y-6">
                     {[1, 2, 3].map((review, index) => (
                         <div key={index} className="bg-white rounded-none p-6 shadow-sm">

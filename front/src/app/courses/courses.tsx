@@ -8,9 +8,10 @@ import React from 'react';
 
 export const Courses = () => {
   return (
-    <div className="flex lg:flex-row flex-col items-center gap-8 md:gap-0 md:justify-between ">
-      {[1, 2, 3].map((item) => (
-        <Card key={item} className="bg-white w-[400px]">
+    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 ">
+    {/* <div className="flex lg:flex-row flex-col items-center gap-8 md:gap-0 md:justify-between "> */}
+      {[1, 2, 3,4].map((item) => (
+        <Card key={item} className="bg-white  max-w-4xl">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4 mb-4">
               <Avatar>
@@ -34,7 +35,7 @@ export const Courses = () => {
             <p className="text-gray-900 mb-4 text-sm">
               Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet
             </p>
-            <div className="flex justify-between my-8">
+            <div className="flex flex-row sm:flex-wrap justify-between my-8">
               <div>
                 <div className="flex space-x-2">
                   <Clock fill="#015AFF" color="white" />

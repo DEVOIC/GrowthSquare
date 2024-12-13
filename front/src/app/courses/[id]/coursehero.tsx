@@ -8,11 +8,11 @@ const CourseHero = () => {
         <>
             {/* Course Hero */}
 
-            <div className="bg-white pt-28 relative">
+            <div className="bg-white pt-16 md:pt-28 relative">
                 <div className="ellipse2 top-right"></div>
                 <div className="ellipse2 mid-left"></div>
                 <div className="sm:px-6 lg:px-28 py-12 px-4 z-30">
-                    <h1 className="text-6xl font-bold text-lightblue mb-4">
+                    <h1 className=" text-3xl md:text-6xl font-bold text-lightblue mb-4">
                         Lorem ipsum dolor sit amet,
                         <br />
                         adipiscing lit lit
@@ -25,7 +25,7 @@ const CourseHero = () => {
                         </div>
                         <span className="ml-2 text-sm text-lightblue">(123 reviews)</span>
                     </div>
-                    <p className="text-lg text-darkblue font-medium mb-6 lg:w-[80%]">
+                    <p className="text-md md:text-lg text-darkblue font-medium mb-6 lg:w-[80%]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
 
@@ -44,7 +44,7 @@ const CourseHero = () => {
                         </div>
                     </div>
 
-                    <div className="mt-20 z-50 flex flex-col w-fit  ">
+                    <div className="mt-20 z-50 flex flex-col md:w-fit  ">
                         <Button variant={'default'} className=" text-white hover:text-darkblue duration-300 text-xl px-20 py-8">
                             Enroll Now <span className=" opacity-70 line-through ">@1999</span> @499
                         </Button>

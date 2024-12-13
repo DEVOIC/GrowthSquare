@@ -1,6 +1,6 @@
 import Navbar from '@/components/parts/navbar'
-import Footer from '@/components/parts/footer'
-import Faqs from '@/components/parts/faqs'
+import Footer from './footer'
+import Faqs from './faqs'
 import Gsmarque from './gsmarque'
 import { Mentors } from './meetmentor'
 import StudentReview from './studentreview'
@@ -10,14 +10,14 @@ import CourseContent from './coursecontent'
 
 export default function CoursePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-white relative overflow-x-hidden">
       {/* Navigation */}
       <Navbar />
       <CourseHero />
       {/* Course Content */}
 
       <div className=" bg-white py-16 border-t-[1px] border-darkblue">
-        <div className=" sm:px-6 lg:px-28 py-12 px-4">
+        <div className=" sm:px-6 lg:px-28  md:py-12 px-4">
 
           <CourseContent />
 
@@ -28,7 +28,7 @@ export default function CoursePage() {
         </div>
       </div>
 
-      <div className='relative overflow-x-hidden '>
+      <div className='relative overflow-hidden bg-darkblue '>
         <Mentors />
       </div>
 

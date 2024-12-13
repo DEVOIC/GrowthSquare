@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { Check } from 'lucide-react'
 import Navbar from "@/components/parts/navbar"       //navbar imported from parts folder
-import Footer from "@/components/parts/footer"       //footer imported from parts folder
+import Footer from "./footer"       //footer imported from parts folder
 import { Button } from "@/components/ui/button"
-import Recommended from "@/components/parts/recommended"
+import Recommended from "./recommended"
 
 export default function PaymentSuccessPage() {
   return (
@@ -33,25 +33,25 @@ export default function PaymentSuccessPage() {
           Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet
           lorem ipsum dolor sit amet
         </p>
-        <div className="mt-20 flex flex-col gap-8 items-center justify-center">
+        <div className=" mt-16 lg:mt-20 flex flex-col gap-8 items-center justify-center">
 
           {/* button for going back to homepage  */}
 
           <Link href="/home">
-            <Button variant={'outline'} className="border-[1px] border-[#015AFF] w-[430px] text-[1.2rem] hover:text-[#015AFF] py-7  text-[#015AFF] font-bold ">
+            <Button variant={'outline'} className="border-[1px] border-[#015AFF] w-[100%] lg:w-[430px] text-[1.2rem] hover:text-[#015AFF] py-7  text-[#015AFF] font-bold ">
               <p className="">Go To Homepage</p>
             </Button>
           </Link>
 
           <Link href="/courses">
-            <Button variant={'default'} className="text-2xl w-[430px] py-7  font-semibold">
+            <Button variant={'default'} className="text-2xl w-[350px] lg:w-[430px] py-7  font-semibold">
               <p className="">Start Learning</p>
             </Button>
           </Link>
 
         </div>
       </div>
-      <div className="h-[1px]  w-full bg-[#001233] mt-40">
+      <div className="h-[1px]  w-full bg-[#001233] mt-20 lg:mt-40">
 
       </div>
       {/* Recommended Courses */}
