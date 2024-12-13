@@ -2,9 +2,9 @@ import { Loader2 } from 'lucide-react'
 
 export default function Loading() {
   return (
-    <div className="min-h-screen grid grid-cols-2">
+    <div className="min-h-screen bg-white">
       {/* Left Section */}
-      <div className="bg-lightblue" />
+  
       
       {/* Right Section */}
       <div className="flex items-center justify-center p-8">

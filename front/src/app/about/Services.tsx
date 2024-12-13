@@ -23,7 +23,7 @@ const Services = () => {
 <rect x="217" y="343" width="964" height="604" stroke="#015AFF" strokeWidth="4"/>
 <rect x="221" y="347" width="476" height="296" fill="#015AFF" fillOpacity="0.1"/>
 <rect x="221" y="347" width="476" height="296" stroke="#015AFF" strokeWidth="4"/>
-<g clip-path="url(#clip0_134_2253)">
+<g clipPath="url(#clip0_134_2253)">
 <rect x="423" y="398.499" width="72" height="72" stroke="#001233" strokeWidth="8"/>
 <path d="M436.452 423.298H470.2M470.2 423.298V457.273M470.2 423.298L419 474.498" stroke="#001233" strokeWidth="8"/>
 </g>

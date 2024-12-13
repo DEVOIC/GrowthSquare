@@ -1,12 +1,12 @@
 
 import Footer from "./footer"
-import FaqContainer from "@/components/ui/faqcontainer"
-import Faqs from "./faqs"
+
 import Navbar from "@/components/parts/navbar"
 import { Courseadvantage } from "./courseadvantage"
 import { Mentors } from "./mentors"
 import { Courses } from "./courses"
 import LearnAtYourPace from "./learnatownpeace"
+import Faqs from "@/components/parts/faqs"
 
 export default function CoursesPage() {
   return (
@@ -55,9 +55,9 @@ export default function CoursesPage() {
             {['All', 'App Development', 'UI/UX Design', 'Video Editing', 'Web Development'].map((category, idx) => (
               <button
                 key={idx}
-                className={`px-6 py-2  lg:text-xl font-semibold rouded-none ${idx === 0
+                className={`px-4 py-1  lg:text-xl font-medium rouded-none ${idx === 0
                   ? 'bg-lightblue text-white'
-                  : 'border-2 border-lightblue text-lightblue hover:bg-blue-50'
+                  : 'border border-lightblue text-lightblue hover:bg-blue-50'
                   }`}
               >
                 {category}
@@ -78,9 +78,7 @@ export default function CoursesPage() {
       <Courseadvantage />
 
       {/* FAQ Section */}
-      <FaqContainer className="">
-        <Faqs />
-      </FaqContainer>
+      <Faqs />
 
       {/* Footer */}
       <div className="bg-darkblue">

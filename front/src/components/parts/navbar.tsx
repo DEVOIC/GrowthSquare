@@ -14,7 +14,7 @@ const Navbar = () => {
             <Image src={Logo} alt="logo" />
           </Link>
           <div className="hidden md:flex items-center space-x-6 text-gray-300">
-            <Link href="/" className="hover:text-white">Explore</Link>
+            <Link href="/home" className="hover:text-white">Home</Link>
             <div className='h-full w-1 '>|</div>
             <Link href="/about" className="hover:text-white">About</Link>
             <div className='h-full w-1 '>|</div>
@@ -23,12 +23,16 @@ const Navbar = () => {
             <Link href="https://blog.growthsq.in/" className="hover:text-white">Blog</Link>
           </div>
           <div className="flex items-center space-x-4 z-30">
+            <Link href="/contact" className="text-white">
             <Button variant={'default'}>
               Become A Member
             </Button>
+            </Link>
+            <Link href="/login" className="text-white">
             <Button variant="outline">
               Login
             </Button>
+            </Link>
           </div>
         </div>
       </nav>

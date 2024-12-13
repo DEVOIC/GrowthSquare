@@ -3,7 +3,16 @@ import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link';
 import image from '../courses/mentor.jpg';
-const Inovators = () => {
+import Loading from '../loading';
+
+const Inovators = async() => {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/get-team-data`)
+    if(data.status !==200){
+      return (<Loading/>)
+    }
+    const memeber:teams[] = await data.json()
+    const part1 = memeber.filter((member, index) => index % 2 === 0)
+    const part2 = memeber.filter((member, index) => index % 2 !== 0)
   return (
     <section className="bg-white py-20 px-4 relative">
            <div className="ellipse top-left"></div>
@@ -18,9 +27,9 @@ const Inovators = () => {
         ready to take on new challenges and grow together.
       </p>
       <div className="flex my-6 space-x-4 animate-marquee">
-            {[1, 2, 3, 4, 5].map((member) => (
+            {part1.map((member) => (
               
-              <div key={member} className=" relative group transform transition-transform duration-300 hover:scale-110">
+              <div key={member.name} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <Link href="/about">
 
                 <Image
@@ -42,9 +51,9 @@ const Inovators = () => {
             ))}
           </div>
           <div className="flex my-6 space-x-4 animate-marquee-reverse">
-            {[1, 2, 3, 4, 5].map((member) => (
+            {part2.map((member) => (
               
-              <div key={member} className=" relative group transform transition-transform duration-300 hover:scale-110">
+              <div key={member.name} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <Link href="/about">
 
                 <Image

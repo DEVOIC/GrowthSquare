@@ -1,7 +1,13 @@
+import Loading from '@/app/loading'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import React from 'react'
 
-const Faqs = () => {
+const Faqs = async() => {
+const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/faqs`)
+    if(data.status !==200){
+      return (<Loading/>)
+    }
+    const faqs:Faqs[] = await data.json()
   return (
     <div className='w-screen bg-white text-black  relative overflow-y-clip'>
           <div className="ellipse top-right"></div>
@@ -16,17 +22,12 @@ const Faqs = () => {
         </h2>
       </div>
       <div className="md:w-2/3 ">
+      {data?
         <Accordion type="single" collapsible className="w-full">
-          {[
-            "What is Webflow and why is it the best website builder?",
-            "What is your favorite template from BRIX Templates?",
-            "How do you clone a Webflow Template from the Showcase?",
-            "Why is BRIX Templates the best Webflow agency out there?",
-            "Why is BRIX Templates the best Webflow agency out there?",
-          ].map((question, index) => (
+          {faqs.map((question, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700 p-4 bg-lightblue my-4">
               <AccordionTrigger className="text-white ">
-                {question}
+                {question.question}
               </AccordionTrigger>
               <AccordionContent className="text-white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -34,7 +35,7 @@ const Faqs = () => {
               </AccordionContent>
             </AccordionItem>
           ))}
-        </Accordion>
+        </Accordion>:<Loading/>}
       </div>
     </div>
   </section></div>

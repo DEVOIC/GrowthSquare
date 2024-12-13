@@ -9,8 +9,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Footer from '@/components/parts/footer'
 import Navbar from '@/components/parts/navbar'
-import Faqs from './faq'
 import Gsmarque from './gsmarque'
+import Faqs from '@/components/parts/faqs'
 
 
 export default function ContactPage() {
@@ -153,9 +153,7 @@ export default function ContactPage() {
       {/* FAQ Section */}
 
 
-      <div className='bg-white px-10'>
-        <Faqs />
-      </div>
+      <Faqs />
       {/* Footer */}
 
       <div className='bg-darkblue'>
