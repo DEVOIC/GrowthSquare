@@ -7,20 +7,27 @@ import Form from 'next/form'
 import { createUser } from "./actions"
 import { useToast } from "@/hooks/use-toast"
 import { useActionState, useEffect } from "react"
+import { Otp } from "@/components/parts/otp"
 
 export default function SignupPage() {
   const [state, action, pending] = useActionState(createUser, null)
-
   const { toast } = useToast()
   // const status = useFormStatus()
   console.log(`${process.env.NEXT_PUBLIC_BACK_API} : ${process.env.NEXT_PUBLIC_PORT}`);
-useEffect(() => {
-  toast({
-    description: state,
-  })
-}, [state])
-
+  useEffect(() => {
+  
+        const showstate = () =>
+        {
+          toast({
+            description: state,
+          })
+         
+        }
+        showstate();
+      }
+    , [pending])
   return (
+    <>{state==="User created successfully"?<Otp />:
     <div className="min-h-screen grid grid-cols-2">
       {/* Left Section */}
       <div className="bg-lightblue" />
@@ -130,7 +137,8 @@ useEffect(() => {
           </p>
         </div>
       </div>
-    </div>
+    </div>}
+    </>
   )
 }
 
