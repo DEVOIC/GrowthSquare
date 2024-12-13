@@ -1,9 +1,25 @@
+'use client'
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Form from 'next/form'
+import { createUser } from "./actions"
+import { useToast } from "@/hooks/use-toast"
+import { useActionState, useEffect } from "react"
 
 export default function SignupPage() {
+  const [state, action, pending] = useActionState(createUser, null)
+
+  const { toast } = useToast()
+  // const status = useFormStatus()
+  console.log(`${process.env.NEXT_PUBLIC_BACK_API} : ${process.env.NEXT_PUBLIC_PORT}`);
+useEffect(() => {
+  toast({
+    description: state,
+  })
+}, [state])
+
   return (
     <div className="min-h-screen grid grid-cols-2">
       {/* Left Section */}
@@ -16,16 +32,18 @@ export default function SignupPage() {
             <h1 className="text-3xl font-bold tracking-tight">Create Your Account</h1>
           </div>
           
-          <form className="space-y-4">
+          <Form action={action} className="space-y-4">
             <div className="space-y-2">
               <label className="text-sm text-lightblue" htmlFor="name">
                 Name
               </label>
               <Input
                 id="name"
+                  name="name"
                 placeholder="John Doe"
                 type="text"
                 className="border-lightblue/20"
+                required
               />
             </div>
             <div className="space-y-2">
@@ -34,9 +52,11 @@ export default function SignupPage() {
               </label>
               <Input
                 id="email"
+                name="email"
                 placeholder="johndoe@gmail.com"
                 type="email"
                 className="border-lightblue/20"
+                required
               />
             </div>
             <div className="space-y-2">
@@ -45,16 +65,18 @@ export default function SignupPage() {
               </label>
               <Input
                 id="password"
+                        name="password"
                 placeholder="strong password"
                 type="password"
                 className="border-lightblue/20"
+                required
               />
             </div>
             
-            <Button className="w-full bg-lightblue hover:bg-blue-700" size="lg">
-              Create Account
+            <Button type="submit" disabled={pending} className="w-full bg-lightblue hover:bg-blue-700" size="lg">
+           {pending?'Creating...':'Create Account'}   
             </Button>
-          </form>
+          </Form>
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
