@@ -11,7 +11,9 @@ import LearnAtYourPace from "./learnatownpeace"
 export default function CoursesPage() {
   return (
 
+
     <div className="bg-darkblue">
+
       {/* Navigation */}
       <Navbar />
       {/* Hero Section */}

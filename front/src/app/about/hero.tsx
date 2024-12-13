@@ -1,6 +1,5 @@
-import { Button } from '@/components/ui/button'
-import {  MoveUpRight } from 'lucide-react'
-import Image from 'next/image'
+
+// import Image from 'next/image'
 import React from 'react'
 
 const Hero = () => {
@@ -19,25 +18,21 @@ const Hero = () => {
         We&#39;re a hub for creatives, developers, and dreamers
           <br />who believe in <span className="border-b-4 border-blue-500">growing together</span>
         </p>
-        <Button variant={'default'}>
-          <p className='text-xl font-bold'>
-            let&#39;s grow together
-          </p>
-          <div>
-            <MoveUpRight  className="ml-2 " size={60}  />
-            </div>
-        </Button>
-        <div className='absolute  -bottom-24'>
-
         
+        {/* <div className='absolute  -bottom-24'>
+
+        <div className='w-94 h-12'>
+
             <Image
-            width={60}
-            height={10}
-            objectFit='contain'
+            width={2000}
+            height={100}
+            objectFit='cover'
             
-            src="https://media.istockphoto.com/id/1485546774/photo/bald-man-smiling-at-camera-standing-with-arms-crossed.jpg?s=612x612&w=0&k=20&c=9vuq6HxeSZfhZ7Jit_2HPVLyoajffb7h_SbWssh_bME=" alt="placeholder" />
+            src="https://s3-alpha-sig.figma.com/img/c155/ca6e/1097f82795b82001c634f3623199a546?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pmWJQosquT2bTFEmNB817rIpEn9zrg-s5zk5j6CBOTViWIak3JYo6HAMQhXaMd14CG8jTCnA7TXEpns6HAJsoyB7KWHpLuJMen-i-GLZdOmDnqn3sX8eRDyzE~qLPt5dwT9qPWZSOmie80LBu0cJzBq-D2vBvlLsDJonX9QkC9YFnJ7icBslPD6UMiiSgCdfHIYzrcTeRZ-xtHCikRg-rdN-VGMB6kJLxDKC7E-y2v2Vk0Z0jlrK4vi1JETxuCFz7drDalIKEbq0W13P4UDfDGqfmufBWEsjhit5bQUEJ0mD6rFNeFlQdrJVB2vLTOZYYmI8YGSUXX0vb7TuzA-tcA__" alt="placeholder" />
        
             </div>
+            </div> */}
+            
 
             </div>
       </section>

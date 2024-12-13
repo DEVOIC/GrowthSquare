@@ -7,13 +7,6 @@ import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import Footer from '@/components/parts/footer'
 import Navbar from '@/components/parts/navbar'
 import Faqs from './faq'
@@ -141,7 +134,7 @@ export default function ContactPage() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="py-6 bg-blue-600 hover:bg-blue-700">
+                  <Button type="submit" className="py-6 bg-lightblue hover:bg-blue-700">
                     Send Message
                   </Button>
                 </form>

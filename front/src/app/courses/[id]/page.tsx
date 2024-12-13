@@ -6,7 +6,6 @@ import { Mentors } from './meetmentor'
 import StudentReview from './studentreview'
 import { Button } from '@/components/ui/button'
 import CourseHero from './coursehero'
-import { ChevronDown } from 'lucide-react'
 import CourseContent from './coursecontent'
 
 export default function CoursePage() {

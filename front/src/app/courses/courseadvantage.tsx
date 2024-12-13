@@ -3,7 +3,8 @@ import { SquareCheckBig } from 'lucide-react'
 
 export const Courseadvantage = () => {
     return (
-        <section className="bg-blue-600 py-10 lg:py-20  px-8 sm:px-16 md:px-28 ">
+
+        <section className="bg-lightblue px-8 py-16 md:p-28">
             <div className=" ">
                 <h2 className=" text-3xl lg:text-5xl font-bold text-white mb-16">
                 Lorem ipsum dolor sit amet,
