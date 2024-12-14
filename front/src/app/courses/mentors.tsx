@@ -48,9 +48,9 @@ export const Mentors = () => {
                     <Badge className="bg-[#015AFF33] py-2 rounded-none hover:bg-[#015AFF33] text-white text-xs sm:text-sm">
                       UI/UX Design
                     </Badge>
-                    <Badge className="bg-[#015AFF33] rounded-none text-white hover:bg-[#015AFF33] text-xs sm:text-sm">
+                    {/* <Badge className="bg-[#015AFF33] rounded-none text-white hover:bg-[#015AFF33] text-xs sm:text-sm">
                       Product Design
-                    </Badge>
+                    </Badge> */}
                   </div>
                   <div className="flex gap-4 sm:gap-6 mt-6">
                     <Link href="#" className="text-white hover:text-lightblue">

@@ -6,9 +6,9 @@ import {
   Instagram,
   Linkedin,
   Mail,
-  MoveUpRight,
   Twitter,
 } from "lucide-react";
+import Image from "next/image";
 
 
 const Footer = () => {
@@ -24,11 +24,13 @@ const Footer = () => {
             Let&#39;s work together
           </h2>
 
-          <div className="relative z-10  w-14 h-14 bg-white">
-            <div className=" absolute -left-3 -bottom-3">
-              <MoveUpRight className=" text-darkblue " size={60} />
-            </div>
-          </div>
+          <Image
+            src="/whiteLogo.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            className=""
+          />
         </div>
       </section>
 
@@ -41,25 +43,25 @@ const Footer = () => {
               <div className="">
                 <div className="space-y-2">
                   <Link
-                    href="#"
+                    href="/home"
                     className="block text-white hover:text-white"
                   >
                     Explore
                   </Link>
                   <Link
-                    href="#"
+                    href="/about"
                     className="block text-white hover:text-white"
                   >
                     About
                   </Link>
                   <Link
-                    href="#"
+                    href="/courses"
                     className="block text-white hover:text-white"
                   >
                     Services
                   </Link>
                   <Link
-                    href="#"
+                    href="/contact"
                     className="block text-white hover:text-white"
                   >
                     Contact Us
@@ -69,7 +71,7 @@ const Footer = () => {
               <div>
                 <div className="space-y-2">
                   <Link
-                    href="#"
+                    href="/courses"
                     className="block text-white hover:text-white"
                   >
                     Courses
@@ -81,7 +83,7 @@ const Footer = () => {
                     FAQs
                   </Link>
                   <Link
-                    href="#"
+                    href="https://blog.growthsq.in/"
                     className="block text-white hover:text-white"
                   >
                     Blog
@@ -91,25 +93,25 @@ const Footer = () => {
               <div>
                 <div className="space-y-2">
                   <Link
-                    href="#"
+                    href="/courses"
                     className="block text-white hover:text-white"
                   >
                     UI/UX Design
                   </Link>
                   <Link
-                    href="#"
+                    href="/courses"
                     className="block text-white hover:text-white"
                   >
                     Web Dev
                   </Link>
                   <Link
-                    href="#"
+                    href="/courses"
                     className="block text-white hover:text-white"
                   >
                     App Dev
                   </Link>
                   <Link
-                    href="#"
+                    href="/courses"
                     className="block text-white hover:text-white"
                   >
                     Video Editing
@@ -130,16 +132,16 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex space-x-4 py-4 lg:py-0 lg:mt-12  justify-center items-center my-auto">
-                <Link href="#" className="hover:text-white">
+                <Link href="https://www.instagram.com/growthsq/" className="hover:text-white">
                   <Instagram className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="hover:text-white">
+                <Link href="https://x.com/thegrowthsquare" className="hover:text-white">
                   <Twitter className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="hover:text-white">
+                <Link href="https://www.linkedin.com/company/growthsq/" className="hover:text-white">
                   <Linkedin className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="hover:text-white">
+                <Link href="contact@growthsq.in" className="hover:text-white">
                   <Mail className="h-6 w-6" />
                 </Link>
               </div>

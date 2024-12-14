@@ -1,11 +1,36 @@
-import React from 'react'
+'use client'
+import React, { useActionState, useEffect } from 'react'
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import {  loginUser } from './actions'
+import { useToast } from '@/hooks/use-toast'
+import Form from 'next/form'
+import { useRouter } from 'next/navigation'
 
 
-const page = () => {
+const Page = () => {
+    const [state, action, pending] = useActionState(loginUser, null)
+    const { toast } = useToast()
+const router = useRouter()
+    useEffect(() => {
+      if(state==="Logged in successfully"){
+        router.replace("/")
+    }
+        const showstate = () =>
+        {
+          toast({
+            description: state,
+          })
+          
+        }
+        showstate();
+      }
+    , [pending])
+
+   
+    
   return (
         <div className="min-h-screen grid grid-cols-2">
           {/* Left Section */}
@@ -18,13 +43,14 @@ const page = () => {
                 <h1 className="text-3xl font-bold tracking-tight">Log Into Your Account</h1>
               </div>
               
-              <form className="space-y-4">
+              <Form action={action} className="space-y-4">
                 <div className="space-y-2">
                   <label className="text-sm text-lightblue" htmlFor="email">
                     Email ID
                   </label>
                   <Input
                     id="email"
+                    name='email'
                     placeholder="johndoe@gmail.com"
                     type="email"
                     className="border-lightblue/20"
@@ -44,16 +70,17 @@ const page = () => {
                   </div>
                   <Input
                     id="password"
+                    name='password'
                     placeholder="strong password"
                     type="password"
                     className="border-lightblue/20"
                   />
                 </div>
                 
-                <Button className="w-full bg-lightblue hover:bg-blue-700" size="lg">
-                  Login
+                <Button disabled={pending} className="w-full bg-lightblue hover:bg-blue-700" size="lg">
+                 {pending? "Logining in":"Login"} Login
                 </Button>
-              </form>
+              </Form>
     
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
@@ -113,4 +140,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

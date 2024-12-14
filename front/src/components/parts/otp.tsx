@@ -1,6 +1,6 @@
 "use client"
 
-import * as React from "react"
+import { useActionState, useEffect,startTransition } from "react"
 import {
     InputOTP,
     InputOTPGroup,
@@ -8,9 +8,32 @@ import {
 } from "@/components/ui/input-otp"
 import { useState } from "react"
 import { Button } from "../ui/button"
+import { verifyUser } from "@/app/signup/actions"
+import { useToast } from "@/hooks/use-toast"
+import { useRouter } from "next/navigation"
 
 export const Otp = () => {
+    const { toast } = useToast()
     const [value, setValue] = useState("")
+const [message, action, pending] = useActionState(verifyUser, null)
+const router = useRouter()
+const  handleSubmit = async() => {
+    startTransition(()=>{
+        action(value)
+    })
+}
+useEffect(() => {
+    if(message==="Email verified successfully"){
+        router.replace("/")
+    }
+    const showstate = () =>
+    {
+      toast({
+        description: message,
+      })
+    }
+    showstate();
+  }, [pending])
 
     return (
         <div className=" h-[100vh] md:min-h-screen grid md:grid-cols-2">
@@ -23,6 +46,9 @@ export const Otp = () => {
                     <h1 className="text-3xl font-bold tracking-tight">Enter OTP you Received </h1>
                     <p> Enter OTP to verify your account  </p>
                 </div>
+
+
+        
                 <InputOTP
                     maxLength={6}
                     value={value}
@@ -46,10 +72,17 @@ export const Otp = () => {
                 </div>
                 <div className="flex justify-evenly items-center w-[60%] mt-10 ">
 
-                    <Button variant={"outline"} className="text-darkblue"> Go Back </Button>
-                    <Button className="">Verify</Button>
+                    <Button onClick={()=>{
+                        router.push('/signup')
+                    }} variant={"outline"} className="text-darkblue"> Go Back </Button>
+                    <Button disabled ={pending} onClick={
+                        handleSubmit
+                    } className="">
+                        {pending ? "Verifying..." : "Verify"}
 
+                        </Button>
                 </div>
+
             </div>
         </div>
     )
