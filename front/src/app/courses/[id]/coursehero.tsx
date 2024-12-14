@@ -12,7 +12,7 @@ const CourseHero = () => {
                 <div className="ellipse2 top-right"></div>
                 <div className="ellipse2 mid-left"></div>
                 <div className="sm:px-6 lg:px-28 py-12 px-4 z-30">
-                    <h1 className=" text-3xl md:text-6xl font-bold text-lightblue mb-4">
+                    <h1 className=" text-3xl md:text-6xl font-bold font-transforma text-lightblue mb-4">
                         Lorem ipsum dolor sit amet,
                         <br />
                         adipiscing lit lit

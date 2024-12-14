@@ -9,18 +9,18 @@ export default function Recommended() {
     return (
 
 
-        <div className="mt-20 lg:mt-48 lg:px-20  px-4  ">
+        <div className="lg:mt-48 mt-16  px-8 lg:px-20   ">
             {/* Recommended Courses */}
             <div className="">
 
-                <h2 className= " text-4xl lg:text-5xl text-darkblue font-bold mb-12">Recommended Courses</h2>
+                <h2 className="text-3xl lg:text-5xl font-bold mb-12 font-transforma">Recommended Courses</h2>
 
                 {/* no-scrollbar is used to hide scrollbar and also width is increased to 110% */}
 
-                <div className="grid grid-cols-1 md:mt-[100px] grid-col-1 lg:grid-cols-2 xl:grid-cols-3 lg:gap-10 overflow-x-scroll no-scrollbar ">
+                <div className="grid grid-cols-1 md:mt-[100px] grid-col-1 md:grid-cols-2 xl:grid-cols-3 lg:gap-10 overflow-x-scroll no-scrollbar ">
                     {[1, 2, 3].map((course) => (
 
-                        <Card key={course} className="bg-white mb-16 lg:mb-40 ">
+                        <Card key={course} className="bg-white mb-10 lg:mb-40 border-[1px]  ">
                             <CardContent className="p-6 ">
                                 <div className="flex items-center space-x-4 mb-4">
                                     <Avatar>
@@ -28,12 +28,12 @@ export default function Recommended() {
                                         <AvatarFallback>MG</AvatarFallback>
                                     </Avatar>
                                     <div>
-                                        <h3 className="font-semibold">Martin Goutry</h3>
+                                        <h3 className=" text-xl text-darkblue font-semibold">Martin Goutry</h3>
                                         <p className="text-[12px] text-[#B9B9B9]">UI/UX Designer at ABC</p>
                                     </div>
                                 </div>
                                 <h4 className="text-xl text-lightblue font-semibold mb-4">Lorem ipsum dolor sit amet sit amet sit</h4>
-                                <p className="text-gray-900 mb-4  text-sm">
+                                <p className="text-darkblue mb-4  text-sm">
                                     Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet
                                 </p>
                                 <div className='flex justify-between my-8 '>
@@ -73,7 +73,7 @@ export default function Recommended() {
                                         UI/UX Design
                                     </div>
                                 </div>
-                                <Button variant={'default'} className="w-full text-white hover:text-darkblue duration-300 text-xl py-8 mb-8">
+                                <Button variant={'default'} className="w-full text-white hover:text-darkblue hover:bg-lightblue/90 duration-300 text-lg py-6 mb-8">
                                     Enroll Now <span className=" opacity-70 line-through ">@1999</span> @499
                                 </Button>
                             </CardContent>

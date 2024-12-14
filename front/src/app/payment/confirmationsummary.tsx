@@ -1,5 +1,6 @@
 import React from 'react'
 import { SquareCheckBig } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const Confirmationsummary = () => {
     return (
@@ -76,9 +77,12 @@ export const Confirmationsummary = () => {
                         <br />
                         <span className='text-darkblue font-medium'> {Date().slice(3, 16)} | {new Date().getHours()} : {new Date().getMinutes()} </span>
                     </div>
-                    {/* <Button className="w-full" size="lg">
-                  Purchase Now
-                </Button> */}
+                    <div className='w-full flex justify-center py-4'>
+                         <Button className="w-[60%] rounded-none hover:bg-lightblue/80" size="lg">
+                        Purchase Now
+                    </Button>
+                    </div>
+                   
                 </div>
             </div>
         </>

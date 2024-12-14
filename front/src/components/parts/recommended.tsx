@@ -13,7 +13,7 @@ export default function Recommended() {
             {/* Recommended Courses */}
             <div className="">
 
-                <h2 className="text-5xl font-bold mb-12">Recommended Courses</h2>
+                <h2 className="text-5xl font-bold mb-12 font-transforma">Recommended Courses</h2>
 
                 {/* no-scrollbar is used to hide scrollbar and also width is increased to 110% */}
 

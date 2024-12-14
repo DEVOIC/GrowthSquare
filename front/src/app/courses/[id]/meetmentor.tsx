@@ -13,8 +13,8 @@ export const Mentors = () => {
                 <div className="ellipse2 bottom-right "></div>
 
                 <div className="flex lg:flex-row flex-col items-center justify-evenly">
-                    <div className="lg:w-[35%] w-full text-center">
-                        <span className="text-lightblue text-5xl font-bold ">Meet your Mentor</span>
+                    <div className="lg:w-[38%] w-full text-center">
+                        <span className="text-lightblue text-5xl font-bold font-transforma ">Meet your Mentor</span>
                         <p className="text-xl my-6 text-white">mast quote to inspire ppl lorem ipsum dolor sit amet adipiscing elit</p>
                         <span className="text-white text-lg">~ lorem ipsum</span>
                     </div>

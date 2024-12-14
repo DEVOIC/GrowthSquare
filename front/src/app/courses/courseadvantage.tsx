@@ -6,7 +6,7 @@ export const Courseadvantage = () => {
 
         <section className="bg-lightblue px-8 py-16 md:p-28">
             <div className=" ">
-                <h2 className=" text-3xl lg:text-5xl font-bold text-white mb-16">
+                <h2 className=" text-3xl font-transforma lg:text-4xl font-bold text-white mb-16">
                 Lorem ipsum dolor sit amet,
                 <br /> lit course advantage
                 </h2>

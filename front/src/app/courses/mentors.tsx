@@ -13,7 +13,7 @@ export const Mentors = () => {
         <div className="ellipse2 bottom-right "></div>
 
         <div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-16 mb-12">
+          <h2 className="text-3xl font-transforma sm:text-4xl md:text-5xl font-bold text-white mt-16 mb-12">
             Meet your Mentors
           </h2>
 

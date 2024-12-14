@@ -10,7 +10,7 @@ export const Courses = () => {
   return (
     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 ">
     {/* <div className="flex lg:flex-row flex-col items-center gap-8 md:gap-0 md:justify-between "> */}
-      {[1, 2, 3,4].map((item) => (
+      {[1, 2, 3].map((item) => (
         <Card key={item} className="bg-white  max-w-4xl">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4 mb-4">
