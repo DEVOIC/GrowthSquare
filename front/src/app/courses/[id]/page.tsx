@@ -1,5 +1,5 @@
 import Navbar from '@/components/parts/navbar'
-import Footer from './footer'
+import Footer from '@/components/parts/footer'
 import Faqs from './faqs'
 import Gsmarque from './gsmarque'
 import { Mentors } from './meetmentor'

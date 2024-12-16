@@ -14,7 +14,6 @@ import Faqs from './Faqs'
 // import Faqs from '@/components/parts/faqs'
 
 import Gsmarque from './gsmarque'
-<!-- import Faqs from '@/components/parts/faqs' -->
 
 
 export default function ContactPage() {
@@ -55,13 +54,11 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-
+      
       {/* Contact Form Section */}
       <section className=" pb-16 bg-white lg:bg-transparent  lg:px-20 ">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white px-4 lg:px-8 rounded-none lg:shadow-xl overflow-hidden">
-
-
             <div className="flex flex-col lg:flex-row lg:space-y-0 gap-28 lg:gap-10 lg:py-16 py-8">
 
               {/* social media section */}

@@ -1,6 +1,5 @@
 
-import Footer from "./footer"
-
+import Footer from "@/components/parts/footer"
 import Navbar from "@/components/parts/navbar"
 import { Courseadvantage } from "./courseadvantage"
 import { Mentors } from "./mentors"
@@ -11,9 +10,7 @@ import Faqs from "@/components/parts/faqs"
 export default function CoursesPage() {
   return (
 
-
     <div className="bg-darkblue">
-
       {/* Navigation */}
       <Navbar />
       {/* Hero Section */}
