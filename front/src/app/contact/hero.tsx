@@ -7,8 +7,8 @@ const Hero = () => {
         
     <section className=" bg-darkblue  ">
         <div className=' container mx-auto px-4 py-20 text-center  relative'>
-      <div className="ellipse top-right"></div>
-      <div className="ellipse bottom-left"></div>
+      <div className="ellipse top-right overflow-hidden"></div>
+      <div className="ellipse bottom-left overflow-hidden"></div>
 
         <h1 className="text-4xl md:text-6xl font-transforma font-semibold text-white mb-6">
         We&#39;d Love to Hean form<span className="text-blue-400">You</span>

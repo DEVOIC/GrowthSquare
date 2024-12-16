@@ -10,6 +10,7 @@ export const Courses = () => {
     {/* <div className="flex lg:flex-row flex-col items-center gap-8 md:gap-0 md:justify-between "> */}
       {[1, 2, 3,4].map((item) => (
         <CourseCard key={item}/>
+
       ))}
     </div>
   );

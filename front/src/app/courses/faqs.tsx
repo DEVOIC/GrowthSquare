@@ -11,7 +11,7 @@ const Faqs = () => {
             <section className="pb-16 ">
                 <div className="flex flex-col lg:flex-row gap-12">
                     <div className="lg:w-1/3 mt-8 md:mt-16">
-                        <h2 className=" text-3xl md:text-5xl leading-tight z-20 font-bold text-darkblue font-transforma md:mb-12 mb-0">
+                        <h2 className=" text-3xl md:text-5xl  leading-tight z-20 font-bold text-darkblue font-transforma md:mb-12 mb-0">
                             <p>Lorem ipsum dolor sit amet,</p>
                             adipiscing lit FAQs
                         </h2>
@@ -29,7 +29,7 @@ const Faqs = () => {
                                     <AccordionTrigger className="text-white text-sm md:text-xl font-semibold">
                                         {question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="text-white/9cracki text-sm md:text-lg font-medium">
+                                    <AccordionContent className="text-white/90 text-sm md:text-lg font-medium">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     </AccordionContent>
                                 </AccordionItem>
@@ -37,7 +37,8 @@ const Faqs = () => {
                         </Accordion>
                     </div>
                 </div>
-            </section></div>
+            </section>
+        </div>
     )
 }
 

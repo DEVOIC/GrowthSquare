@@ -1,20 +1,20 @@
 import Link from "next/link"
 import { Check } from 'lucide-react'
 import Navbar from "@/components/parts/navbar"       //navbar imported from parts folder
-import Footer from "./footer"       //footer imported from parts folder
+import Footer from "@/components/parts/footer"       //footer imported from parts folder
 import { Button } from "@/components/ui/button"
-import Recommended from "./recommended"
+import Recommended from "../recommended"
 
 export default function PaymentSuccessPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Navigation */}
 
       <Navbar />
 
       {/* Ellipses */}
       <div className="ellipse2 top-right mt-28 opacity-20  "></div>
-      <div className="ellipse2 -bottom-52 opacity-55"></div>
+      <div className="ellipse2 mid-left "></div>
 
       {/* Success Message */}
       <div className="max-w-4xl mx-auto md:mt-[170px] px-4 text-center">

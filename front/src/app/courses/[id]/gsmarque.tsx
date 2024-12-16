@@ -3,7 +3,7 @@ import React from "react";
 const Gsmarque = () => {
   return (
     
-    <div className="w-screen bg-darkblue py-12 relative overflow-x-hidden">
+    <div className="w-screen bg-darkblue py-12 relative overflow-hidden">
             <div className="ellipse top-right"></div>
             <div className="ellipse bottom-left"></div>
       <div className=" space-y-2">

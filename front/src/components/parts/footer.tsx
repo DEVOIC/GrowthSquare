@@ -14,8 +14,8 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className="w-screen relative">
-      <div className="ellipse top-right"></div>
-      <div className="ellipse mid-left"></div>
+      <div className="ellipse top-right overflow-hidden"></div>
+      <div className="ellipse mid-left overflow-hidden"></div>
 
       {/* CTA Section */}
       <section className=" w-screen border-b-2  px-4 py-20 text-center">
