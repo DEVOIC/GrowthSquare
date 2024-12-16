@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
+import Loading from "../loading";
 const TestCard = () => {
   return (
     <Card className={`bg-white p-6  md:col-span-2 `}>
@@ -29,7 +30,14 @@ const TestCard = () => {
     </Card>
   );
 };
-const Testimonial = () => {
+const Testimonial = async() => {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/testimonial`)
+        if(data.status !==200){
+          return (<Loading/>)
+        }
+        const rawData = await data.json()
+        const testimonial:Testimonial[] = await rawData.data.testimonial
+  console.log(testimonial);
   return (
     <div className="w-screen relative"> 
     <div className=" ellipse top-right"></div>

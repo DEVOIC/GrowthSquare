@@ -5,11 +5,13 @@ import React from 'react'
 import Loading from '../loading'
 
 const Courses = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/faqs`)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/courses`)
       if(data.status !==200){
         return (<Loading/>)
       }
-      const cources:Course[] = await data.json()
+      const rawData = await data.json()
+      const courses:Course[] = await rawData.data.courses
+
   return (
     <div className='w-screen  bg-white overflow-y-clip relative'>
       <div className="ellipse top-right"></div>
@@ -38,9 +40,10 @@ const Courses = async() => {
 
           adipiscing lit courses</h2>
         <div className="   flex flex-wrap  gap-6  ">
-          {[1, 2, 3].map((item) => (
+          {courses.length===0 ?<div>Not able to fetch mentors</div>:
+        courses.map((course) => (
 
-<CourseCard key={item}/>
+<CourseCard key={course._id} data={course}/>
 
           ))}
         </div>

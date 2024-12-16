@@ -1,12 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface teams{
-  _id:string,
+interface user{
+    _id:string,
     name:string,
+    email:string,
     role:string,
     bio:string,
+    dob:Date,
     socialLinks:string[],
     profilePicture:string,
-    joiningDate:Date,
-    endingDate:Date
+    skills:string[]
 
-  }
+}

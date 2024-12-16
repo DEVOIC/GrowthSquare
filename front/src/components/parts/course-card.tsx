@@ -3,7 +3,7 @@ import { AvatarFallback, Avatar, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Clock, PanelsTopLeft, Star, StarHalf } from 'lucide-react'
-const CourseCard = () => {
+const CourseCard = ({data}:{data:Course}) => {
   return (
     <><Card  className="bg-white w-96 ">
     <CardContent className="p-6">
@@ -13,13 +13,13 @@ const CourseCard = () => {
           <AvatarFallback>MG</AvatarFallback>
         </Avatar>
         <div>
-          <h3 className="font-semibold">Martin Goutry</h3>
+          <h3 className="font-semibold">{data.instructor}</h3>
           <p className="text-sm text-gray-600">Instructor</p>
         </div>
       </div>
-      <h4 className="text-xl text-lightblue font-semibold mb-4">Lorem ipsum dolor sit amet sit amet sit</h4>
+      <h4 className="text-xl text-lightblue font-semibold mb-4">{data.title}</h4>
       <p className="text-gray-900 mb-4  text-sm">
-        Lorem ipsum dolor sit amet sit amet lorem ipsum dolor sit amet sit amet
+       {data.description}
       </p>
       <div className='flex justify-between mb-4'>
         <div>
@@ -53,8 +53,16 @@ const CourseCard = () => {
 
           <span className="ml-1">4.5</span>
         </div>
-        <div className="text-sm font-semibold text-lightblue border border-lightblue py-1 px-4">
-          App Dev
+        <div>
+          {data.tags.map((tag, index) => (
+
+
+        <div key={index} className="text-sm font-semibold text-lightblue border border-lightblue py-1 px-4">
+          {tag}
+        </div>
+
+          ))}
+
         </div>
       </div>
       <Button variant={'default'} className="w-full text-white">

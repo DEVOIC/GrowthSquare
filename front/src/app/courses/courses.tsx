@@ -3,15 +3,24 @@
 import CourseCard from '@/components/parts/course-card';
 
 import React from 'react';
+import Loading from '../loading';
 
-export const Courses = () => {
+export const Courses = async() => {
+ const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/courses`)
+      if(data.status !==200){
+        return (<Loading/>)
+      }
+      const rawData = await data.json()
+      const courses:Course[] = await rawData.data.courses
+
   return (
     <div className="flex flex-wrap  gap-6  ">
-    {/* <div className="flex lg:flex-row flex-col items-center gap-8 md:gap-0 md:justify-between "> */}
-      {[1, 2, 3,4].map((item) => (
-        <CourseCard key={item}/>
+   {courses.length===0 ?<div>Not able to fetch mentors</div>:
+        courses.map((course) => (
 
-      ))}
+<CourseCard key={course._id} data={course}/>
+
+          ))}
     </div>
   );
 };

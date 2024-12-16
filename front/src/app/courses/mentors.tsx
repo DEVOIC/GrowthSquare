@@ -7,8 +7,10 @@ export const Mentors = async() => {
     if(data.status !==200){
       return (<Loading/>)
     }
-    const mentors:teams[] = await data.json()
-    console.log("team",mentors[0]);
+    // console.log(data);
+const rawData = await data.json()
+    const mentors:teams[] = rawData.data.team;
+    // console.log("team",mentors);
   return (
     <>
       <div className="bg-darkblue lg:py-16 px-8 sm:px-16 md:px-28 pb-28 relative">
@@ -22,8 +24,9 @@ export const Mentors = async() => {
           </h2>
 
           <div className="flex flex-wrap lg:gap-4  mt-24">
-            {[1, 2, 3, 4, 5, 6].map((mentor) => (
-              <MentorCard key={mentor}/>
+            {mentors.length===0 ?<div>Not able to fetch mentors</div>:
+            mentors.map((mentor) => (
+              <MentorCard key={mentor._id} data={mentor}/>
             ))}
           </div>
         </div>

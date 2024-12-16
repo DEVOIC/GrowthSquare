@@ -21,7 +21,6 @@ async function logout() {
   // Redirect to login page or perform other actions after logout
 }
 
-  console.log(value );
 
   return (
     <>

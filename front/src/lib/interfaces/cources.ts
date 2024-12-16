@@ -1,6 +1,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Course {
+    _id: string
     title: string
     description: string
     instructor: string
