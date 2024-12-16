@@ -2,8 +2,14 @@
 import CourseCard from '@/components/parts/course-card'
 import {  GraduationCap } from 'lucide-react'
 import React from 'react'
+import Loading from '../loading'
 
-const Courses = () => {
+const Courses = async() => {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/faqs`)
+      if(data.status !==200){
+        return (<Loading/>)
+      }
+      const cources:Course[] = await data.json()
   return (
     <div className='w-screen  bg-white overflow-y-clip relative'>
       <div className="ellipse top-right"></div>

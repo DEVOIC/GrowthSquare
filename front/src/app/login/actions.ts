@@ -1,6 +1,7 @@
 'use server'
-
+import { cookies } from 'next/headers'
 export async function loginUser(prestate:string,formData: FormData) {
+  const cookieStore = await cookies()
 
     const rawFormData = {
         email: formData.get('email') as string,
@@ -10,10 +11,19 @@ export async function loginUser(prestate:string,formData: FormData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+
       },
+      credentials: 'include',
       body: JSON.stringify(rawFormData),
     })
- 
+    console.log("login",response);
+ const token = response.headers.get('set-cookie');
+
+ if (token) {
+   
+
+   cookieStore.set('token', token.slice(6, token.indexOf(';')));
+ }
     // Handle response if necessary
     const data = await response.json()
     console.log(data);

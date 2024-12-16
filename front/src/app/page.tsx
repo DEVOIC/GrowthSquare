@@ -1,5 +1,21 @@
+// import { cookies } from "next/headers";
+// import {useRouter} from "next/navigation";
+// import { useEffect } from "react";
 
 export default function Home() {
+  // const router = useRouter()
+  // useEffect(() => {
+  //   const checkcookie = async () => {
+  //     const cookieStore = await cookies()
+  //     const token = cookieStore.get('token')
+  //     if (token !=null ) {
+  //    router.replace("/home")
+  //     } else {
+  //       router.replace("/login")
+  //     }}
+  //   checkcookie();
+  // }, [])
+  
   
   return (
     <>
