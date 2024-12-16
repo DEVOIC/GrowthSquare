@@ -15,11 +15,11 @@ export default function NotFound() {
           <p className="text-gray-600 max-w-md mx-auto">
             Sorry, we couldn&#39;t find the page youre looking for. It might have been removed, renamed, or doesn&#39;t exist.
           </p>
-          <Button asChild className="bg-lightblue hover:bg-blue-700">
             <Link href="/">
+          <Button asChild className="bg-lightblue hover:bg-blue-700">
               Return to Home
-            </Link>
           </Button>
+            </Link>
         </div>
       </div>
       

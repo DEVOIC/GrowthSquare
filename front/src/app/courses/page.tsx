@@ -67,9 +67,9 @@ export default function CoursesPage() {
       </section>
 
       {/* Mentors Section */}
-      <div className="">
+    
         <Mentors />
-      </div>
+    
 
       {/* Course Advantages */}
       <Courseadvantage />

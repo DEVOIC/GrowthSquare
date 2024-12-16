@@ -10,7 +10,7 @@ import Gsmarque from "./gsmarque"
 import Initiaitive from "./Initiaitive"
 import Faqs from "@/components/parts/faqs"
 import Footer from "@/components/parts/footer"
-import FaqContainer from "@/components/ui/faqcontainer"
+// import FaqContainer from "@/components/ui/faqcontainer"
 
 export default function Home() {
   return (
@@ -42,9 +42,9 @@ export default function Home() {
       <Initiaitive />
 
       {/* FAQ Section */}
-      <FaqContainer>
+      {/* <FaqContainer> */}
         <Faqs />
-      </FaqContainer>
+      {/* </FaqContainer> */}
 
       {/* Footer */}
       <Footer />

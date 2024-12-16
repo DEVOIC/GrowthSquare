@@ -4,8 +4,25 @@ import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
 import Logo from '../../../public/gslogo.svg';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
-const Navbar = () => {
+
+const Navbar = async() => {
+
+  const cookieStore = await cookies()
+const value = cookieStore.has('token')
+async function logout() {
+  'use server';
+  const cookieStore = await cookies()
+
+  cookieStore.delete('token');
+  redirect('/')
+  // Redirect to login page or perform other actions after logout
+}
+
+  console.log(value );
+
   return (
     <>
       <nav style={{ zIndex: "100" }} className="container bg-darkblue customnav min-w-full  px-10  sticky top-0  py-4">
@@ -28,11 +45,18 @@ const Navbar = () => {
               Become A Member
             </Button>
             </Link>
-            <Link href="/login" className="text-white">
+            <div>
+              {value ? 
+            <Button onClick={logout} className='text-white' variant="outline">
+              Logout
+            </Button>
+            : <Link href="/login" className="text-white">
             <Button variant="outline">
               Login
             </Button>
-            </Link>
+            </Link>}
+            </div>
+           
           </div>
         </div>
       </nav>

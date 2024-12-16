@@ -32,12 +32,12 @@ const router = useRouter()
    
     
   return (
-        <div className="min-h-screen grid grid-cols-2">
+        <div className="min-h-screen flex">
           {/* Left Section */}
-          <div className="bg-lightblue" />
+          <div className="bg-lightblue flex-1 hidden md:block" />
           
           {/* Right Section */}
-          <div className="flex items-center justify-center p-8">
+          <div className="flex flex-1 w-full items-center justify-center p-8">
             <div className="w-full max-w-md space-y-8">
               <div className="space-y-2 text-center">
                 <h1 className="text-3xl font-bold tracking-tight">Log Into Your Account</h1>
@@ -78,7 +78,7 @@ const router = useRouter()
                 </div>
                 
                 <Button disabled={pending} className="w-full bg-lightblue hover:bg-blue-700" size="lg">
-                 {pending? "Logining in":"Login"} Login
+                 {pending? "Logining in":"Login"}
                 </Button>
               </Form>
     
