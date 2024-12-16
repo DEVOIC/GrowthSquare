@@ -2,6 +2,10 @@
 interface teams{
     name:string,
     role:string,
-    image:string,
-    social:string
+    bio:string,
+    socialLinks:string[],
+    profilePicture:string,
+    joiningDate:Date,
+    endingDate:Date
+
   }
