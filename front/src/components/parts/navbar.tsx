@@ -13,7 +13,8 @@ const Navbar = async() => {
   const cookieStore = await cookies()
 const value = cookieStore.has('token')
 async function logout() {
-  'use server';
+
+  // 'use server';
   const cookieStore = await cookies()
 
   cookieStore.delete('token');

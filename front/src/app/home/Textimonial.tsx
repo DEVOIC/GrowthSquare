@@ -30,19 +30,18 @@ const TestCard = () => {
     </Card>
   );
 };
-const Testimonial = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/testimonial`)
-        if(data.status !==200){
-          return (<Loading/>)
-        }
-        const rawData = await data.json()
-        const testimonial:Testimonial[] = await rawData.data.testimonial
-  console.log(testimonial);
+const Testimonial = async () => {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/testimonials/get-testimonials`)
+  if (data.status !== 200) {
+    return (<Loading />)
+  }
+  const rawData = await data.json()
+  const testimonial: Testimonial[] = await rawData.data.testimonial
   return (
-    <div className="w-screen relative"> 
-    <div className=" ellipse top-right"></div>
-    <div className=" ellipse mid-left"></div>
-    <div className=" ellipse bottom-right"></div>
+    <div className="w-screen relative">
+      <div className=" ellipse top-right"></div>
+      <div className=" ellipse mid-left"></div>
+      <div className=" ellipse bottom-right"></div>
 
       <section className="container z-10 mx-auto px-4 py-20 bg-darkblue">
         <h2 className="text-3xl font-bold text-white font-transforma mb-12">
@@ -61,12 +60,12 @@ const Testimonial = async() => {
           </div>
           <div className="col-span-2">
             <TestCard />
-          </div> 
+          </div>
           <div className=" bg-lightblue "></div>
-         
+
           <div className="col-span-2">
             <TestCard />
-          </div> 
+          </div>
           <div className=" bg-lightblue  "></div>
           <div className=" bg-lightblue "></div>
           <div className="col-span-2 ">

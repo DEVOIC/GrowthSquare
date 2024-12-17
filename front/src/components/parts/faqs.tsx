@@ -3,12 +3,15 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import React from 'react'
 
 const Faqs = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/faqs`)
-  if(data.status !==200){
-    return (<Loading/>)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`)
+  if (data.status !== 200) {
+    return (<Loading />)
   }
-  const faqs:Faqs[] = await data.json()
-  
+  // const faqs: Faqs[] = await data.json();
+
+  const result = await data.json();
+  const faqs = result.data.faqs;
+
   // const faqs: Faqs[] = [
   //   "hello", "world", "this", "is", "a", "test"
   // ]
@@ -35,8 +38,9 @@ const Faqs = async () => {
                       {question.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-white">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                      eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
+                      {question.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
