@@ -10,11 +10,11 @@ import Faqs from "@/components/parts/faqs"
 export default function CoursesPage() {
   return (
 
-    <div className="bg-darkblue">
+    <div className="bg-darkblue overflow-hidden relative">
       {/* Navigation */}
       <Navbar />
       {/* Hero Section */}
-      <section className="text-center lg:mt-[200px] mt-28 pb-32 px-4 relative">
+      <section className="text-center lg:mt-[200px] mt-28 pb-32 px-4 ">
 
         {/* ellipse */}
         <div className="ellipse top-right -mt-16 backdrop:blur-2xl"> </div>

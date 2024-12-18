@@ -10,8 +10,8 @@ const Initiaitive = () => {
           <div className=" ellipse top-right"></div>
     <div className=" ellipse mid-left"></div>
 
-      <section className="container  py-20 bg-darkblue">
-    <h2 className="text-3xl font-bold text-white mx-auto px-24 font-transforma mb-12">
+      <section className="container py-20 bg-darkblue">
+    <h2 className="text-3xl font-bold text-white mx-auto px-8 lg:px-24 font-transforma mb-12">
           <p>Lorem ipsum dolor sit amet,</p>
           adipiscing lit courses
         </h2>

@@ -14,7 +14,7 @@ export const Courses = async () => {
     const courses: Course[] = await rawData.data.courses
   
   return (
-    <div className="flex flex-wrap  gap-6  ">
+    <div className="  grid xl:grid-cols-3 lg:grid-cols-2  gap-6  ">
       {courses.length === 0 ? <div>Not able to fetch mentors</div> :
         courses.map((course) => (
 

@@ -4,7 +4,7 @@ import React from "react";
 import Loading from "../loading";
 const TestCard = () => {
   return (
-    <Card className={`bg-white p-6  md:col-span-2 `}>
+    <Card className={`bg-white py-8 lg:p-6  md:col-span-2 `}>
       <CardContent>
         <div className="flex items-center space-x-4 mb-4">
           <Avatar>

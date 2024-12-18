@@ -10,7 +10,7 @@ const CourseCard = ({ data }: { data: Course }) => {
   
   return (
     <>
-    <Card className="bg-white w-96 ">
+    <Card className="bg-white  ">
       <CardContent className="p-6">
         <div className="flex items-center space-x-4 mb-4">
           <Avatar>
@@ -23,7 +23,7 @@ const CourseCard = ({ data }: { data: Course }) => {
           </div>
         </div>
         <h4 className="text-xl text-lightblue font-semibold mb-4">{data.courseName}</h4>
-        <p className="text-gray-900 mb-4  text-sm">
+        <p className="text-gray-900 mb-4  py-4 text-sm">
           {data.courseDescription}
         </p>
         <div className='flex justify-between mb-4'>
@@ -76,6 +76,7 @@ const CourseCard = ({ data }: { data: Course }) => {
           </div>
         </div>
         <Link href={`/courses/${data._id}`} >
+        {/* <Link href={`/courses/${data._id}`} > */}
           <Button variant={'default'} className="w-full hover:bg-lightblue/80 text-white">
             Start Learning
           </Button>

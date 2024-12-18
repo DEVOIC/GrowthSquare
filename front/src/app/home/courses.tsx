@@ -13,7 +13,7 @@ const Courses = async () => {
   const courses: Course[] = await rawData.data.courses
 
   return (
-    <div className='w-screen  bg-white overflow-y-clip relative'>
+    <div className='w-screen  bg-white overflow-hidden relative'>
       <div className="ellipse top-right"></div>
       <div className="ellipse mid-left"></div>
 
@@ -31,7 +31,7 @@ const Courses = async () => {
       <div className='h-[1px] bg-black'></div>
 
       {/* Course Cards */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl font-bold text-darkblue font-transforma mb-12">
           <p>
 
@@ -39,8 +39,8 @@ const Courses = async () => {
           </p>
 
           adipiscing lit courses</h2>
-        <div className="   flex flex-wrap  gap-6  ">
-          
+        <div className="   grid xl:grid-cols-3 lg:grid-cols-2  gap-6  ">
+
           {courses.length === 0 ? <div>Not able to fetch mentors</div> :
             courses.map((course) => (
               <CourseCard key={course._id} data={course} />

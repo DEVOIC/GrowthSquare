@@ -15,9 +15,9 @@ const listData = [
 
 const LearnAtYourPace = () => {
     return (
-        <section className="flex flex-col lg:gap-0 gap-32 lg:flex-row  justify-between items-center bg-lightblue lg:py-0 py-10 lg:h-screen px-8 lg:px-28 ">
+        <section className="flex flex-col lg:gap-0 gap-32 lg:flex-row  justify-between items-center bg-lightblue lg:py-32 py-16 px-8 lg:px-28 ">
             {/* Left Side - Images */}
-            <div className=" text-white  lg:flex flex-col gap-10 ">
+            <div className=" text-white lg:flex flex-col gap-10 ">
                 <div className=" text-white flex flex-col gap-8 ">
 
                     <div className="flex justify-end mr-16">

@@ -33,7 +33,7 @@ const Footer = () => {
       </section>
 
       {/* Footer */}
-      <footer className=" text-gray-400 ">
+      <footer className=" text-gray-400 z-50 relative ">
         <div className="  ">
           <div className="w-full flex md:flex-row flex-col ">
             <div className=" flex-1 px-4 sm:px-14 py-8 md:p-14 md:border-r-2  md:mx-auto flex justify-between  md:w-2/3 ">

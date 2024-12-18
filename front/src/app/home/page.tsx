@@ -14,10 +14,11 @@ import Footer from "@/components/parts/footer"
 
 export default function Home() {
   return (
-    <div className=" bg-darkblue ">
+    <div className=" bg-darkblue relative overflow-hidden ">
 
 
       {/* Navigation */}
+
       <Navbar />
 
       {/* Hero Section */}
@@ -38,7 +39,10 @@ export default function Home() {
       <Galley />
 
       {/* Exclusive Squares */}
+      <div className="overflow-hidden relative">
       <Gsmarque />
+
+      </div>
       <Initiaitive />
 
       {/* FAQ Section */}

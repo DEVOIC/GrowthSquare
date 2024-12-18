@@ -11,10 +11,10 @@ const Gsmarque = () => {
        
             {[...Array(10)].map((_, i) => (
               <div key={i} className="flex ">
-                <p  className="text-white bg-lightblue bg-opacity-20 text-8xl py-1  font-semibold">
+                <p  className="text-white bg-lightblue bg-opacity-20 text-4xl lg:text-8xl py-1  font-semibold">
                 GrowthSquare{"  "}
               </p>{" "}
-          <p className="text-white text-8xl bg-lightblue bg-opacity-20  py-1 font-semibold">. </p>{" "}
+          <p className="text-white text-4xl lg:text-8xl bg-lightblue bg-opacity-20  py-1 font-semibold">. </p>{" "}
               </div>
 
             ))}
