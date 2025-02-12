@@ -5,15 +5,16 @@ import React from 'react'
 import Loading from '../loading'
 
 const Courses = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/courses`)
+  console.log(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/courses/get-all-courses`)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/course/get-all-courses`)
       if(data.status !==200){
         return (<Loading/>)
       }
       const rawData = await data.json()
-      const courses:Course[] = await rawData.data.courses
-
-  return (
-    <div className='w-screen  bg-white overflow-y-clip relative'>
+      let courses:Course[] = await rawData.data.courses
+     courses =  courses.slice(0, 4)
+      return (
+    <div className='w-screen bg-white overflow-y-clip relative'>
       <div className="ellipse top-right"></div>
       <div className="ellipse mid-left"></div>
 

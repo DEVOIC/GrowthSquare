@@ -31,13 +31,13 @@ const TestCard = () => {
   );
 };
 const Testimonial = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/testimonial`)
-        if(data.status !==200){
-          return (<Loading/>)
-        }
-        const rawData = await data.json()
-        const testimonial:Testimonial[] = await rawData.data.testimonial
-  console.log(testimonial);
+  // const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/testimonial`)
+        // if(data.status !==200){
+        //   return (<Loading/>)
+        // }
+  //       const rawData = await data.json()
+  //       const testimonial:Testimonial[] = await rawData.data.testimonial
+  // console.log(testimonial);
   return (
     <div className="w-screen relative"> 
     <div className=" ellipse top-right"></div>

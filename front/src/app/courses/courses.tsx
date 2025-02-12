@@ -6,7 +6,7 @@ import React from 'react';
 import Loading from '../loading';
 
 export const Courses = async() => {
- const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/courses`)
+ const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/courses`)
       if(data.status !==200){
         return (<Loading/>)
       }

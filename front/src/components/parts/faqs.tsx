@@ -3,12 +3,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import React from 'react'
 
 const Faqs = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/faqs`)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`)
   if(data.status !==200){
     return (<Loading/>)
   }
-  const faqs:Faqs[] = await data.json()
-  
+  const rawData = await data.json()
+  const faqs:Faqs[] = rawData.data.faqs
   // const faqs: Faqs[] = [
   //   "hello", "world", "this", "is", "a", "test"
   // ]

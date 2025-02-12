@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Loading from '../loading';
 
 const Founding = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/get-team-data`)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/get-team-data`)
   if(data.status !==200){
     return (<Loading/>)
   }

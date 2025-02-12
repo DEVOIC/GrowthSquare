@@ -2,7 +2,7 @@ import React from 'react'
 import { AvatarFallback, Avatar, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Clock, PanelsTopLeft, Star, StarHalf } from 'lucide-react'
+import { Clock, Globe, GraduationCap, IndianRupee } from 'lucide-react'
 const CourseCard = ({data}:{data:Course}) => {
   return (
     <><Card  className="bg-white w-96 ">
@@ -13,38 +13,40 @@ const CourseCard = ({data}:{data:Course}) => {
           <AvatarFallback>MG</AvatarFallback>
         </Avatar>
         <div>
-          <h3 className="font-semibold">{data.instructor}</h3>
+          <h3 className="font-semibold">{data.instructors[0]}</h3>
           <p className="text-sm text-gray-600">Instructor</p>
         </div>
       </div>
-      <h4 className="text-xl text-lightblue font-semibold mb-4">{data.title}</h4>
+      <h4 className="text-xl text-lightblue font-semibold mb-4">{data.courseName}</h4>
       <p className="text-gray-900 mb-4  text-sm">
-       {data.description}
+       {data.courseDescription}
       </p>
       <div className='flex justify-between mb-4'>
         <div>
           <div className='flex space-x-2'>
             <Clock fill='#015AFF' color='white' />
-            <span className='text-sm  font-semibold'>time/dureation</span>
-          </div><div className='flex space-x-2'>
-            <PanelsTopLeft fill='#015AFF' color='white' />
-            <span className='text-sm  font-semibold'>live / recorded</span>
+            <span className='text-sm  font-semibold'>{data.courseDuration} {data.durationUnit}</span>
+          </div>
+          
+          <div className='flex space-x-2'>
+            <IndianRupee color='#015AFF' size={20}  />
+            <span className='text-sm  font-semibold'>{data.coursePrice}</span>
           </div>
 
         </div> <div>
           <div className='flex space-x-2'>
-            <PanelsTopLeft fill='#015AFF' color='white' />
-            <span className='text-sm  font-semibold'>live / recorded</span>
+            <Globe fill='#015AFF' color='white' />
+            <span className='text-sm  font-semibold'>{data.language}</span>
           </div>
           <div className='flex space-x-2'>
-            <Clock fill='#015AFF' color='white' />
-            <span className='text-sm  font-semibold'>time/dureation</span>
+            <GraduationCap fill='#015AFF' color='white' />
+            <span className='text-sm  font-semibold'>{data.level}</span>
           </div>
         </div>
 
       </div>
       <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <Star color='' fill='#DFB300' />
           <Star color='' fill='#DFB300' />
           <Star color='' fill='#DFB300' />
@@ -52,11 +54,9 @@ const CourseCard = ({data}:{data:Course}) => {
           <StarHalf color='' fill='#DFB300' />
 
           <span className="ml-1">4.5</span>
-        </div>
-        <div>
-          {data.tags.map((tag, index) => (
-
-
+        </div> */}
+        <div className='flex'>
+          {data.courseTags.map((tag, index) => (
         <div key={index} className="text-sm font-semibold text-lightblue border border-lightblue py-1 px-4">
           {tag}
         </div>
