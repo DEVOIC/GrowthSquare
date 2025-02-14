@@ -11,7 +11,6 @@ export async function loginUser(prestate:string,formData: FormData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-
       },
       credentials: 'include',
       body: JSON.stringify(rawFormData),

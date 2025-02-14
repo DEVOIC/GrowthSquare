@@ -4,11 +4,14 @@ import React from 'react'
 
 const Faqs = async () => {
   const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`)
-  if(data.status !==200){
-    return (<Loading/>)
+  if (data.status !== 200) {
+    return (<Loading />)
   }
-  const rawData = await data.json()
-  const faqs:Faqs[] = rawData.data.faqs
+  // const faqs: Faqs[] = await data.json();
+
+  const result = await data.json();
+  const faqs = result.data.faqs;
+
   // const faqs: Faqs[] = [
   //   "hello", "world", "this", "is", "a", "test"
   // ]
@@ -30,13 +33,14 @@ const Faqs = async () => {
             {data ?
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((question, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700 p-4 bg-lightblue my-4">
+                  <AccordionItem key={index} value={`item-${index}`} className=" z-30 relative border-b border-gray-700 p-4 bg-lightblue my-4">
                     <AccordionTrigger className="text-white ">
                       {question.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-white">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                      eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
+                      {question.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}

@@ -6,12 +6,14 @@ import Link from 'next/link';
 import Loading from '../loading';
 
 const Founding = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/get-team-data`)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`)
   if(data.status !==200){
     return (<Loading/>)
   }
   
-  const memeber:teams[] = await data.json()
+  const result = await data.json()
+  const memeber:teams[] = result.data.team
+  
   return (
 
         <section className="bg-white py-12 px-4 relative">
@@ -25,11 +27,11 @@ const Founding = async() => {
           <div className="flex space-x-4 animate-marquee">
             {memeber.map((member) => (
               
-              <div key={member.name} className=" relative group transform transition-transform duration-300 hover:scale-110">
-                <Link href={member.social}>
+              <div key={member._id} className=" relative group transform transition-transform duration-300 hover:scale-110">
+                <Link href={member.socialLinks[0]}>
 
                 <Image
-                  src={member.image}
+                  src={member.profilePicture}
                   alt="Team member"
                   width={240}
                   height={320}

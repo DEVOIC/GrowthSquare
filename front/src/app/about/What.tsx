@@ -5,18 +5,18 @@ import photo from '../courses/user2demo.svg'
 
 const What = () => {
   return (
-    <section className="bg-lightblue py-20 px-4 relative">
-      <div className="absolute left-1/2 top-0 w-1 h-full bg-white "></div>
-      <div className="absolute left-[48.5%] p-4 top-[25%] w-12 h-12 bg-white ">
+    <section className="bg-lightblue py-16 md:py-20 px-8 md:px-4 relative">
+      <div className="absolute md:inline-block hidden  left-1/2 top-0 w-1 h-full bg-white "></div>
+      <div className="absolute md:inline-block hidden  left-[48.5%] p-4 top-[25%] w-12 h-12 bg-white ">
         {/* <div className="realtive border-4 border-lightblue">
         <MoveUpRight className=" " color='blue' size={30} />
 
         </div> */}
       </div>
-      <div className="absolute left-[48.5%] bottom-[25%] w-12 h-12 bg-white "></div>
+      <div className="absolute md:inline-block hidden  left-[48.5%] bottom-[25%] w-12 h-12 bg-white "></div>
 
-      <div className="max-w-6xl py-10 mx-auto align-middle grid md:grid-cols-2 gap-20">
-        <div className=" flex mx-5 items-center justify-end ">
+      <div className="max-w-6xl  lg:py-10 mx-auto align-middle grid md:grid-cols-2 gap-20">
+        <div className=" hidden md:flex mx-5 items-center justify-end ">
           <Image
             src={photo}
             alt="Team member"
@@ -47,7 +47,7 @@ const What = () => {
             </p>
           </div>
 
-          <div className="flex items-center mx-5 justify-start">
+          <div className="hidden md:flex items-center mx-5 justify-start">
             <Image
               src={photo}
               alt="Team member"

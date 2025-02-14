@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 import Navbar from "@/components/parts/navbar"       //navbar imported from parts folder
 import Footer from "@/components/parts/footer"       //footer imported from parts folder
 import { Button } from "@/components/ui/button"
-import Recommended from "../recommended"
+import Recommended from "@/components/parts/recommended"
 
 export default function PaymentSuccessPage() {
   return (

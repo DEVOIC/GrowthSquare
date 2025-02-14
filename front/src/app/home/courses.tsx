@@ -1,20 +1,19 @@
 
 import CourseCard from '@/components/parts/course-card'
-import {  GraduationCap } from 'lucide-react'
+import { GraduationCap } from 'lucide-react'
 import React from 'react'
 import Loading from '../loading'
 
-const Courses = async() => {
-  console.log(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/courses/get-all-courses`)
+const Courses = async () => {
   const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/course/get-all-courses`)
-      if(data.status !==200){
-        return (<Loading/>)
-      }
-      const rawData = await data.json()
-      let courses:Course[] = await rawData.data.courses
-     courses =  courses.slice(0, 4)
-      return (
-    <div className='w-screen bg-white overflow-y-clip relative'>
+  if (data.status !== 200) {
+    return (<Loading />)
+  }
+  const rawData = await data.json()
+  const courses: Course[] = await rawData.data.courses
+
+  return (
+    <div className='w-screen  bg-white overflow-hidden relative'>
       <div className="ellipse top-right"></div>
       <div className="ellipse mid-left"></div>
 
@@ -32,7 +31,7 @@ const Courses = async() => {
       <div className='h-[1px] bg-black'></div>
 
       {/* Course Cards */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl font-bold text-darkblue font-transforma mb-12">
           <p>
 
@@ -40,13 +39,12 @@ const Courses = async() => {
           </p>
 
           adipiscing lit courses</h2>
-        <div className="   flex flex-wrap  gap-6  ">
-          {courses.length===0 ?<div>Not able to fetch mentors</div>:
-        courses.map((course) => (
+        <div className="   grid xl:grid-cols-3 lg:grid-cols-2  gap-6  ">
 
-<CourseCard key={course._id} data={course}/>
-
-          ))}
+          {courses.length === 0 ? <div>Not able to fetch mentors</div> :
+            courses.map((course) => (
+              <CourseCard key={course._id} data={course} />
+            ))}
         </div>
       </section>
     </div>

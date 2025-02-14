@@ -13,7 +13,7 @@ import Faqs from "@/components/parts/faqs";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-darkblue ">
+    <div className="min-h-screen bg-darkblue relative overflow-hidden ">
       {/* Navigation */}
       <Navbar />
 
@@ -23,20 +23,20 @@ export default function AboutPage() {
       {/* Timeline Sections */}
 
       {/* Why It Matters & Wha&#39; Next */}
-     <What/>
+      <What />
 
       {/* Services Grid */}
-     <Services/>
+      <Services />
 
-     <Why/>
+      <Why />
 
 
-        {/* Team Sections */}
-        <Founding />
+      {/* Team Sections */}
+      <Founding />
 
-        {/* The Next Wave of Innovators */}
+      {/* The Next Wave of Innovators */}
 
-        <Inovators />
+      <Inovators />
 
       <Gsmarque />
 
