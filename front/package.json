@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/swc-darwin-arm64": "^15.1.4",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.1.2",
@@ -21,7 +22,7 @@
     "cookies-next": "^5.0.2",
     "input-otp": "^1.4.1",
     "lucide-react": "^0.460.0",
-    "next": "15.0.3",
+    "next": "^15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "tailwind-merge": "^2.5.4",

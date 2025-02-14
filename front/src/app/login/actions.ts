@@ -34,7 +34,7 @@ export async function loginUser(prestate:string,formData: FormData) {
 
 export async function verifyUser(prestate:string,number:string) {
     
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/verify-email`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/verify-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
