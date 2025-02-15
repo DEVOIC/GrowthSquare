@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast'
 import Form from 'next/form'
 import { useRouter } from 'next/navigation'
 
+export const dynamic = "force-dynamic";
 
 const Page = () => {
   const [state, action, pending] = useActionState(loginUser, null)

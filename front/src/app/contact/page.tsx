@@ -15,6 +15,7 @@ import Faqs from './Faqs'
 
 import Gsmarque from './gsmarque'
 
+export const dynamic = "force-dynamic";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

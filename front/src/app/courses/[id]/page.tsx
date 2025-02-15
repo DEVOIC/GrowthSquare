@@ -9,6 +9,7 @@ import StudentReview from './studentreview'
 import { Button } from '@/components/ui/button'
 import CourseHero from './coursehero'
 import Loading from '@/app/loading'
+export const dynamic = "force-dynamic";
 
 export default function CoursePage() {
   const [courseData, setCourseData] = useState<Course[] | null>(null)

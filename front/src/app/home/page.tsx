@@ -11,6 +11,7 @@ import Initiaitive from "./Initiaitive"
 import Faqs from "@/components/parts/faqs"
 import Footer from "@/components/parts/footer"
 // import FaqContainer from "@/components/ui/faqcontainer"
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (

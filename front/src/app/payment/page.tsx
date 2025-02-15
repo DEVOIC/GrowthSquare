@@ -8,6 +8,7 @@ import { Confirmationsummary } from '@/app/payment/confirmationsummary'
 import { Courseselection } from './courseselection'
 import { Acknowledgement } from './acknowledgement'
 import { Method } from './method'
+export const dynamic = "force-dynamic";
 
 export default function PaymentPage() {
   const [step, setStep] = useState(1)

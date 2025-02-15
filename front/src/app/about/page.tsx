@@ -10,6 +10,7 @@ import Services from "./Services";
 import What from "./What";
 import Why from "./Why";
 import Faqs from "@/components/parts/faqs";
+export const dynamic = "force-dynamic";
 
 export default function AboutPage() {
   return (

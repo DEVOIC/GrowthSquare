@@ -8,6 +8,7 @@ import { createUser } from "./actions"
 import { useToast } from "@/hooks/use-toast"
 import { useActionState, useEffect } from "react"
 import { Otp } from "@/components/parts/otp"
+export const dynamic = "force-dynamic";
 
 export default function SignupPage() {
   const [state, action, pending] = useActionState(createUser, null)

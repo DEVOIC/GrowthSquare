@@ -8,6 +8,7 @@ import Form from 'next/form'
 import { useEffect } from 'react'
 import { useToast } from '@/hooks/use-toast'
 import Link from 'next/link'
+export const dynamic = "force-dynamic";
 
 const Restpassword = () => {
 
