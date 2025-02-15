@@ -3,12 +3,17 @@ import React from 'react'
 import { Check, ChevronRight } from 'lucide-react'
 import { CheckMark, PendingMark } from '@/components/ui/checkmark'
 
-export const Courseselection = ({ step, selectedCourse, setSelectedCourse }) => {
+interface CourseSelectionProps {
+    step: number;
+    selectedCourse: string;
+    setSelectedCourse: (course: string) => void;
+}
+
+export const Courseselection: React.FC<CourseSelectionProps> = ({ step, selectedCourse, setSelectedCourse }) => {
     return (
         <div className="mb-8 flex flex-col gap-8">
             <div className='flex gap-4 lg:gap-8 justify-center'>
                 {step > 1 ?
-
                     //mark checked symbol
                     <CheckMark className='lg:mt-2 scale-75 lg:scale-100' >
                         <Check size={48} color="#ffffff" strokeWidth={3} />

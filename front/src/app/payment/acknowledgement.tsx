@@ -5,7 +5,7 @@ import { CheckMark, PendingMark } from '@/components/ui/checkmark'
 import { Checkbox } from "@/components/ui/checkbox"
 
 
-export const Acknowledgement = ({ step }) => {
+export const Acknowledgement = ({ step }:{step:any}) => {
     return (
         <div>
             <div className='flex gap-4 lg:gap-8'>

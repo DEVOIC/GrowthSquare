@@ -50,12 +50,12 @@ export default function PaymentPage() {
 
             {/* Step 1: Course Selection */}
 
-            <Courseselection step={step} setStep={setStep} selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse} />
+            <Courseselection step={step}  selectedCourse={selectedCourse} setSelectedCourse={setSelectedCourse} />
 
 
             {/* Step 2: Payment Method */}
 
-            <Method step={step} setStep={setStep} paymentMethod={paymentMethod} setPaymentMethod={setPaymentMethod} paymentMethods={paymentMethods} />
+            <Method step={step}  paymentMethod={paymentMethod} setPaymentMethod={setPaymentMethod} paymentMethods={paymentMethods} />
 
             {/* Step 3: Confirmation */}
             <Acknowledgement step={step} />

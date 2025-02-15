@@ -14,7 +14,7 @@ import Footer from "@/components/parts/footer"
 
 export default function Home() {
   return (
-    <div className=" bg-darkblue relative overflow-hidden ">
+    <div className=" bg-darkblue   ">
 
 
       {/* Navigation */}

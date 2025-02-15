@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Clock, PanelsTopLeft, Star, StarHalf } from 'lucide-react'
 import Link from 'next/link'
-import { log } from 'console'
 
 const CourseCard = ({ data }: { data: Course }) => {
   

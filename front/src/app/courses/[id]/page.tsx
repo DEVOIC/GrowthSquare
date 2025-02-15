@@ -1,16 +1,13 @@
 
 'use client'
 import { useState, useEffect } from 'react'
-import Navbar from '@/components/parts/navbar'
 import Footer from '@/components/parts/footer'
-import Faqs from '@/components/parts/faqs'
 
 import Gsmarque from './gsmarque'
 import { Mentors } from './meetmentor'
 import StudentReview from './studentreview'
 import { Button } from '@/components/ui/button'
 import CourseHero from './coursehero'
-import CourseContent from './coursecontent'
 import Loading from '@/app/loading'
 
 export default function CoursePage() {
@@ -18,7 +15,7 @@ export default function CoursePage() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const id = window.location.pathname.split('/')[2]
+    // const id = window.location.pathname.split('/')[2]
 
     const fetchData = async () => {
       try {
@@ -45,7 +42,7 @@ export default function CoursePage() {
     fetchData()
   }, [])
 
-  if (isLoading) {
+  if (isLoading || !courseData) {
     return <Loading />
   }
 

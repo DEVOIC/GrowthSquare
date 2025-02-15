@@ -37,6 +37,7 @@ const Testimonial = async () => {
   }
   const rawData = await data.json()
   const testimonial: Testimonial[] = await rawData.data.testimonial
+  console.log(testimonial)
   return (
     <div className="w-screen relative">
       <div className=" ellipse top-right"></div>

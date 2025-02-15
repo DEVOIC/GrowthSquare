@@ -6,12 +6,11 @@ import Image from 'next/image'
 import Logo from '../../../public/gslogo.svg';
 // import { cookies } from 'next/headers';
 // import { redirect } from 'next/navigation';
-const Navbar = async () => {
+const Navbar =  () => {
 
 
 
     // commented this only for the purpose of testing the logout function
-
 
     // const cookieStore = await cookies()
     // const value = cookieStore.has('token')
@@ -23,7 +22,7 @@ const Navbar = async () => {
     // }
 
 
-    const value = false;
+    // const value = false;
 
     return (
         <>
@@ -37,8 +36,8 @@ const Navbar = async () => {
                         <div className='h-full w-1 '>|</div>
                         <Link href="/about" className="hover:text-white">About</Link>
                         <div className='h-full w-1 '>|</div>
-                        <Link href="/courses" className="hover:text-white">Courses</Link>
-                        <div className='h-full w-1 '>|</div>
+                        {/* <Link href="/courses" className="hover:text-white">Courses</Link> */}
+                        {/* <div className='h-full w-1 '>|</div> */}
                         <Link href="https://blog.growthsq.in/" className="hover:text-white">Blog</Link>
                     </div>
                     <div className="flex items-center space-x-4 z-30">
@@ -47,7 +46,7 @@ const Navbar = async () => {
                                 Become A Member
                             </Button>
                         </Link>
-                        <div>
+                        {/* <div>
                             {value ?
                                 <Button onClick={logout} className='text-white' variant="outline">
                                     Logout
@@ -57,12 +56,13 @@ const Navbar = async () => {
                                         Login
                                     </Button>
                                 </Link>}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </nav>
         </>
     )
 }
+
 
 export default Navbar

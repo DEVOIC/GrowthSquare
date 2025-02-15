@@ -1,4 +1,4 @@
-`use client`
+"use client"
 import React from 'react'
 import { Check, ChevronRight } from 'lucide-react'
 import { Input } from "@/components/ui/input"
@@ -8,7 +8,19 @@ import { Button } from "@/components/ui/button"
 import { CheckMark, PendingMark } from '@/components/ui/checkmark'
 
 
-export const Method = ({ paymentMethod, setPaymentMethod, paymentMethods, step }) => {
+interface PaymentMethod {
+    value: string;
+    label: string;
+}
+
+interface MethodProps {
+    paymentMethod: string;
+    setPaymentMethod: (method: string) => void;
+    paymentMethods: PaymentMethod[];
+    step: number;
+}
+
+export const Method: React.FC<MethodProps> = ({ paymentMethod, setPaymentMethod, paymentMethods, step }) => {
     return (
         <div>
             <div className='flex gap-4  lg:gap-8 mb-8'>
