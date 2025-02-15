@@ -1,21 +1,39 @@
+"use client"
 import Loading from '@/app/loading'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Faqs = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`)
-  if (data.status !== 200) {
-    return (<Loading />)
+const Faqs =  () => {
+  const [faqs, setFaqs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchFaqs = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setFaqs(result.data.faqs);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFaqs();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
   }
-  // const faqs: Faqs[] = await data.json();
 
-  const result = await data.json();
-  const faqs = result.data.faqs;
-
-  // const faqs: Faqs[] = [
-  //   "hello", "world", "this", "is", "a", "test"
-  // ]
-  // const data = true;
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <div className='w-screen bg-white text-black  relative overflow-y-clip'>
       <div className="ellipse top-right"></div>
@@ -30,7 +48,7 @@ const Faqs = async () => {
             </h2>
           </div>
           <div className="md:w-2/3 ">
-            {data ?
+            { faqs?
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((question, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className=" z-30 relative border-b border-gray-700 p-4 bg-lightblue my-4">

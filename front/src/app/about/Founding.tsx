@@ -1,19 +1,43 @@
+"use client";
 import Image from 'next/image'
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 // import image from '../courses/mentor.jpg';
 import { MoveUpRight } from 'lucide-react';
 import Link from 'next/link';
 import Loading from '../loading';
 
-const Founding = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`)
-  if(data.status !==200){
-    return (<Loading/>)
+const Founding = () => {
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setMembers(result.data.team);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMembers();
+  }, []);
+
+  if (loading || !members) {
+    return <Loading />;
   }
-  
-  const result = await data.json()
-  const memeber:teams[] = result.data.team
-  
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
 
         <section className="bg-white py-12 px-4 relative">
@@ -25,7 +49,7 @@ const Founding = async() => {
             towards growth and innovation
           </p>
           <div className="flex space-x-4 animate-marquee">
-            {memeber.map((member) => (
+            {members.map((member) => (
               
               <div key={member._id} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <Link href={member.socialLinks[0]}>

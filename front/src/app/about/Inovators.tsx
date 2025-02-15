@@ -1,21 +1,46 @@
+"use client";
 import { MoveUpRight } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Link from 'next/link';
 import image from '../courses/mentor.jpg';
 import Loading from '../loading';
 
-const Inovators = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`)
-  if (data.status !== 200) {
-    return (<Loading />)
+const Inovators =  () => {
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setMembers(result.data.team);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMembers();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
   }
 
-  const result = await data.json()
-  const memeber: teams[] = result.data.team
-  const part1 = memeber.filter((member, index) => index % 2 === 0)
-  const part2 = memeber.filter((member, index) => index % 2 !== 0)
-  return (
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  const part1 = members.filter((member, index) => index % 2 === 0);
+  const part2 = members.filter((member, index) => index % 2 !== 0);
+return (
     <section className="bg-white py-20 px-4 relative">
       <div className="ellipse top-left"></div>
       <div className="ellipse bottom-right"></div>

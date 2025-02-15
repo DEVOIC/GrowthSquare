@@ -1,17 +1,40 @@
-
+"use client"
 import CourseCard from '@/components/parts/course-card'
 import { GraduationCap } from 'lucide-react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Loading from '../loading'
 
-const Courses = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/course/get-all-courses`)
-  if (data.status !== 200) {
-    return (<Loading />)
-  }
-  const rawData = await data.json()
-  const courses: Course[] = await rawData.data.courses
+const Courses =  () => {
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/course/get-all-courses`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setCourses(result.data.courses);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <div className='w-screen  bg-white overflow-hidden relative'>
       <div className="ellipse top-right"></div>

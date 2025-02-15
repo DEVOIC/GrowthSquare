@@ -1,6 +1,7 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Loading from "../loading";
 const TestCard = () => {
   return (
@@ -30,14 +31,38 @@ const TestCard = () => {
     </Card>
   );
 };
-const Testimonial = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/testimonials/get-testimonials`)
-  if (data.status !== 200) {
-    return (<Loading />)
+const Testimonial =  () => {
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/testimonials/get-testimonials`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const rawData = await response.json();
+        setTestimonials(rawData.data.testimonials);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  if (loading || !testimonials) {
+    return <Loading />;
   }
-  const rawData = await data.json()
-  const testimonial: Testimonial[] = await rawData.data.testimonial
-  console.log(testimonial)
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="w-screen relative">
       <div className=" ellipse top-right"></div>
