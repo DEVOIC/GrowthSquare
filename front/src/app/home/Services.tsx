@@ -14,12 +14,10 @@ const Services = () => {
         </h2>
         <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-8  relative">
           {[
-            "Skill Building",
-            "Design & Content Services",
-            "Web & App Development",
-            "Customized Training Programs",
-            "SME & Startup Support",
-            "Institutional Partnerships",
+            "Design services",
+            "SME and startup support",
+            "Institutional partnerships",
+            "Marketing partnerships",
           ].map((service) => (
             <Card
               style={{

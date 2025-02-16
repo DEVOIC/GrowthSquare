@@ -1,7 +1,7 @@
 
-// import { cookies } from "next/headers";
-// import {useRouter} from "next/navigation";
-// import { useEffect } from "react";
+"use client"
+import {useRouter} from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
   // const router = useRouter()
@@ -16,6 +16,10 @@ export default function Home() {
   //     }}
   //   checkcookie();
   // }, [])
+  const router = useRouter()
+  useEffect(() => {
+    router.replace("/home")
+  }, [])
   
  
   return (

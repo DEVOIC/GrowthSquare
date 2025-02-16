@@ -16,5 +16,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/courses', '/payment','/login','/signup'], // Only run middleware for these paths
+  matcher: ['/courses/:path*', '/payment/:path*','/login','/signup'], // Only run middleware for these paths
 };

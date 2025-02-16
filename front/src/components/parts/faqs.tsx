@@ -16,7 +16,10 @@ const Faqs =  () => {
           throw new Error('Network response was not ok');
         }
         const result = await response.json();
-        setFaqs(result.data.faqs);
+        const completeData  = result.data.faqs;
+        const currentPath = window.location.pathname;
+        const filteredFaqs = completeData.filter(faq => faq.page === currentPath);
+        setFaqs(filteredFaqs);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -34,6 +37,7 @@ const Faqs =  () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
+
   return (
     <div className='w-screen bg-white text-black  relative overflow-y-clip'>
       <div className="ellipse top-right"></div>
