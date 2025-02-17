@@ -9,8 +9,8 @@ const Services = () => {
       <div className=" ellipse mid-left z-0"></div>
       <section className="container  mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-darkblue font-transforma mb-12">
-          <p>Lorem ipsum dolor sit amet,</p>
-          adipiscing lit Services
+          <p>We provide on-demand services </p>
+          for in-demand skills
         </h2>
         <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-8  relative">
           {[

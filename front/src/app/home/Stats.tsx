@@ -4,7 +4,8 @@ const Stats = () => {
   return (
     <div className="w-screen bg-lightblue relative overflow-hidden py-7">
       <div className=" space-y-2">
-        <div className="bg-white flex  justify-between bg-opacity-10 animate-marquee">
+        <div className="bg-white bg-opacity-10"> 
+        <div className=" flex min-w-full  justify-between  animate-marquee">
 
         
 
@@ -28,7 +29,9 @@ const Stats = () => {
           <p className="text-white text-xl font-semibold">5+ Courses </p>
           <p className="text-white text-xl font-semibold">.</p>
         </div>
-        <div className="bg-white flex  justify-between bg-opacity-10 animate-marquee-reverse">
+        </div>
+        <div className="bg-white bg-opacity-10"> 
+        <div className=" flex  justify-between  animate-marquee-reverse">
         
 
         <p className="text-white text-xl font-semibold"> 500+ Learners</p>
@@ -45,6 +48,7 @@ const Stats = () => {
           <p className="text-white text-xl font-semibold">.</p>
           <p className="text-white text-xl font-semibold">5+ Courses </p>
           <p className="text-white text-xl font-semibold">.</p>
+        </div>
         </div>
       </div>
     </div>

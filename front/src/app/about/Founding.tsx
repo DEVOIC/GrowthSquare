@@ -43,7 +43,7 @@ const Founding = () => {
         <section className="bg-white py-12 px-4 relative">
            <div className="ellipse top-right"></div>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-lightblue mb-8">The Brains Behind the Mission</h2>
+          <h2 className="text-4xl font-bold text-lightblue mb-8">The Visionary Architects of Our Mission</h2>
           <p className="text-xl mb-12">
             Meet the trailblazers who set the foundation and continue to guide our community
             towards growth and innovation

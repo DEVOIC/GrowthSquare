@@ -1,13 +1,20 @@
 "use client"
 import Loading from '@/app/loading'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { useToast } from '@/hooks/use-toast'
 import React, { useEffect, useState } from 'react'
 
 const Faqs =  () => {
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { toast } = useToast()
+  const showstate = () => {
+    toast({
+      description: "Error fetching Faqs",
+    })
 
+  }
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
@@ -21,6 +28,7 @@ const Faqs =  () => {
         const filteredFaqs = completeData.filter(faq => faq.page === currentPath);
         setFaqs(filteredFaqs);
       } catch (error) {
+        showstate();
         setError(error.message);
       } finally {
         setLoading(false);
@@ -35,7 +43,7 @@ const Faqs =  () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div></div>;
   }
 
   return (

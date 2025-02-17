@@ -2,6 +2,7 @@ import Shortimg from '@/components/parts/shortimg'
 import { Button } from '@/components/ui/button'
 import { MoveUpRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Hero = () => {
@@ -21,6 +22,7 @@ const Hero = () => {
           Collaborate, innovate, and level up with experts in design,
           development, content, and more
         </p>
+        <Link href="/contact">
         <Button variant={'default'}>
           <p className='text-xl font-bold'>
             let&#39;s grow together
@@ -29,6 +31,7 @@ const Hero = () => {
             <MoveUpRight className="ml-2 " size={60} />
           </div>
         </Button>
+        </Link>
         <div className='hidden lg:inline-block  absolute left-12 bottom-36'>
 
           <Shortimg >

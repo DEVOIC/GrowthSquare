@@ -48,7 +48,7 @@ return (
 
 
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-lightblue mb-8">The Next Wave of Innovators</h2>
+        <h2 className="text-4xl font-bold text-lightblue mb-8">The Euphoric Intellectuals behind Growth Square</h2>
         <p className="text-xl mb-12">
           The dedicated team working hard to build on the foundation laid by the mentors—
           ready to take on new challenges and grow together.
