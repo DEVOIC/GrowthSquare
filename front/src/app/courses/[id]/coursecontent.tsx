@@ -9,7 +9,7 @@ const CourseContent = () => {
             <div className="lg:w-2/3 z-10 relative">
                 <Accordion type="single" collapsible className="w-full ">
                     {[1, 2, 3, 4, 5].map((lesson, index) => (
-                        <AccordionItem key={index} value={`item-${index}`} className="border-[1px] border-lightblue px-4 md:-10 py-2 bg-white my-4">
+                        <AccordionItem key={index} value={`item-${index}`} className="border-[1px] border-lightblue px-6 md:-10 py-2 bg-white my-4">
                             <AccordionTrigger className="text-darkblue  md:text-lg font-semibold">
                                 Lesson {index + 1}: Lorem ipsum dolor sit amet, adipiscing lit
                             </AccordionTrigger>

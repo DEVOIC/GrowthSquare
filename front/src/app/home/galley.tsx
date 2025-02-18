@@ -4,7 +4,7 @@ import React from "react";
 
 const Galley = () => {
   return (
-    <div className="w-screen bg-lightblue">
+    <div className="w-screen bg-lightblue relative overflow-hidden">
       <section className="container mx-auto px-4 py-24 ">
         <h2 className="text-3xl font-bold text-white font-transforma mb-12">
           <p>Lorem ipsum dolor sit amet,</p>

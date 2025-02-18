@@ -10,14 +10,16 @@ import Gsmarque from "./gsmarque"
 import Initiaitive from "./Initiaitive"
 import Faqs from "@/components/parts/faqs"
 import Footer from "@/components/parts/footer"
-import FaqContainer from "@/components/ui/faqcontainer"
+// import FaqContainer from "@/components/ui/faqcontainer"
+
 
 export default function Home() {
   return (
-    <div className=" bg-darkblue ">
+    <div className=" bg-darkblue   ">
 
 
       {/* Navigation */}
+
       <Navbar />
 
       {/* Hero Section */}
@@ -38,13 +40,16 @@ export default function Home() {
       <Galley />
 
       {/* Exclusive Squares */}
+      <div className="overflow-hidden relative">
       <Gsmarque />
+
+      </div>
       <Initiaitive />
 
       {/* FAQ Section */}
-      <FaqContainer>
+      {/* <FaqContainer> */}
         <Faqs />
-      </FaqContainer>
+      {/* </FaqContainer> */}
 
       {/* Footer */}
       <Footer />

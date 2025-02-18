@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster"
 
 const Transformabold = localFont({
   src: "./fonts/TransformaSans_Trial-Bold-BF660ca8e06490f.otf",  variable: "--font-transforma",
@@ -25,9 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${Transformabold.variable} ${Transformasemi.variable} antialiased `}
+        className={`${Transformabold.variable} ${Transformasemi.variable} antialiased overflow-x-hidden`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

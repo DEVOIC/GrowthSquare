@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+command_output.log
+.ds_store
 # dependencies
 /node_modules
 /.pnp

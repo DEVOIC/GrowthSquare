@@ -3,7 +3,7 @@ import React from "react";
 const Gsmarque = () => {
   return (
     
-    <div className="w-screen bg-darkblue py-12 relative overflow-x-hidden">
+    <div className="w-screen bg-darkblue py-12 relative overflow-hidden">
             <div className="ellipse top-right"></div>
             <div className="ellipse bottom-left"></div>
       <div className=" space-y-2">
@@ -29,7 +29,7 @@ const Gsmarque = () => {
           </p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">
-            100+ Members
+            75+ Members
           </p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">
@@ -37,7 +37,7 @@ const Gsmarque = () => {
           </p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">
-            100+ Members
+            75+ Members
           </p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">
@@ -45,7 +45,7 @@ const Gsmarque = () => {
           </p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">
-            100+ Members
+            75+ Members
           </p>
           <p className="text-white md:text-lg px-1 py-1 font-semibold">.</p>
         </div>
