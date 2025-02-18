@@ -1,12 +1,11 @@
 "use client";
-import Image from 'next/image'
+import Image from "next/image";
 // import React,{useEffect, useState} from 'react'
 // import image from '../courses/mentor.jpg';
-import { MoveUpRight } from 'lucide-react';
-import Link from 'next/link';
+import { MoveUpRight } from "lucide-react";
+import Link from "next/link";
 // import Loading from '../loading';
-import foundingMemebers from '@/data/foundingmemebers';
-
+import foundingMemebers from "@/data/foundingmemebers";
 
 const Founding = () => {
   // const [members, setMembers] = useState([]);
@@ -41,22 +40,24 @@ const Founding = () => {
   // }
 
   return (
-
-        <section className="bg-white py-12 px-4 relative">
-           <div className="ellipse top-right"></div>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-lightblue mb-8">The Visionary Architects of Our Mission</h2>
-          <p className="text-xl mb-12">
-            Meet the trailblazers who set the foundation and continue to guide our community
-            towards growth and innovation
-          </p>
-          <div className="flex space-x-4 animate-marquee">
-            {foundingMemebers.map((member,index) => (
-              
-              <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
-               
-   <Link href="/about">
-                <div className="relative w-[240px] h-[320px]">
+    <section className="bg-white py-12 px-4 ">
+      <div className="ellipse top-right"></div>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-lightblue mb-8">
+          The Visionary Architects of Our Mission
+        </h2>
+        <p className="text-xl mb-12">
+          Meet the trailblazers who set the foundation and continue to guide our
+          community towards growth and innovation
+        </p>
+        <div className="flex space-x-4 animate-marquee">
+          {foundingMemebers.map((member, index) => (
+            <div
+              key={index}
+              className="  group transform transition-transform duration-300 hover:scale-110"
+            >
+              <Link href="/about">
+                <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
                     src={member.image}
                     alt="Team member"
@@ -73,13 +74,12 @@ const Founding = () => {
                   <MoveUpRight className="mt-2" color="white" size={30} />
                 </div>
               </Link>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+};
 
-  )
-}
-
-export default Founding
+export default Founding;

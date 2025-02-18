@@ -52,7 +52,7 @@ return (
 
 
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-5">
         <h2 className="text-4xl font-bold text-lightblue mb-8">The Euphoric Intellectuals behind Growth Square</h2>
         <p className="text-xl mb-12">
           The dedicated team working hard to build on the foundation laid by the mentors—
@@ -64,7 +64,7 @@ return (
             <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
    
    <Link href="/about">
-                <div className="relative w-[240px] h-[320px]">
+                <div className="  md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
                     src={member.image}
                     alt="Team member"
@@ -91,7 +91,7 @@ return (
 
             <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
              <Link href="/about">
-                <div className="relative w-[240px] h-[320px]">
+                <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
                     src={member.image}
                     alt="Team member"

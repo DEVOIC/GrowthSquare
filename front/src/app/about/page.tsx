@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export default function AboutPage() {
   return (
-    <div className=" bg-darkblue  ">
+    <div className=" bg-darkblue overflow-x-hidden ">
       {/* Navigation */}
       <Navbar />
 
