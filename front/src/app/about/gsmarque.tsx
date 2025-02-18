@@ -29,7 +29,7 @@ const Gsmarque = () => {
           </p>
           <p className="text-white text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white text-lg px-1 py-1 font-semibold">
-            100+ Members
+            75+ Members
           </p>
           <p className="text-white text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white text-lg px-1 py-1 font-semibold">
@@ -37,7 +37,7 @@ const Gsmarque = () => {
           </p>
           <p className="text-white text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white text-lg px-1 py-1 font-semibold">
-            100+ Members
+            75+ Members
           </p>
           <p className="text-white text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white text-lg px-1 py-1 font-semibold">
@@ -45,7 +45,7 @@ const Gsmarque = () => {
           </p>
           <p className="text-white text-lg px-1 py-1 font-semibold">.</p>
           <p className="text-white text-lg px-1 py-1 font-semibold">
-            100+ Members
+            75+ Members
           </p>
           <p className="text-white text-lg px-1 py-1 font-semibold">.</p>
         </div>

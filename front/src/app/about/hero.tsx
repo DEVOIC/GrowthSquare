@@ -12,11 +12,10 @@ const Hero = () => {
       <div className="ellipse bottom-left"></div>
 
         <h1 className="text-5xl md:text-6xl font-transforma font-semibold text-white mb-6">
-        Our Vision, Your <span className="text-lightblue">Growth</span>
+        Your progress begins  <span className="text-lightblue">here</span>
         </h1>
         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-        We&#39;re a hub for creatives, developers, and dreamers
-          <br />who believe in <span className="border-b-4 border-lightblue">growing together</span>
+        Your First Step Toward a Future of  <span className="border-b-4 border-lightblue">Limitless Opportunities</span>
         </p>
         
         {/* <div className='absolute  -bottom-24'>

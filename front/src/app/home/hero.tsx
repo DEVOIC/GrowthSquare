@@ -1,7 +1,7 @@
-import Shortimg from '@/components/parts/shortimg'
+// import Shortimg from '@/components/parts/shortimg'
 import { Button } from '@/components/ui/button'
 import { MoveUpRight } from 'lucide-react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
         </Button>
         </Link>
-        <div className='hidden lg:inline-block  absolute left-12 bottom-36'>
+        {/* <div className='hidden lg:inline-block  absolute left-12 bottom-36'>
 
           <Shortimg >
             <Image
@@ -67,7 +67,10 @@ const Hero = () => {
               height={80}
               src="https://media.istockphoto.com/id/1485546774/photo/bald-man-smiling-at-camera-standing-with-arms-crossed.jpg?s=612x612&w=0&k=20&c=9vuq6HxeSZfhZ7Jit_2HPVLyoajffb7h_SbWssh_bME=" alt="placeholder" />
           </Shortimg>
-        </div></div>
+        </div>
+         */}
+         </div>
+        
     </section>
   )
 }

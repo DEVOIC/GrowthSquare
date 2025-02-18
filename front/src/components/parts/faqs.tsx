@@ -15,6 +15,10 @@ const Faqs =  () => {
     })
 
   }
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  }
+
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
@@ -24,11 +28,10 @@ const Faqs =  () => {
         }
         const result = await response.json();
         const completeData  = result.data.faqs;
-        const currentPath = window.location.pathname;
-        const filteredFaqs = completeData.filter(faq => faq.page === currentPath);
-        setFaqs(filteredFaqs);
+        setFaqs(completeData);
       } catch (error) {
         showstate();
+        console.log(error)
         setError(error.message);
       } finally {
         setLoading(false);
@@ -41,8 +44,10 @@ const Faqs =  () => {
   if (loading) {
     return <Loading />;
   }
-
-  if (error) {
+  const currentPath = window.location.pathname;
+  const filteredFaqs = faqs.filter(faq => faq.category == capitalizeFirstLetter(currentPath.replace('/','')));
+ 
+  if (error || filteredFaqs.length === 0) {
     return <div></div>;
   }
 
@@ -62,7 +67,7 @@ const Faqs =  () => {
           <div className="md:w-2/3 ">
             { faqs?
               <Accordion type="single" collapsible className="w-full">
-                {faqs.map((question, index) => (
+                {filteredFaqs.map((question, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className=" z-30 relative border-b border-gray-700 p-4 bg-lightblue my-4">
                     <AccordionTrigger className="text-white ">
                       {question.question}
