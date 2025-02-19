@@ -143,11 +143,8 @@ body {
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
 
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
@@ -173,7 +170,19 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  display: flex;
+  gap: 1rem; 
+  justify-content: space-between;
+  align-items: center;
+
+
+  flex-shrink: 0;
+  animation: marquee 20s linear infinite;
+}
+.animate-marquee + * {
+  white-space: nowrap;
+  padding: 0 3rem;
+  flex-shrink: 0;
 }
 
 .animate-marquee-reverse {
