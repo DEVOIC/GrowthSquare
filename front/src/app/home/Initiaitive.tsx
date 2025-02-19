@@ -1,6 +1,9 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { GraduationCap } from 'lucide-react'
 import React from 'react'
+import gsqlogo from "../../../public/whiteLogo.png";
+import Image from 'next/image';
+
 
 const Initiaitive = () => {
   return (
@@ -18,8 +21,18 @@ const Initiaitive = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 w-screen relative z-20">
       {['Square Space', 'Square Plus', 'Square Light', 'Square Champ'].map((square, index) => (
         <Card key={index} className="bg-gray-600 p-6 border-2 border-lightblue ">
-          <CardContent className="flex flex-col items-center justify-center h-full">
-            <GraduationCap className="h-12 w-12 text-white mb-4" />
+          <CardContent  className="flex flex-col items-center justify-center h-full">
+            {index%2 === 0 ? <GraduationCap size={40} className=" text-white mb-4" /> :
+
+
+<Image
+            src={gsqlogo} 
+            alt="Logo"
+            width={35}
+            height={15}
+            className=" mb-4"
+          />
+            }
             <h3 className="text-white text-lg font-semibold text-center">{square}</h3>
           </CardContent>
         </Card>

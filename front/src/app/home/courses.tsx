@@ -43,20 +43,38 @@ const Courses = () => {
       <div className="ellipse mid-left"></div>
 
       {/* Logo Marquee */}
-      <div className=" px-4 py-8">
-        <div className="flex justify-between md:space-x-0 space-x-12  animate-marquee">
+      <div className=" px-4 py-8  before-marquee  ">
+        <div className="    animate-marquee">
           {collabs.map((_, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <Image
-                src={_.image}
-                className=""
-                width={30}
-                height={30}
-                alt={_.name}
-              />
-              <span className="text-lg font-bold text-black">{_.name}</span>
+            <div key={index} className="flex space-x-2  items-center ">
+
+                <Image
+                  src={_.image}
+                  className=""
+                  width={30}
+                  height={30}
+                  alt={_.name}
+                />
+                <span className="text-lg font-bold text-black">{_.name}</span>
+             
             </div>
-          ))}
+          ))} 
+        </div> 
+        <div aria-hidden="true"  className="  animate-marquee">
+          {collabs.map((_, index) => (
+            <div key={index} className="flex space-x-2  items-center ">
+
+                <Image
+                  src={_.image}
+                  className=""
+                  width={30}
+                  height={30}
+                  alt={_.name}
+                />
+                <span className="text-lg font-bold text-black">{_.name}</span>
+             
+            </div>
+          ))} 
         </div>
       </div>
       <div className="h-[1px] bg-black"></div>

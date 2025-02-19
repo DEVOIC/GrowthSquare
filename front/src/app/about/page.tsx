@@ -14,10 +14,10 @@ export const dynamic = "force-dynamic";
 
 export default function AboutPage() {
   return (
-    <div className=" bg-darkblue overflow-x-hidden ">
+    <div className=" bg-darkblue  ">
       {/* Navigation */}
       <Navbar />
-
+<div className="overflow-x-hidden">
       {/* Hero Section */}
       <Hero />
 
@@ -43,7 +43,7 @@ export default function AboutPage() {
 
       {/* FAQ Section */}
       <Faqs />
-
+      </div>
       {/* Footer */}
       <Footer />
     </div>

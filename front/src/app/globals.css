@@ -141,14 +141,67 @@ body {
   }
 
 }
+.animate-marquee {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
 
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
+  animation: scroll 20s linear infinite;
+}
+
+.before-marquee {
+  font-size: 15px;
+
+  
+  user-select: none;
+
+  --gap: 60px;
+  display: flex;
+  gap: var(--gap);
+}
+
+.before-marquee:hover .animate-marquee {
+  animation-play-state: paused;
+}.before-marquee-reverse:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
   }
+}
+.before-marquee-reverse {
+  font-size: 15px;
 
-  100% {
-    transform: translateX(-100%);
+
+  
+  user-select: none;
+
+  --gap: 60px;
+  display: flex;
+
+  flex-direction: row-reverse;
+  gap: var(--gap);
+}
+.animate-marquee-reverse {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+
+  animation: scroll1 20s linear infinite;
+}
+
+@keyframes scroll1 {
+  to {
+    transform: translateX(calc(+100% + var(--gap)));
   }
 }
 
@@ -162,6 +215,10 @@ body {
   }
 }
 
+.animate-marquee-y {
+  animation: marqueey 30s linear infinite;
+}
+
 @keyframes marqueey {
   0% {
     transform: translateY(0%);
@@ -171,20 +228,6 @@ body {
     transform: translateY(-50%);
   }
 }
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.animate-marquee-reverse {
-  animation: marquee1 30s linear infinite;
-}
-
-.animate-marquee-y {
-  animation: marqueey 30s linear infinite;
-}
-
-
 
 /* hiding scrollbar for cards  */
 @layer utilities {

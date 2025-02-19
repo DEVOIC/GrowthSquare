@@ -122,6 +122,11 @@ const members: Member[] = [
       role: "Graphic Designer Intern"
     },
     {
+      image: "https://drive.google.com/uc?id=1zF2fGWxyUAv212buVIlV2uV-40Mvi55e",
+      name: "Muskan Gupta",
+      role: "Operational Coordinator "
+    },
+    {
       image: "https://drive.google.com/uc?id=1VKdb46ejp9Y9h3XFCawiQ7m4awYqFFXj",
       name: "Lipika Sonkeshri",
       role: "Manage LinkedIn (for Commenting and Growth)"

@@ -5,9 +5,9 @@ interface Member {
   }
 const foundingMemebers: Member[] = [
     {
-      image:"https://media.licdn.com/dms/image/v2/D5603AQFu-v_RNuL4XA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732512155128?e=1745452800&v=beta&t=YPx1NJC8GQD3v0bHdIBz8fhzbzAsV_ErPMOrWwVJYV0",
+      image:"https://drive.google.com/uc?id=1jRJXkTC60Rg9YRwXSU3Xlt1mslcxWrK6",
       name:"Shivam Singh ",
-      role:"Product Manager"
+      role:"Founder & Product Design Manager"
     },
     {
         image: "https://drive.google.com/uc?id=1wCwx6PxQD1KT2OcpqAzsfSZHXg0edQHH",
