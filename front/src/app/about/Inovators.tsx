@@ -58,7 +58,36 @@ return (
           The dedicated team working hard to build on the foundation laid by the mentors—
           ready to take on new challenges and grow together.
         </p>
-        <div className="flex  my-6 space-x-4 animate-marquee">
+        <div className='before-marquee'>
+
+    
+        <div className="flex  my-6 animate-marquee">
+          {part1.map((member, index) => (
+
+            <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
+   
+   <Link href="/about">
+                <div className="  md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
+                  <Image
+                    src={member.image}
+                    alt="Team member"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
+                  <h3 className="font-bold">{member.name}</h3>
+                  <p className="text-sm">{member.role}</p>
+                </div>
+                <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
+                  <MoveUpRight className="mt-2" color="white" size={30} />
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>  
+        <div className="flex  my-6  animate-marquee">
           {part1.map((member, index) => (
 
             <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
@@ -84,9 +113,9 @@ return (
             </div>
           ))}
         </div>
-
-
-        <div className="flex my-6 space-x-4 animate-marquee-reverse">
+        </div>
+        <div className='before-marquee-reverse'>
+        <div className="flex my-6  animate-marquee-reverse">
           {part2.map((member,index) => (
 
             <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
@@ -110,6 +139,32 @@ return (
               </Link>
             </div>
           ))}
+        </div>  
+        <div className="flex my-6  animate-marquee-reverse">
+          {part2.map((member,index) => (
+
+            <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
+             <Link href="/about">
+                <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
+                  <Image
+                    src={member.image}
+                    alt="Team member"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
+                  <h3 className="font-bold">{member.name}</h3>
+                  <p className="text-sm">{member.role}</p>
+                </div>
+                <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
+                  <MoveUpRight className="mt-2" color="white" size={30} />
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
         </div>
       </div>
     </section>

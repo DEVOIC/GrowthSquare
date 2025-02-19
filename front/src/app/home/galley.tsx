@@ -10,103 +10,222 @@ const Galley = () => {
           <p>Lorem ipsum dolor sit amet,</p>
           adipiscing lit Gallary
         </h2>
-        <div className=" space-y-2">
-          <div className="flex bg-white w-fit space-x-3 bg-opacity-10 animate-marquee ">
-            <div className=" m-2">
-              <Image
-                width={250}
-                height={100}
-                objectFit="cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
-                alt="1"
-              />
-            </div>
-            <div className=" m-2 bg-white w-64"></div>
-            <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
-              <div className=" absolute -left-3 -bottom-3">
-                <MoveUpRight className=" text-white " size={80} />
+        <div className=" space-y-2  ">
+          <div className="bg-white bg-opacity-10 w-full">
+            <div className="  overflow-hidden before-marquee">
+              <div className="flex  w-fit space-x-3  animate-marquee ">
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white w-64 h-[80%] my-auto"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
               </div>
-              <div className="w-1/2 ">Collab Event</div>
-            </div><div className=" m-2">
-              <Image
-                width={250}
-                height={100}
-                objectFit="cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
-                alt="1"
-              />
-            </div>
-            <div className=" m-2 bg-white w-64"></div>
-            <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
-              <div className=" absolute -left-3 -bottom-3">
-                <MoveUpRight className=" text-white " size={80} />
+              <div aria-hidden="true" className="flex w-fit space-x-3  animate-marquee ">
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-10/12 w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
               </div>
-              <div className="w-1/2 ">Collab Event</div>
-            </div>
-          </div>  <div className="flex bg-white w-fit space-x-3 bg-opacity-10 animate-marquee-reverse ">
-            <div className=" m-2">
-              <Image
-                width={250}
-                height={100}
-                objectFit="cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
-                alt="1"
-              />
-            </div>
-            <div className=" m-2 bg-white w-64"></div>
-            <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
-              <div className=" absolute -left-3 -bottom-3">
-                <MoveUpRight className=" text-white " size={80} />
+            </div>{" "}
+          </div>
+          <div className="bg-white bg-opacity-10 w-full">
+            <div className="  overflow-hidden before-marquee-reverse">
+              <div className="  w-fit  animate-marquee-reverse ">
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">First online Meetup</div>
+                </div>
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">First online Meetup</div>
+                </div>
               </div>
-              <div className="w-1/2 ">First online Meetup</div>
-            </div><div className=" m-2">
-              <Image
-                width={250}
-                height={100}
-                objectFit="cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
-                alt="1"
-              />
+              <div aria-hidden="true" className="  w-fit   animate-marquee-reverse ">
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">First online Meetup</div>
+                </div>
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">First online Meetup</div>
+                </div>
+              </div>{" "}
             </div>
-            <div className=" m-2 bg-white w-64"></div>
-            <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
-              <div className=" absolute -left-3 -bottom-3">
-                <MoveUpRight className=" text-white " size={80} />
+          </div>
+          <div className="bg-white bg-opacity-10 w-full">
+            <div className="  overflow-hidden before-marquee">
+              <div className="flex  w-fit space-x-3  animate-marquee ">
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white w-64 h-[80%] my-auto"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
               </div>
-              <div className="w-1/2 ">First online Meetup</div>
-            </div>
-          </div>  <div className="flex bg-white w-fit space-x-3 bg-opacity-10 animate-marquee ">
-            <div className=" m-2">
-              <Image
-                width={250}
-                height={100}
-                objectFit="cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
-                alt="1"
-              />
-            </div>
-            <div className=" m-2 bg-white w-64"></div>
-            <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
-              <div className=" absolute -left-3 -bottom-3">
-                <MoveUpRight className=" text-white " size={80} />
+              <div aria-hidden="true" className="flex w-fit space-x-3  animate-marquee ">
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-[80%] my-auto w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
+                <div className=" m-2">
+                  <Image
+                    width={250}
+                    height={100}
+                    objectFit="cover"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    alt="1"
+                  />
+                </div>
+                <div className=" m-2 bg-white h-10/12 w-64"></div>
+                <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
+                  <div className=" absolute -left-3 -bottom-3">
+                    <MoveUpRight className=" text-white " size={80} />
+                  </div>
+                  <div className="w-1/2 ">Collab Event</div>
+                </div>
               </div>
-              <div className="w-1/2 ">Collab Event</div>
-            </div><div className=" m-2">
-              <Image
-                width={250}
-                height={100}
-                objectFit="cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
-                alt="1"
-              />
-            </div>
-            <div className=" m-2 bg-white w-64"></div>
-            <div className=" m-2 bg-darkblue w-64 px-3 font-bold text-xl text-white flex justify-end align-middle items-center relative">
-              <div className=" absolute -left-3 -bottom-3">
-                <MoveUpRight className=" text-white " size={80} />
-              </div>
-              <div className="w-1/2 ">Collab Event</div>
-            </div>
+            </div>{" "}
           </div>
         </div>
       </section>

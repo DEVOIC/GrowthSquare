@@ -5,7 +5,7 @@ interface Member {
   }
 const foundingMemebers: Member[] = [
     {
-      image:"https://drive.google.com/open?id=1jRJXkTC60Rg9YRwXSU3Xlt1mslcxWrK6",
+      image:"https://drive.google.com/uc?id=1jRJXkTC60Rg9YRwXSU3Xlt1mslcxWrK6",
       name:"Shivam Singh ",
       role:"Founder & Product Design Manager"
     },
