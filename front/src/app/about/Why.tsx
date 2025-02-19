@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import photo from '../courses/user2demo.svg'
+// import photo from '../courses/user2demo.svg'
 // import { MoveUpRight } from "lucide-react";
+import gsqlogo from "../../../public/whiteLogo.png";
 
 const Why = () => {
   return (
@@ -18,7 +19,7 @@ const Why = () => {
       <div className="max-w-6xl  lg:py-10 mx-auto align-middle grid md:grid-cols-2 gap-20">
         <div className=" hidden md:flex mx-5 items-center justify-end ">
           <Image
-            src={photo}
+            src={gsqlogo}
             alt="Team member"
             width={80}
             height={30}
@@ -49,7 +50,7 @@ const Why = () => {
 
         <div className="hidden md:flex items-center mx-5 justify-start">
           <Image
-            src={photo}
+            src={gsqlogo}
             alt="Team member"
             width={80}
             height={80}
