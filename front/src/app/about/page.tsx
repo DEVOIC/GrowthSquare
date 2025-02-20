@@ -3,14 +3,14 @@ import Navbar from "@/components/parts/navbar";
 import Hero from "./hero";
 import Footer from "@/components/parts/footer";
 
-import Gsmarque from "./gsmarque";
+import Gsmarque from "../../components/parts/gsmarque";
 import Founding from "./Founding";
 import Inovators from "./Inovators";
 import Services from "./Services";
 import What from "./What";
 import Why from "./Why";
 import Faqs from "@/components/parts/faqs";
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default function AboutPage() {
   return (

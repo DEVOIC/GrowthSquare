@@ -6,7 +6,7 @@ import { Mentors } from "./mentors"
 import { Courses } from "./courses"
 import LearnAtYourPace from "./learnatownpeace"
 import Faqs from "@/components/parts/faqs"
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 export default function CoursesPage() {
   return (
 
