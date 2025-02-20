@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import { Check } from 'lucide-react'
 import Navbar from "@/components/parts/navbar"       //navbar imported from parts folder
