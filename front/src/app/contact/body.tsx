@@ -1,5 +1,5 @@
-
-import React, { useState } from 'react'
+"use client" 
+import React, { useActionState, useEffect,  } from 'react'
 
 
 import Link from "next/link"
@@ -7,20 +7,21 @@ import Image from 'next/image'
 import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { useToast } from '@/hooks/use-toast'
+import { createContact } from './action'
 const Body = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-      })
+    const [state, action, pending] = useActionState(createContact, null);
+    const { toast } = useToast()
+    useEffect(() => {
+        const showstate = () => {
+          toast({
+            description: state,
+          })
     
-      const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        // Handle form submission
-        console.log('Form submitted:', formData)
+        }
+        showstate();
       }
-    
+        , [pending])
   return (
 
     <>
@@ -67,17 +68,17 @@ const Body = () => {
             </div>
             <div className='bg-lightblue py-4 lg:py-0 w-full flex justify-center'>
               <div className="flex space-x-8 bg-darkblue py-4 lg:my-6 justify-center px-10 ">
-                <Link href="#" className="hover:text-blue-200">
-                  <Instagram className="w-6 h-6" />
+              <Link href="https://www.instagram.com/growthsq/" className="hover:text-white">
+                  <Instagram className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="hover:text-blue-200">
-                  <Twitter className="w-6 h-6" />
+                <Link href="https://x.com/thegrowthsquare" className="hover:text-white">
+                  <Twitter className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="hover:text-blue-200">
-                  <Linkedin className="w-6 h-6" />
+                <Link href="https://www.linkedin.com/company/growthsq/" className="hover:text-white">
+                  <Linkedin className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="hover:text-blue-200">
-                  <Mail className="w-6 h-6" />
+                <Link href="contact@growthsq.in" className="hover:text-white">
+                  <Mail className="h-6 w-6" />
                 </Link>
               </div>
             </div>
@@ -87,15 +88,14 @@ const Body = () => {
           {/* input fields */}
 
           <div className="lg:py-16 px-4 lg:w-[50%]">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action={action} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lg lg:text-sm  font-medium text-lightblue pb-1">
                   Name
                 </label>
                 <Input
                   id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  name='name'
                   placeholder="John Doe"
                   className='rounded-none border-2 text-darkblue font-semibold text-md lg:text-xl border-lightblue '
                   required
@@ -108,28 +108,54 @@ const Body = () => {
                 <Input
                   id="email"
                   type="email"
-                  value={formData.email}
+                  name='email'
                   className='rounded-none border-2 border-lightblue   text-darkblue font-semibold text-md lg:text-xl '
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="johndoe@gmail.com"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-lg lg:text-sm  font-medium text-lightblue pb-1">
-                  Message
+                <label htmlFor="CollegeName" className="block text-lg lg:text-sm  font-medium text-lightblue pb-1">
+                  Collage Name
                 </label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Hi! 👋"
-                  className="min-h-[150px] rounded-none border-2 border-lightblue  text-darkblue font-semibold text-md lg:text-xl "
+                <Input
+                  id="collegeName"
+                  type="text"
+                  name='collegeName'
+                  className='rounded-none border-2 border-lightblue   text-darkblue font-semibold text-md lg:text-xl '
+                  placeholder="Uit"
                   required
                 />
               </div>
-              <Button type="submit" className="py-6 bg-lightblue hover:bg-blue-700">
-                Send Message
+
+              <div>
+                <label htmlFor="contactNumber" className="block text-lg lg:text-sm  font-medium text-lightblue pb-1">
+                  Contact Number
+                </label>
+                <Input
+                  id="contactNumber"
+                  type='number'
+                  name='contactNumber'
+                  className='rounded-none border-2 border-lightblue   text-darkblue font-semibold text-md lg:text-xl '
+                  placeholder="9999999999"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="yearOfGraduation" className="block text-lg lg:text-sm  font-medium text-lightblue pb-1">
+                  Year of Graduation
+                </label>
+                <Input
+                  id="yearOfGraduation"
+                  type="number"
+                  name='yearOfGraduation'
+                  className='rounded-none border-2 border-lightblue   text-darkblue font-semibold text-md lg:text-xl '
+                  placeholder="2026"
+                  required
+                />
+              </div>
+              <Button type="submit" disabled={pending} className="py-6 bg-lightblue hover:bg-blue-700">
+{pending? "Sending..": "Send"} 
               </Button>
             </form>
           </div>

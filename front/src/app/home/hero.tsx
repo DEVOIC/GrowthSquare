@@ -4,7 +4,8 @@ import { MoveUpRight } from 'lucide-react'
 // import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
+import gsqlogo from "../../../public/whiteLogo.png";
+import Image from 'next/image';
 const Hero = () => {
   return (
 
@@ -28,7 +29,8 @@ const Hero = () => {
             let&#39;s grow together
           </p>
           <div>
-            <MoveUpRight className="ml-2 " size={60} />
+
+          <Image src={gsqlogo} alt="logo" width={20} height={20} />
           </div>
         </Button>
         </Link>
