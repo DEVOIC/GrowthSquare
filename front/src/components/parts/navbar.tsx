@@ -41,11 +41,11 @@ const Navbar =  () => {
                              visibility : click ? "visible" : "hidden",
                         }}>
                             <div className='w-[60%] h-[100vh]  flex-[0.6] bg-[#015aff] px-12 py-8'>
-                                <div className='w-[95%]'><IoCloseSharp className='h-8 w-8 grid justify-self-end' onClick={handleClick} /></div>
-                                <div className='flex flex-col gap-6 px-10 py-4'>
-                                    <Link href="/home" className="hover:text-white text-2xl">Home</Link>
-                                    <Link href="/about" className="hover:text-white text-2xl">About</Link>
-                                    <Link href="https://blog.growthsq.in/" className="hover:text-white text-2xl">Blog</Link>
+                                <div className='w-[95%] flex justify-between'><span className='bg-white bg-opacity-20'><Image src={Logo} alt="logo" className='opacity-100' /></span><IoCloseSharp className='h-8 w-8 grid justify-self-end' onClick={handleClick} /></div>
+                                <div className='flex flex-col gap-6 px-8 py-4'>
+                                    <Link href="/home" className="hover:text-white text-darkblue text-2xl">Home</Link>
+                                    <Link href="/about" className="hover:text-white text-darkblue text-2xl">About</Link>
+                                    <Link href="https://blog.growthsq.in/" className="hover:text-white text-darkblue text-2xl">Blog</Link>
                                 </div>
                             </div>
                             <div className='w-[40%] h-[100vh] bg-black opacity-30 flex-[0.4]' onClick={handleClick}></div>
