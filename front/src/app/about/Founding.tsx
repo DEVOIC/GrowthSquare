@@ -3,7 +3,7 @@ import Image from "next/image";
 // import React,{useEffect, useState} from 'react'
 // import image from '../courses/mentor.jpg';
 import { MoveUpRight } from "lucide-react";
-import Link from "next/link";
+
 // import Loading from '../loading';
 import foundingMemebers from "@/data/foundingmemebers";
 
@@ -57,7 +57,7 @@ const Founding = () => {
               key={index}
               className="  group transform transition-transform duration-300 hover:scale-110"
             >
-              <Link href="/about">
+
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
                     src={member.image}
@@ -74,7 +74,7 @@ const Founding = () => {
                 <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
                   <MoveUpRight className="mt-2" color="white" size={30} />
                 </div>
-              </Link>
+
             </div>
           ))}
         </div>   <div className="flex space-x-4 animate-marquee">
@@ -83,7 +83,7 @@ const Founding = () => {
               key={index}
               className="  group transform transition-transform duration-300 hover:scale-110"
             >
-              <Link href="/about">
+            
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
                     src={member.image}
@@ -100,7 +100,7 @@ const Founding = () => {
                 <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
                   <MoveUpRight className="mt-2" color="white" size={30} />
                 </div>
-              </Link>
+           
             </div>
           ))}
         </div>
