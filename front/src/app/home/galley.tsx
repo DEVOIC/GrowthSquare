@@ -7,8 +7,7 @@ const Galley = () => {
     <div className="w-screen bg-lightblue relative overflow-hidden">
       <section className="container mx-auto px-4 py-24 ">
         <h2 className="text-3xl font-bold text-white font-transforma mb-12">
-          <p>Lorem ipsum dolor sit amet,</p>
-          adipiscing lit Gallary
+          <p>Moments of Learning and Collaboration</p>
         </h2>
         <div className=" space-y-2  ">
           <div className="bg-white bg-opacity-10 w-full">

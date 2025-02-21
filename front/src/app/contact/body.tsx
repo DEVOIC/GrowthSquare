@@ -62,8 +62,8 @@ const Body = () => {
                 />
               </div>
               <h2 className="relative z-10 text-2xl font-bold py-10 px-6 text-white">
-                lorem ipsum dolor set amet
-                <span className="text-darkblue"> adipiscing</span>
+              Let's Start a Conversation
+                
               </h2>
             </div>
             <div className='bg-lightblue py-4 lg:py-0 w-full flex justify-center'>

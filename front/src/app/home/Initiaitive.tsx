@@ -15,8 +15,7 @@ const Initiaitive = () => {
 
       <section className="container py-20 bg-darkblue">
     <h2 className="text-3xl font-bold text-white mx-auto px-8 lg:px-24 font-transforma mb-12">
-          <p>Lorem ipsum dolor sit amet,</p>
-          adipiscing lit courses
+          <p>Experience GrowthSquare's Signature Programs</p>
         </h2>
     <div className="grid grid-cols-2 md:grid-cols-4 w-screen relative z-20">
       {['Square Space', 'Square Plus', 'Square Light', 'Square Champ'].map((square, index) => (

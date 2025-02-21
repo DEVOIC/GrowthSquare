@@ -60,8 +60,8 @@ const Faqs =  () => {
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/3">
             <h2 className="text-3xl z-20 font-bold text-darkblue font-transforma mb-12">
-              <p>Lorem ipsum dolor sit amet,</p>
-              adipiscing lit FAQs
+              <p>New to GrowthSquare? </p>
+              Here's What You Need to Know
             </h2>
           </div>
           <div className="md:w-2/3 ">

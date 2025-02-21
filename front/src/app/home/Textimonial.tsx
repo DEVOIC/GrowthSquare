@@ -128,8 +128,7 @@ const Testimonial =  () => {
 
       <section className="container z-10 mx-auto px-4 py-20 bg-darkblue">
         <h2 className="text-3xl font-bold text-white font-transforma mb-12">
-          <p>Lorem ipsum dolor sit amet,</p>
-          adipiscing lit courses
+          <p>Voices of Achievement</p>
         </h2>
 
         <div  className="  grid grid-cols-1 md:grid-rows-3  md:grid-cols-6 gap-5 ">
