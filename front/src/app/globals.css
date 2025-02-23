@@ -149,7 +149,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .before-marquee {
