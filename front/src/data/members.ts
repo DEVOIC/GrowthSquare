@@ -12,9 +12,9 @@ const members: Member[] = [
     },
   
     {
-      image: "https://drive.google.com/uc?id=1rT41hLZZsKcDwoQH9txLWEqMvAd6D0ZG",
+      image: "https://drive.google.com/uc?id=1YCE8aVGSoQq6nP69QLtLkt5ogASB_SUK",
       name: "Nitin Chakrawarti",
-      role: "Head in Web Department (Community)"
+      role: "Head of Web Department"
     },
     {
       image: "https://drive.google.com/uc?id=1qHXFVYFIGFYn81CYlkS_66kADKrKXMXE",
@@ -131,11 +131,11 @@ const members: Member[] = [
       name: "Lipika Sonkeshri",
       role: "Manage LinkedIn (for Commenting and Growth)"
     },
-    {
-      image: "https://drive.google.com/uc?id=1ko5Bpok85nkGEQ1hp7ZZGVT9OLedwGDs",
-      name: "Himansh Prajapati",
-      role: "Co-Head in Web Dept."
-    }
+    // {
+    //   image: "https://drive.google.com/uc?id=1ko5Bpok85nkGEQ1hp7ZZGVT9OLedwGDs",
+    //   name: "Himansh Prajapati",
+    //   role: "Co-Head in Web Dept."
+    // }
   ];
 
   export default members;

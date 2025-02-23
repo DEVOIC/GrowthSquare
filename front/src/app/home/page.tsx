@@ -27,11 +27,12 @@ export default function Home() {
 
       <Courses />
 
-      <Stats />
+      {/* <Stats /> */}
 
 
       {/* Testimonials */}
       <Testimonial />
+      <Stats />
 
       {/* Services Section */}
       <Services />

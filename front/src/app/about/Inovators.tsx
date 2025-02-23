@@ -11,7 +11,7 @@ import members from '@/data/members';
 
 
 
-const Inovators =  () => {
+const Inovators = () => {
   // const [members, setMembers] = useState([]);
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
@@ -45,7 +45,7 @@ const Inovators =  () => {
 
   const part1 = members.filter((member, index) => index % 2 === 0);
   const part2 = members.filter((member, index) => index % 2 !== 0);
-return (
+  return (
     <section className="bg-white py-20 px-4 relative">
       <div className="ellipse top-left"></div>
       <div className="ellipse bottom-right"></div>
@@ -60,38 +60,12 @@ return (
         </p>
         <div className='before-marquee'>
 
-    
-        <div className="flex  my-6 animate-marquee">
-          {part1.map((member, index) => (
 
-            <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
-   
+          <div className="flex  my-6 animate-marquee">
+            {part1.map((member, index) => (
 
-                <div className="  md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
-                  <Image
-                    src={member.image}
-                    alt="Team member"
-                    layout="fill"
-                    objectFit="cover"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
-                  <h3 className="font-bold">{member.name}</h3>
-                  <p className="text-sm">{member.role}</p>
-                </div>
-                <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
-                  <MoveUpRight className="mt-2" color="white" size={30} />
-                </div>
+              <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
 
-            </div>
-          ))}
-        </div>  
-        <div className="flex  my-6  animate-marquee">
-          {part1.map((member, index) => (
-
-            <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
-   
 
                 <div className="  md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
@@ -102,48 +76,49 @@ return (
                     className="w-full h-full"
                   />
                 </div>
-                <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
-                  <h3 className="font-bold">{member.name}</h3>
-                  <p className="text-sm">{member.role}</p>
+                <div className="w-full absolute bottom-0 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
+                  <h3 className="font-bold text-[1vmax]">{member.name}</h3>
+                  <p className="text-[1vmax]">{member.role}</p>
                 </div>
-                <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
+                {/* <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
                   <MoveUpRight className="mt-2" color="white" size={30} />
-                </div>
+                </div> */}
 
-            </div>
-          ))}
-        </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex  my-6  animate-marquee">
+            {part1.map((member, index) => (
+
+              <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
+
+
+                <div className="  md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
+                  <Image
+                    src={member.image}
+                    alt="Team member"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
+                  <h3 className="font-bold text-[1vmax]">{member.name}</h3>
+                  <p className="text-[1vmax]">{member.role}</p>
+                </div>
+                {/* <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
+                  <MoveUpRight className="mt-2" color="white" size={30} />
+                </div> */}
+
+              </div>
+            ))}
+          </div>
         </div>
         <div className='before-marquee-reverse'>
-        <div className="flex my-6  animate-marquee-reverse">
-          {part2.map((member,index) => (
+          <div className="flex my-6  animate-marquee-reverse">
+            {part2.map((member, index) => (
 
-            <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
-           
-                <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
-                  <Image
-                    src={member.image}
-                    alt="Team member"
-                    layout="fill"
-                    objectFit="cover"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
-                  <h3 className="font-bold">{member.name}</h3>
-                  <p className="text-sm">{member.role}</p>
-                </div>
-                <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
-                  <MoveUpRight className="mt-2" color="white" size={30} />
-                </div>
-
-            </div>
-          ))}
-        </div>  
-        <div className="flex my-6  animate-marquee-reverse">
-          {part2.map((member,index) => (
-
-            <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
+              <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
 
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
@@ -154,17 +129,42 @@ return (
                     className="w-full h-full"
                   />
                 </div>
-                <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
-                  <h3 className="font-bold">{member.name}</h3>
-                  <p className="text-sm">{member.role}</p>
+                <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
+                  <h3 className="font-bold text-[1vmax]">{member.name}</h3>
+                  <p className="text-[1vmax]">{member.role}</p>
                 </div>
-                <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
+                {/* <div className="lg:w-10 w-6 h-6 lg:h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
                   <MoveUpRight className="mt-2" color="white" size={30} />
-                </div>
+                </div> */}
 
-            </div>
-          ))}
-        </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex my-6  animate-marquee-reverse">
+            {part2.map((member, index) => (
+
+              <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
+
+                <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
+                  <Image
+                    src={member.image}
+                    alt="Team member"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
+                  <h3 className="font-bold text-[1vmax]">{member.name}</h3>
+                  <p className="text-[1vmax]">{member.role}</p>
+                </div>
+                {/* <div className="lg:w-10 lg:h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
+                  <MoveUpRight className="mt-2" color="white" size={30} />
+                </div> */}
+
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

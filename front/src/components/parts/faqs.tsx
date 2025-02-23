@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useToast } from '@/hooks/use-toast'
 import React, { useEffect, useState } from 'react'
 
-const Faqs =  () => {
+const Faqs = () => {
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ const Faqs =  () => {
           throw new Error('Network response was not ok');
         }
         const result = await response.json();
-        const completeData  = result.data.faqs;
+        const completeData = result.data.faqs;
         setFaqs(completeData);
       } catch (error) {
         showstate();
@@ -45,8 +45,8 @@ const Faqs =  () => {
     return <Loading />;
   }
   const currentPath = window.location.pathname;
-  const filteredFaqs = faqs.filter(faq => faq.category == capitalizeFirstLetter(currentPath.replace('/','')));
- 
+  const filteredFaqs = faqs.filter(faq => faq.category == capitalizeFirstLetter(currentPath.replace('/', '')));
+
   if (error || filteredFaqs.length === 0) {
     return <div></div>;
   }
@@ -56,8 +56,8 @@ const Faqs =  () => {
       <div className="ellipse top-right"></div>
       <div className="ellipse mid-left"></div>
 
-      <section className="container mx-auto px-4 py-20">
-        <div className="flex flex-col md:flex-row gap-12">
+      <section className=" lg:mx-auto px-4 py-20">
+        <div className="flex flex-col md:flex-row gap-4 lg:gap-12">
           <div className="md:w-1/3">
             <h2 className="text-3xl z-20 font-bold text-darkblue font-transforma mb-12">
               <p>New to GrowthSquare? </p>
@@ -65,10 +65,10 @@ const Faqs =  () => {
             </h2>
           </div>
           <div className="md:w-2/3 ">
-            { faqs?
+            {faqs ?
               <Accordion type="single" collapsible className="w-full">
                 {filteredFaqs.map((question, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className=" z-30 relative border-b border-gray-700 p-4 bg-lightblue my-4">
+                  <AccordionItem key={index} value={`item-${index}`} className=" z-30 relative border-b border-gray-700 p-4 bg-lightblue mb-4">
                     <AccordionTrigger className="text-white ">
                       {question.question}
                     </AccordionTrigger>

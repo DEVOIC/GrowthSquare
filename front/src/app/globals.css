@@ -149,8 +149,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
-
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .before-marquee {
@@ -169,6 +168,7 @@ body {
 }.before-marquee-reverse:hover .animate-marquee-reverse {
   animation-play-state: paused;
 }
+
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - var(--gap)));
@@ -181,7 +181,7 @@ body {
   
   user-select: none;
 
-  --gap: 60px;
+  --gap: 20px;
   display: flex;
 
   flex-direction: row-reverse;
@@ -239,4 +239,21 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00123370;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00123370;
 }
