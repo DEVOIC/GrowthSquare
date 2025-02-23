@@ -1,4 +1,4 @@
-import { MoveUpRight } from "lucide-react";
+// import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import TopArrow from "./Vector 2.png";
