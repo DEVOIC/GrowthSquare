@@ -1,5 +1,5 @@
 "use client";
-import { Avatar,  } from "@/components/ui/avatar";
+import { Avatar, } from "@/components/ui/avatar";
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -51,17 +51,17 @@ const testimonials: Testimonial[] = [
 
 const TestCard = ({ data }: { data: Testimonial }) => {
   return (
-    <Card className={`bg-white py-8 lg:p-6  md:col-span-2 `}>
+    <Card className={`bg-white py-8 lg:p-6 h-full md:col-span-2 `}>
       <CardContent>
         <div className="flex items-center space-x-4 mb-4">
           <Avatar>
-           <Image
+            <Image
               src={data.profileImage}
               alt={data.name}
               width={40}
               height={40}
               className="rounded-full"
-              />
+            />
             {/* <AvatarFallback>{data.name}</AvatarFallback> */}
           </Avatar>
           <div>
@@ -72,7 +72,7 @@ const TestCard = ({ data }: { data: Testimonial }) => {
           </div>
         </div>
         <p className="text-gray-600 ">
-         {data.message }
+          {data.message}
         </p>
       </CardContent>
     </Card>
@@ -80,45 +80,45 @@ const TestCard = ({ data }: { data: Testimonial }) => {
 };
 
 
-const Testimonial =  () => {
-//   const [testimonials, setTestimonials] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-//   const { toast } = useToast()
-//   const showstate = () => {
-//     toast({
-//       description: "Error fetching testimonials",
-//     })
+const Testimonial = () => {
+  //   const [testimonials, setTestimonials] = useState([]);
+  //   const [loading, setLoading] = useState(true);
+  //   const [error, setError] = useState(null);
+  //   const { toast } = useToast()
+  //   const showstate = () => {
+  //     toast({
+  //       description: "Error fetching testimonials",
+  //     })
 
-//   }
-//   useEffect(() => {
-//     const fetchTestimonials = async () => {
-//       try {
-//         const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/testimonials/get-testimonials`);
-//         if (!response.ok) {
-//           throw new Error('Network response was not ok');
-//         }
-//         const rawData = await response.json();
-//         setTestimonials(rawData.data.testimonials);
-//       } catch (error) {
-//         showstate();
-//         setError(error.message);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
+  //   }
+  //   useEffect(() => {
+  //     const fetchTestimonials = async () => {
+  //       try {
+  //         const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/testimonials/get-testimonials`);
+  //         if (!response.ok) {
+  //           throw new Error('Network response was not ok');
+  //         }
+  //         const rawData = await response.json();
+  //         setTestimonials(rawData.data.testimonials);
+  //       } catch (error) {
+  //         showstate();
+  //         setError(error.message);
+  //       } finally {
+  //         setLoading(false);
+  //       }
+  //     };
 
-//     fetchTestimonials();
-//   }, []);
+  //     fetchTestimonials();
+  //   }, []);
 
-//   if (loading || !testimonials) {
-//     return <Loading />;
-//   }
-// if (error) {
-//     return <div></div>;
+  //   if (loading || !testimonials) {
+  //     return <Loading />;
+  //   }
+  // if (error) {
+  //     return <div></div>;
 
-//   }
-  
+  //   }
+
 
   return (
     <div className="w-screen relative">
@@ -131,18 +131,17 @@ const Testimonial =  () => {
           <p>Voices of Achievement</p>
         </h2>
 
-        <div  className="  grid grid-cols-1 md:grid-rows-3  md:grid-cols-6 gap-5 ">
+        <div className="  grid grid-cols-1 md:grid-rows-3  md:grid-cols-6 gap-5 ">
           {/* <div className=" bg-lightblue "></div> */}
           <div className="col-span-2 row-span-2 ">
-            <TestCard data= {testimonials[0]} />
+            <TestCard data={testimonials[0]} />
           </div>
           <div className=" bg-lightblue "></div>
-          <div className="  col-span-3 ">
+          <div className="col-span-2 lg:col-span-3 ">
             <TestCard data={testimonials[1]} />
           </div>
-          <div className="col-span-3">
-          <TestCard data={testimonials[2]} />
-
+          <div className="col-span-2 lg:col-span-3">
+            <TestCard data={testimonials[2]} />
           </div>
           <div className=" bg-lightblue "></div>
 
@@ -154,20 +153,20 @@ const Testimonial =  () => {
               allowFullScreen
               title="Testimonial Video"
             ></iframe> */}
+
           <div className=" bg-lightblue "></div>
           <div className="col-span-2">
-          <TestCard data={testimonials[3]} />
+            <TestCard data={testimonials[3]} />
           </div>
           <div className=" bg-lightblue  "></div>
           <div className="col-span-2 ">
-          <TestCard data={testimonials[4]} />
-
+            <TestCard data={testimonials[4]} />
           </div>
           {/* <div className=" bg-lightblue "></div> */}
 
-       
+
         </div>
-          {/* <div className=" bg-lightblue "></div> */}
+        {/* <div className=" bg-lightblue "></div> */}
       </section>
     </div>
   );

@@ -18,7 +18,7 @@ const Footer = () => {
       {/* CTA Section */}
       <section className="  border-b-2 justify-center px-8 md:px-0  py-20 text-center">
         <div className=" flex justify-center w-full   md:space-x-6 items-center">
-          <h2 className="md:text-6xl items-center  text-start text-4xl font-bold  text-white mb-6">
+          <h2 className="md:text-6xl items-center  text-start text-4xl font-bold  text-white mb-2">
             Let&#39;s work together
           </h2>
           <Image
@@ -36,7 +36,7 @@ const Footer = () => {
       <footer className=" text-gray-400 z-50 relative ">
         <div className="  ">
           <div className="w-full flex md:flex-row flex-col ">
-            <div className=" flex-1 px-4 sm:px-14 py-8 md:p-14 md:border-r-2  md:mx-auto flex justify-between  md:w-2/3 ">
+            <div className="  px-4 sm:px-14 py-8 md:py-14 md:px-2 md:border-r-2  flex justify-evenly  md:w-1/2 ">
               <div className=" pr-2">
                 <div className="space-y-2">
                   <Link
@@ -117,10 +117,10 @@ const Footer = () => {
                 </div>
               </div>{" "}
             </div>
-            <div className="flex-1">
+            <div className="flex lg:w-1/2 flex-col">
+
               <div className="border-b-2 p-4  ">
                 <div className="w-2/3 mx-auto py-4 my-auto">
-
                   <p>
                     mast quote to inspire ppl lorem ipsum dolor sit amet amet, consectetur adipiscing elit
                   </p>
@@ -129,7 +129,8 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex space-x-16 md:space-x-4 py-4 lg:py-0 lg:mt-12  justify-center items-center my-auto">
+
+              <div className=" flex space-x-16 md:space-x-16 h-full  py-6 lg:py-auto  justify-center items-center ">
                 <Link href="https://www.instagram.com/growthsq/" className="hover:text-white">
                   <Instagram className="h-6 w-6" />
                 </Link>
@@ -143,6 +144,7 @@ const Footer = () => {
                   <Mail className="h-6 w-6" />
                 </Link>
               </div>
+
             </div>
           </div>
         </div>

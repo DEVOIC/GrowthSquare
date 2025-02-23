@@ -8,7 +8,9 @@ export async function createContact(prestate: string, formData: FormData) {
     collegeName: formData.get('collegeName') as string,
     contactNumber: formData.get('contactNumber') as string,
     yearOfGraduation:Number( formData.get('yearOfGraduation') ),
+  
   }
+
   const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/contact/create-contact`, {
     method: 'POST',
     headers: {
