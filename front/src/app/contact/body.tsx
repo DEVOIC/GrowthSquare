@@ -15,9 +15,12 @@ const Body = () => {
   const { toast } = useToast()
   useEffect(() => {
     const showstate = () => {
-      toast({
-        description: state,
-      })
+      if (state){
+
+        toast({
+          description: state,
+        })
+      }
     }
     showstate();
   }
@@ -147,12 +150,15 @@ const Body = () => {
                       Year of Graduation
                     </label>
                     <select
+                      defaultValue={new Date().getFullYear()+1}
                       id="yearOfGraduation"
                       name="yearOfGraduation"
                       className="rounded-none border-2 border-lightblue  font-semibold text-md lg:text-xl w-full p-2"
                       required
                     >
-                      <option value="" className='text-gray-400' disabled selected>Select</option>
+                      <option
+                    
+                       value="" className='text-gray-400' disabled >Select</option>
                       {Array.from({ length: 4 }, (_, i) => new Date().getFullYear() + i).map(year => (
                         <option key={year} value={year} className='text-darkblue'>
                           {year}
