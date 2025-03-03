@@ -1,5 +1,5 @@
 "use client";
-import { MoveUpRight } from 'lucide-react'
+// import { MoveUpRight } from 'lucide-react'
 import Image from 'next/image'
 // import React,{useEffect, useState} from 'react'
 
