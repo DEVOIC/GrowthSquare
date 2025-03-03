@@ -7,7 +7,7 @@ const Galley = () => {
   return (
     <div className="w-screen bg-lightblue relative overflow-hidden">
       <section className=" mx-auto  py-24 ">
-        <h2 className="text-3xl px-4 font-bold text-white font-transforma mb-12">
+        <h2 className="container  mx-auto text-3xl px-4 font-bold text-white font-transforma mb-12">
           <p>Moments of Learning and Collaboration</p>
         </h2>
         <div className=" space-y-2  ">
