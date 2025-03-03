@@ -14,7 +14,7 @@ const Initiaitive = () => {
       <div className=" ellipse mid-left"></div>
 
       <section className=" py-20 bg-darkblue">
-        <h2 className="text-3xl font-bold text-white mx-auto px-2 lg:px-4 font-transforma mb-12">
+        <h2 className="container text-3xl font-bold text-white mx-auto px-2 lg:px-4 font-transforma mb-12">
           <p>Experience GrowthSquare's Signature Programs</p>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 px-6 relative z-20">
