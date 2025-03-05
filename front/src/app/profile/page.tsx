@@ -83,10 +83,10 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-900">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-white ">         {/*  bg-gradient-to-br from-blue-800 via-blue-600 to-blue-900 */}
       <div className="max-w-4xl mx-auto">
         {/* card */}
-        <div className="backdrop-blur-lg bg-white/10 rounded-2xl shadow-xl overflow-hidden border border-white/20">
+        <div className="backdrop-blur-lg bg-blue-700 rounded-2xl shadow-xl overflow-hidden border border-white/20">
           {/* Profile picture centered at the top */}
           <div className="flex flex-col items-center pt-10 pb-6">
             <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-lg mb-4">
