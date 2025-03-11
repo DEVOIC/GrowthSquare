@@ -53,7 +53,7 @@ const TestCard = ({ data }: { data: Testimonial }) => {
   return (
     <Card className={`bg-white py-8 lg:p-6 h-full md:col-span-2 `}>
       <CardContent>
-        <div className="flex items-center space-x-4 mb-4">
+        <div className="flex items-center space-x-4  mb-4">
           <Avatar>
             <Image
               src={data.profileImage}
@@ -126,8 +126,8 @@ const Testimonial = () => {
       <div className=" ellipse mid-left"></div>
       <div className=" ellipse bottom-right"></div>
 
-      <section className="container z-10 mx-auto px-4 py-20 bg-darkblue">
-        <h2 className="text-3xl font-bold text-white font-transforma mb-12">
+      <section className="container z-10 mx-auto px-4 py-20 bg-darkblue ">
+        <h2 className="text-3xl font-bold text-white font-transforma mb-12 p-9">
           <p>Voices of Achievement</p>
         </h2>
 

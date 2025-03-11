@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Hero = () => {
   return (
 
-    <section className=" h-full bg-darkblue  pb-10  ">
+    <section className=" h-full bg-darkblue pb-10  ">
       <div className=' container mx-auto px-4 py-10 lg:pt-32 lg:pb-20 text-center  relative'>
         <div className="ellipse top-right"></div>
         <div className="ellipse bottom-left"></div>
