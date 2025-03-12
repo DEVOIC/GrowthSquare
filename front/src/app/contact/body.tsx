@@ -54,7 +54,7 @@ const Body = () => {
 
               {/* social media section */}
 
-              <div className="bg-lightblue h-[400px] lg:h-auto lg:w-[40%] my-16 mx-4 lg:m-8 text-white">
+              <div className="bg-lightblue h-[400px] lg:h-auto lg:w-[40%] my-16 mx-4 lg:m-8 text-white hidden lg:block xl:block md:block">
                 <div className="relative  text-center h-[100%] lg:h-[80%]">
                   <div className="absolute inset-0 opacity-30  ">
                     <Image
@@ -62,7 +62,7 @@ const Body = () => {
                       layout="fill"
                       // objectFit="cover"
                       alt="Contact Us"
-                      className='object-cover  '
+                      className='object-cover'
                     />
                   </div>
                   <h2 className="relative z-10 text-2xl font-bold py-10 px-6 text-white">
