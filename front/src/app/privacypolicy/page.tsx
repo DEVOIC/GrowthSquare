@@ -8,7 +8,7 @@ export default function PrivacypolicyPage() {
 <section className=" bg-darkblue  ">
         <Navbar/>
 
-        <div className="text-white font-bold text-3xl">HI this is privacy policy</div>
+        <div className="text-white font-bold text-3xl">This is privacy policy</div>
 
         <Footer/>
         </section>
