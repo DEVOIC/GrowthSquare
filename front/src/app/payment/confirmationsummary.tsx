@@ -1,11 +1,48 @@
 import React from 'react'
 import { SquareCheckBig } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Script from 'next/script'
 
 export const Confirmationsummary = () => {
+
+    const createOrder = async () => {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/payment/create-order`,{
+            method: "POST",
+            body: JSON.stringify("5000")
+      })
+      const data = await res.json()
+    
+    const paymentData = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        order_id: data.id,
+
+        handler : async function (response:any) {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/payment/verify/verify-payment`, {
+                method: "POST",
+                body: JSON.stringify({
+                    orderId: response.razorpay_order_id,
+                    razorpayPaymentId: response.razorpay_payment_id,
+                    razorpaySignature: response.razorpay_signature
+                })
+            })
+            const data = await res.json()
+            console.log(data)
+            if(data.isOk){
+                // page transition as payment is successful 
+                alert("payment successful")
+            } else {
+                alert("payment failed")
+            }
+        }
+    }
+
+    const payment = new (window as any).Razorpay(paymentData)
+    payment.open()
+    }
     return (
         <>
             <div className="lg:col-span-1 mt-6">
+                <Script src='https://checkout.razorpay.com/v1/checkout.js' type='text/javascript' />
                 <div className="bg-white  border-[1px] border-lightblue md:w-[550px] z-10 relative">
                     <div>
                         <h2 className="text-md pl-10 font-bold  text-darkblue py-6">ORDER SUMMARY - #07111124</h2>
@@ -78,7 +115,7 @@ export const Confirmationsummary = () => {
                         <span className='text-darkblue font-medium'> {Date().slice(3, 16)} | {new Date().getHours()} : {new Date().getMinutes()} </span>
                     </div>
                     <div className='w-full flex justify-center py-4'>
-                         <Button className="w-[60%] rounded-none hover:bg-lightblue/80" size="lg">
+                         <Button className="w-[60%] rounded-none hover:bg-lightblue/80" size="lg" onClick={createOrder}>
                         Purchase Now
                     </Button>
                     </div>
