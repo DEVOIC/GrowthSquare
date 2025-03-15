@@ -4,7 +4,7 @@ export function middleware(request) {
   const { pathname } = request.nextUrl;
 
   // List of routes you want to block
-  const blockedRoutes = ['/courses', '/payment','/login','/signup'];
+  const blockedRoutes = ['/courses', '/payment'];
 
   if (blockedRoutes.includes(pathname)) {
     // Return a 404 response for blocked routes
@@ -16,5 +16,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/courses/:path*', '/payment/:path*','/login','/signup'], // Only run middleware for these paths
+  matcher: ['/courses/:path*', '/payment/:path*'], // Only run middleware for these paths
 };
