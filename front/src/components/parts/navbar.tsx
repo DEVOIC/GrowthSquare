@@ -34,14 +34,37 @@ const Navbar = () => {
         style={{ zIndex: "100" }}
         className="container bg-darkblue customnav min-w-full  px-10  sticky top-0  py-4"
       >
-        <div className="flex items-center  justify-between">
-          <Link href="/" className="md:flex hidden items-center space-x-2">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
             <Image src={Logo} alt="logo" />
           </Link>
-          <GiHamburgerMenu
-            className="md:hidden block text-[#015aff] h-8 w-8"
-            onClick={handleClick}
-          />
+          
+          <div className="hidden md:flex items-center space-x-6 text-gray-300">
+            <Link href="/home" className="hover:text-white">
+              Home
+            </Link>
+            <div className="h-full w-1 ">|</div>
+            <Link href="/about" className="hover:text-white">
+              About
+            </Link>
+            <div className="h-full w-1 ">|</div>
+            <Link href="https://blog.growthsq.in/" className="hover:text-white">
+              Blog
+            </Link>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <div className="hidden md:block ">
+              <Link href="/contact" className="text-white ">
+                <Button variant={"default"}>Become A Member</Button>
+              </Link>
+            </div>
+            <GiHamburgerMenu
+              className="md:hidden block text-[#015aff] h-8 w-8"
+              onClick={handleClick}
+            />
+          </div>
+
           <div
             className="w-[100vw] h-[100vh] left-0 top-0 absolute flex z-40"
             style={{
@@ -49,7 +72,7 @@ const Navbar = () => {
               visibility: click ? "visible" : "hidden",
             }}
           >
-            <div className="w-[60%] h-[100vh]  flex-[0.6] bg-darkblue px-12 py-8">
+            <div className="w-[60%] h-[100vh] flex-[0.6] bg-darkblue px-12 py-8">
               <div className="w-[95%] flex justify-between">
                 <span className="">
                   <Image src={Logo} alt="logo" className="opacity-100" />
@@ -78,43 +101,18 @@ const Navbar = () => {
                 >
                   Blog
                 </Link>
+                <Link
+                  href="/contact"
+                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                >
+                  Become A Member
+                </Link>
               </div>
             </div>
             <div
               className="w-[40%] h-[100vh] bg-black opacity-30 flex-[0.4]"
               onClick={handleClick}
             ></div>
-          </div>
-          <div className="hidden md:flex items-center space-x-6 text-gray-300">
-            <Link href="/home" className="hover:text-white">
-              Home
-            </Link>
-            <div className="h-full w-1 ">|</div>
-            <Link href="/about" className="hover:text-white">
-              About
-            </Link>
-            <div className="h-full w-1 ">|</div>
-            {/* <Link href="/courses" className="hover:text-white">Courses</Link> */}
-            {/* <div className='h-full w-1 '>|</div> */}
-            <Link href="https://blog.growthsq.in/" className="hover:text-white">
-              Blog
-            </Link>
-          </div>
-          <div className="flex items-center space-x-4 z-30">
-            <Link href="/contact" className="text-white">
-              <Button variant={"default"}>Become A Member</Button>
-            </Link>
-            {/* <div>
-                            {value ?
-                                <Button onClick={logout} className='text-white' variant="outline">
-                                    Logout
-                                </Button>
-                                : <Link href="/login" className="text-white">
-                                    <Button variant="outline">
-                                        Login
-                                    </Button>
-                                </Link>}
-                        </div> */}
           </div>
         </div>
       </nav>
