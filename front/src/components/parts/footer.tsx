@@ -122,10 +122,10 @@ const Footer = () => {
                 <div className="w-2/3 mx-auto py-4 my-auto">
 
                   <p>
-                    mast quote to inspire ppl lorem ipsum dolor sit amet amet, consectetur adipiscing elit
+                  "Alone, we can do so little; together, we can do so much."
                   </p>
                   <p>
-                    ~ John Doe
+                    ~ Helen Keller
                   </p>
                 </div>
               </div>
