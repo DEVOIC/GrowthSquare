@@ -39,7 +39,7 @@ export default function AboutPage() {
 
       <Inovators />
 
-      <Gsmarque />
+      {/* <Gsmarque /> */}
 
       {/* FAQ Section */}
       <Faqs />
