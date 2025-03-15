@@ -238,7 +238,7 @@ const members: Member[] = [
      linkedin: "https://linkedin.com/in/username",
   github: "https://github.com/username",
   twitter: "https://twitter.com/username",
-  instagram: "https://instagram.com/usernameheelo"
+  instagram: "https://instagram.com/usernameheel"
     }
   ];
 
