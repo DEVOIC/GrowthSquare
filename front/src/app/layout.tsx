@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
-import { BsWhatsapp } from "react-icons/bs";
+// import { BsWhatsapp } from "react-icons/bs";
 
 const Transformabold = localFont({
   src: "./fonts/TransformaSans_Trial-Bold-BF660ca8e06490f.otf",  variable: "--font-transforma",
