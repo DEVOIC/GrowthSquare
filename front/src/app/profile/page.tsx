@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { User, Mail, Phone, Calendar, Link, Code, FileText } from "lucide-react";
+import { Phone, Calendar, Link, Code, FileText } from "lucide-react";
 import Image from "next/image";
 
 // Define the user profile interface
