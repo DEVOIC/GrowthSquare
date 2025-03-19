@@ -22,7 +22,7 @@ const Faqs = () => {
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/faq/get-faqs`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
