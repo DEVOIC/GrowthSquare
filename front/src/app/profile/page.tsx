@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -31,26 +30,35 @@ export default function ProfilePage() {
     // This would be replaced with an actual API call
     const fetchProfile = async () => {
       try {
-        // Simulating API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      })
+      const data = await response.json()
+         console.log(data)
+         setProfile(data)
+        // await new Promise(resolve => setTimeout(resolve, 1000));
         
         // Mock data
-        const mockProfile: UserProfile = {
-          username: "Sumit Singh Raghuwanshi",
-          contactNumber: "+91 8770487454",
-          bio: "Senior Software Engineer with 5+ years of experience in full-stack development. Passionate about creating intuitive user experiences and scalable backend solutions.",
-          socialLinks: {
-            twitter: "https://twitter.com/Sumit",
-            linkedin: "https://linkedin.com/in/sumit",
-            github: "https://github.com/sumit",
-            website: "https://sumit.dev"
-          },
-          dateOfBirth: "1895-05-19",
-          profilePicture: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          skills: ["React", "TypeScript", "Node.js", "HTML", "AWS", "Docker", "MongoDB", "Next.js", "CSS", "JavaScript", ]
-        };
+        // const mockProfile: UserProfile = {
+        //   username: "Sumit Singh Raghuwanshi",
+        //   contactNumber: "+91 8770487454",
+        //   bio: "Senior Software Engineer with 5+ years of experience in full-stack development. Passionate about creating intuitive user experiences and scalable backend solutions.",
+        //   socialLinks: {
+        //     twitter: "https://twitter.com/Sumit",
+        //     linkedin: "https://linkedin.com/in/sumit",
+        //     github: "https://github.com/sumit",
+        //     website: "https://sumit.dev"
+        //   },
+        //   dateOfBirth: "1895-05-19",
+        //   profilePicture: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        //   skills: ["React", "TypeScript", "Node.js", "HTML", "AWS", "Docker", "MongoDB", "Next.js", "CSS", "JavaScript", ]
+        // };
         
-        setProfile(mockProfile);
+        // setProfile(mockProfile);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching profile:", error);

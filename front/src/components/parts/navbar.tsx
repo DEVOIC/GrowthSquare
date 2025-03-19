@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 // import { cookies } from 'next/headers';
 // import { redirect } from 'next/navigation';
-const Navbar = () => {
+const Navbar =() => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
   // commented this only for the purpose of testing the logout function
 
   // const cookieStore = await cookies()
-  // const value = cookieStore.has('token')
+  // const token = cookieStore.has('token')
   // async function logout() {
   //     const cookieStore = await cookies()
   //     cookieStore.delete('token');
@@ -26,7 +26,7 @@ const Navbar = () => {
   //     // Redirect to login page or perform other actions after logout
   // }
 
-  // const value = false;
+  const value = false;
 
   return (
     <>
@@ -57,6 +57,11 @@ const Navbar = () => {
             <div className="hidden md:block ">
               <Link href="/contact" className="text-white ">
                 <Button variant={"default"}>Become A Member</Button>
+              </Link>
+            </div>
+            <div className="hidden md:block ">
+              <Link href="/login" className="text-white ">
+                <Button className="bg-transparent border border-white">Login</Button>
               </Link>
             </div>
             <GiHamburgerMenu
@@ -107,6 +112,20 @@ const Navbar = () => {
                 >
                   Become A Member
                 </Link>
+                {/* {token === null ?
+                <Link
+                  href="/login"
+                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                  >
+                    Login
+                  </Link>
+                : 
+                 <Button
+                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                  onClick={logout}
+                  >
+                    Logout
+                  </Button>} */}
               </div>
             </div>
             <div
