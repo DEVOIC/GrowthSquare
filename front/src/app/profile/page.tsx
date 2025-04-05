@@ -1,13 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Phone, Calendar, Link, FileText } from "lucide-react";
-import Image from "next/image";
-import axios from "axios";
 
+import { useState, useEffect } from "react";
+import { Phone, Calendar, Link, Code, FileText } from "lucide-react";
+import Image from "next/image";
 
 // Define the user profile interface
 interface UserProfile {
-  name: string;
+  username: string;
   contactNumber: string;
   bio: string;
   socialLinks: {
@@ -29,24 +28,37 @@ export default function ProfilePage() {
   // Simulate fetching user profile data from backend
   useEffect(() => {
     // This would be replaced with an actual API call
-    console.log(`token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}`)
     const fetchProfile = async () => {
       try {
-        const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Cookie: `token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}; SameSite=Lax; Secure`,
-            },
-            withCredentials: true,
-            // Allow cross-domain requests
-             // Include credentials (cookies)
-          }
-        );
-
-        console.log(response);
-        setProfile(response.data.data.user); // Assuming the response contains the profile data
+      const response = await fetch(`/api/auth/check-auth`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      })
+      const data = await response.json()
+         console.log(data)
+         setProfile(data)
+        // await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Mock data
+        // const mockProfile: UserProfile = {
+        //   username: "Sumit Singh Raghuwanshi",
+        //   contactNumber: "+91 8770487454",
+        //   bio: "Senior Software Engineer with 5+ years of experience in full-stack development. Passionate about creating intuitive user experiences and scalable backend solutions.",
+        //   socialLinks: {
+        //     twitter: "https://twitter.com/Sumit",
+        //     linkedin: "https://linkedin.com/in/sumit",
+        //     github: "https://github.com/sumit",
+        //     website: "https://sumit.dev"
+        //   },
+        //   dateOfBirth: "1895-05-19",
+        //   profilePicture: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        //   skills: ["React", "TypeScript", "Node.js", "HTML", "AWS", "Docker", "MongoDB", "Next.js", "CSS", "JavaScript", ]
+        // };
+        
+        // setProfile(mockProfile);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -89,13 +101,13 @@ export default function ProfilePage() {
             <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-lg mb-4">
               <Image 
                 src={profile.profilePicture} 
-                alt={profile.name}
+                alt={profile.username}
                 fill
                 style={{ objectFit: "cover" }}
                 priority
               />
             </div>
-            <h1 className="text-3xl font-bold text-white">{profile.name}</h1>
+            <h1 className="text-3xl font-bold text-white">{profile.username}</h1>
           </div>
 
           {/* Contact info centered with stacked layout */}
@@ -135,7 +147,7 @@ export default function ProfilePage() {
                   <Link size={20} />
                   Social Links
                 </h2>
-                {/* <ul className="space-y-3">
+                <ul className="space-y-3">
                   {Object.entries(profile.socialLinks).map(([platform, url]) => (
                     <li key={platform} className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
@@ -154,11 +166,11 @@ export default function ProfilePage() {
                       </a>
                     </li>
                   ))}
-                </ul> */}
+                </ul>
               </div>
 
               {/* Skills */}
-              {/* <div className="p-4 backdrop-blur-md bg-white/5 rounded-xl">
+              <div className="p-4 backdrop-blur-md bg-white/5 rounded-xl">
                 <h2 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
                   <Code size={20} />
                   Skills
@@ -174,7 +186,7 @@ export default function ProfilePage() {
                     </span>
                   ))}
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
