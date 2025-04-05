@@ -26,7 +26,7 @@ const Navbar =() => {
   //     // Redirect to login page or perform other actions after logout
   // }
 
-  const value = false;
+
 
   return (
     <>
