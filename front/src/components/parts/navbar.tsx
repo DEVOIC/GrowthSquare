@@ -7,20 +7,30 @@ import Logo from "../../../public/gslogo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
-const Navbar =() => {
+const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [token, setToken] = useState("")
+  const [token, setToken] = useState<string | null>(null);
 
   const handleClick = () => {
     setClick(!click);
   };
 
   useEffect(() => {
-    setToken(document?.cookie?.split('; ').find(row => row.startsWith('token=')).split('=')[1])
-  }, [])
+    // Safely access cookies
+    if (typeof document !== 'undefined') {
+      const cookies = document.cookie;
+      const tokenCookie = cookies.split(';').find(row => row.trim().startsWith('token='));
+      
+      if (tokenCookie) {
+        const tokenValue = tokenCookie.split('=')[1];
+        setToken(tokenValue);
+      }
+    }
+  }, []);
 
   const logout = () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/home";
+    setToken(null);
   }
 
   return (
@@ -33,7 +43,7 @@ const Navbar =() => {
           <Link href="/" className="flex items-center space-x-2">
             <Image src={Logo} alt="logo" />
           </Link>
-          
+
           <div className="hidden md:flex items-center space-x-6 text-gray-300">
             <Link href="/home" className="hover:text-white">
               Home
@@ -47,7 +57,7 @@ const Navbar =() => {
               Blog
             </Link>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <div className="hidden md:block ">
               <Link href="/contact" className="text-white ">
@@ -55,17 +65,20 @@ const Navbar =() => {
               </Link>
             </div>
             <div className="hidden md:block ">
-              {token === null ?
-              <Link href="/login" className="text-white ">
-                <Button className="bg-transparent border border-white">Login</Button>
-              </Link>
-              :
-              <Link href="/home" className="text-white"><Button
-                className="bg-transparent border border-white"
-                onClick={logout}
-                >
-                Logout
-              </Button></Link>}
+              {!token ? (
+                <Link href="/login" className="text-white ">
+                  <Button className="bg-transparent border border-white">Login</Button>
+                </Link>
+              ) : (
+                <Link href="/home" className="text-white">
+                  <Button
+                    className="bg-transparent border border-white"
+                    onClick={logout}
+                  >
+                    Logout
+                  </Button>
+                </Link>
+              )}
             </div>
             <GiHamburgerMenu
               className="md:hidden block text-[#015aff] h-8 w-8"
@@ -115,25 +128,26 @@ const Navbar =() => {
                 >
                   Become A Member
                 </Link>
-                {token === null ?
-                <Link
-                  href="/login"
-                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                {!token ? (
+                  <Link
+                    href="/login"
+                    className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
                   >
                     Login
                   </Link>
-                : 
-                 <Link 
-                  href="/home"
-                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
-                  onClick={logout}
+                ) : (
+                  <Link
+                    href="/home"
+                    className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                    onClick={logout}
                   >
                     Logout
-                  </Link>}
+                  </Link>
+                )}
               </div>
             </div>
             <div
-              className="w-[40%] h-[100vh] bg-black opacity-30 flex-[0.4]"
+              className="flex-[0.4] bg-black bg-opacity-50"
               onClick={handleClick}
             ></div>
           </div>
