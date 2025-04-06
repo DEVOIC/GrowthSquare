@@ -29,15 +29,15 @@ export default function ProfilePage() {
   // Simulate fetching user profile data from backend
   useEffect(() => {
     // This would be replaced with an actual API call
-    console.log(`token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}`)
+    //console.log(`token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}`)
     const fetchProfile = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`,
+          `/api/auth/check-auth`,
           {
             headers: {
               "Content-Type": "application/json",
-              Cookie: `token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}; SameSite=Lax; Secure`,
+             // Cookie: `token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}; SameSite=Lax; Secure`,
             },
             withCredentials: true,
             // Allow cross-domain requests
