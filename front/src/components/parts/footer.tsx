@@ -1,5 +1,6 @@
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Instagram,
   Linkedin,
@@ -8,7 +9,27 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+// Local quotes array to avoid CORS issues
+const quotes = [
+  { text: "Alone, we can do so little; together, we can do so much.", author: "Helen Keller" },
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+  { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+  { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" },
+  { text: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+  { text: "What you get by achieving your goals is not as important as what you become.", author: "Zig Ziglar" }
+];
+
 const Footer = () => {
+  const [quote, setQuote] = useState(quotes[0]);
+
+  useEffect(() => {
+    // Get a random quote from our local array
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setQuote(quotes[randomIndex]);
+  }, []);
+
   return (
     <div className="w-screen relative">
       {/* <div className="w-screen relative py-10 lg:py-20  px-2 sm:px-16 md:px-28 "> */}
@@ -119,14 +140,10 @@ const Footer = () => {
             </div>
             <div className="flex lg:w-1/2 flex-col">
 
-              <div className="border-b-2 p-4  ">
+              <div className="border-b-2 p-4">
                 <div className="w-2/3 mx-auto py-4 my-auto">
-                  <p>
-                  "Alone, we can do so little; together, we can do so much."
-                  </p>
-                  <p>
-                    ~ Helen Keller
-                  </p>
+                  <p>"{quote.text}"</p>
+                  <p>~ {quote.author}</p>
                 </div>
               </div>
 
@@ -151,7 +168,7 @@ const Footer = () => {
       </footer>
       <div className=" font-medium  border-t text-white bg-lightblue border-gray-800 p-5 flex flex-col md:flex-row justify-between items-center">
         <div className="mx-auto w-10/12 container flex lg:flex-row flex-col-reverse items-center gap-4 lg:gap-0 lg:justify-between">
-          <p className="text-center">&copy; 2024 Copyright. All Rights Reserved</p>
+          <p className="text-center">&copy; {new Date().getFullYear()} Copyright. All Rights Reserved</p>
           <div className="flex flex-wrap items-center justify-center space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-white">
               Terms & Conditions

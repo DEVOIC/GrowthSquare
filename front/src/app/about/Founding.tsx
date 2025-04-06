@@ -8,11 +8,11 @@ const Founding = () => {
   return (
     <section className="bg-white py-12 px-4 ">
       <div className="ellipse top-right"></div>
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-lightblue mb-8">
+      <div className="">
+        <h2 className="text-3xl font-bold text-lightblue mb-2">
           The Visionary Architects of Our Mission
         </h2>
-        <p className="text-xl mb-12">
+        <p className="text-lg mb-12">
           Meet the trailblazers who set the foundation and continue to guide our
           community towards growth and innovation
         </p>
