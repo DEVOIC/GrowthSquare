@@ -32,7 +32,7 @@ export default function ProfilePage() {
     console.log(`token=${document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]}`)
     const fetchProfile = async () => {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`,
           {
             headers: {
