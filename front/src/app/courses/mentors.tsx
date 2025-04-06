@@ -3,7 +3,7 @@ import Loading from "../loading";
 
 
 export const Mentors = async() => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/team/get-team-data`)
     if(data.status !==200){
       return (<Loading/>)
     }
