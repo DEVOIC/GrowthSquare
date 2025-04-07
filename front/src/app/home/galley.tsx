@@ -19,7 +19,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -42,7 +42,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -67,7 +67,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -90,7 +90,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -119,7 +119,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -135,7 +135,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -153,7 +153,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -169,7 +169,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -191,7 +191,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -214,7 +214,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/file/d/1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -239,7 +239,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/uc?export=view&id=1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
@@ -262,7 +262,7 @@ const Galley = () => {
                     width={250}
                     height={100}
                     objectFit="cover"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1z3WO2y5h7YkHljxIsvwuOxP21OE_8tnedA&s"
+                    src="https://drive.google.com/uc?export=view&id=1qSsmLovtTLpv1k-kJy1Br4B7689fP2AX"
                     alt="1"
                   />
                 </div>
