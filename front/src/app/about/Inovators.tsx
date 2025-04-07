@@ -13,9 +13,9 @@ const Inovators = () => {
       <div className="ellipse top-left"></div>
       <div className="ellipse bottom-right"></div>
 
-      <div className="max-w-6xl mx-auto px-5">
-        <h2 className="text-4xl font-bold text-lightblue mb-8">The Euphoric Intellectuals behind Growth Square</h2>
-        <p className="text-xl mb-12">
+      <div className="">
+        <h2 className="text-3xl max-w-4xl font-bold text-lightblue mb-2">The Euphoric Intellectuals behind Growth Square</h2>
+        <p className="text-lg mb-12">
           The dedicated team working hard to build on the foundation laid by the mentors—
           ready to take on new challenges and grow together.
         </p>

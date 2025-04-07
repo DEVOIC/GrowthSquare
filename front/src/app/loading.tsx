@@ -4,8 +4,6 @@ export default function Loading() {
   return (
     <div className="min-h-screen items-center bg-white">
       {/* Left Section */}
-  
-      
       {/* Right Section */}
       <div className="flex items-center justify-center p-8">
         <div className="text-center space-y-4">

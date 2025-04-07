@@ -26,10 +26,6 @@ export default function Home() {
       <Hero />
 
       <Courses />
-
-      {/* <Stats /> */}
-
-
       {/* Testimonials */}
       <Testimonial />
       <Stats />
@@ -42,16 +38,12 @@ export default function Home() {
 
       {/* Exclusive Squares */}
       <div className="overflow-hidden relative">
-      <Gsmarque />
-
+        <Gsmarque />
       </div>
       <Initiaitive />
 
       {/* FAQ Section */}
-      {/* <FaqContainer> */}
-        <Faqs />
-      {/* </FaqContainer> */}
-
+      <Faqs page={"Home"} />
       {/* Footer */}
       <Footer />
 
