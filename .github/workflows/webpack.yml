@@ -30,4 +30,4 @@ jobs:
       env:
         NEXT_PUBLIC_BACK_API: ${{ secrets.API_BASE_URL }}
         NEXT_PUBLIC_ROUTE: ${{ secrets.API_ROUTE }}
-        NEXT_PUBLIC_PORT: ""
+        NEXT_PUBLIC_PORT: ${{ secrets.API_PORT}}
