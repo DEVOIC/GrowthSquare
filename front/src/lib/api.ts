@@ -1,10 +1,10 @@
 import {
     ApiResponse,
-    Faq,
+    // Faq,
     FaqResponse,
-    Course,
+    // Course,
     CourseResponse,
-    TeamMember,
+    // TeamMember,
     Testimonial
 } from '@/types/api';
 

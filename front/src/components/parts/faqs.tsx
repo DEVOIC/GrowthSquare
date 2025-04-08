@@ -1,5 +1,5 @@
 "use client"
-import Loading from '@/app/loading'
+// import Loading from '@/app/loading'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { useToast } from '@/hooks/use-toast'
 import { getFaqs } from '@/lib/api'
@@ -22,7 +22,7 @@ const Faqs = ({ page }: FaqsProps) => {
         const response = await getFaqs();
         setFaqs(response.data.faqs);
       } catch (err) {
-        setError('Error fetching FAQs');
+        setError(`Error fetching FAQs ${err}`);
         toast({
           description: "Error fetching FAQs",
         });
