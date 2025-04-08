@@ -22,22 +22,22 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: 'front/package-lock.json'  # Add this line
+
     - name: Debug env variables
       run: |
-        echo "BACK_API: ${{ secrets.API_BASE_UR }}"
+        echo "BACK_API: ${{ secrets.API_BASE_URL }}"
         echo "PORT: ${{ secrets.API_PORT }}"
         echo "ROUTE: ${{ secrets.API_ROUTE }}"
-
+        
     - name: Install dependencies
-      run: |
-        cd front
-        npm install
+      working-directory: ./front  # Better than cd
+      run: npm ci  # Better than npm install for CI
 
     - name: Build project
-      run: |
-        cd front
-        npm run build
+      working-directory: ./front
+      run: npm run build
       env:
-        NEXT_PUBLIC_BACK_API: ${{ secrets.API_BASE_UR || 'http://localhost' }}
+        NEXT_PUBLIC_BACK_API: ${{ secrets.API_BASE_URL || 'http://localhost' }}
         NEXT_PUBLIC_PORT: ${{ secrets.API_PORT || '3001' }}
         NEXT_PUBLIC_ROUTE: ${{ secrets.API_ROUTE || 'api/V1' }}
