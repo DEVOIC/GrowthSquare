@@ -4,7 +4,7 @@ export function middleware(request) {
   const { pathname } = request.nextUrl;
 
   // List of routes you want to block
-  const blockedRoutes = ['/payment'];
+  const blockedRoutes = [];
 
   if (blockedRoutes.includes(pathname)) {
     // Return a 404 response for blocked routes
