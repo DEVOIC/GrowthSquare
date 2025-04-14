@@ -8,7 +8,7 @@ export const Confirmationsummary = () => {
     const createOrder = async () => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/payment/create-order`,{
             method: "POST",
-            body: JSON.stringify("5000")
+            body: JSON.stringify("5000") 
       })
       const data = await res.json()
     

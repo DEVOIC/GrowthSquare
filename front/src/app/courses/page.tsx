@@ -48,19 +48,6 @@ export default function CoursesPage() {
             Lorem ipsum dolor sit amet,
             <br />adipiscing lit courses
           </h2>
-          <div className="flex gap-4 lg:gap-10 my-20 flex-wrap">
-            {['All', 'App Development', 'UI/UX Design', 'Video Editing', 'Web Development'].map((category, idx) => (
-              <button
-                key={idx}
-                className={`px-4 py-1  lg:text-xl font-medium rouded-none ${idx === 0
-                  ? 'bg-lightblue text-white'
-                  : 'border border-lightblue text-lightblue hover:bg-blue-50'
-                  }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
           {/* Course Cards */}
           <Courses />
         </div>
