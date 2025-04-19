@@ -49,7 +49,7 @@ const ProfilePage = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/profile/edit`,  //change this 
+        `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/edit-profile`,
         {
           skills: tempSkills,
           socialLinks: tempSocials,
