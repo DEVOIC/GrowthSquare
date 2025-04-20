@@ -170,13 +170,13 @@ const Footer = () => {
         <div className="mx-auto w-10/12 container flex lg:flex-row flex-col-reverse items-center gap-4 lg:gap-0 lg:justify-between">
           <p className="text-center">&copy; {new Date().getFullYear()} Copyright. All Rights Reserved</p>
           <div className="flex flex-wrap items-center justify-center space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="text-white">
+            <Link href="/termsncondition" className="text-white hover:underline">
               Terms & Conditions
             </Link>
-            <Link href="#" className="text-white">
+            <Link href="/privacypolicy" className="text-white hover:underline">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-white">
+            <Link href="/refundpolicy" className="text-white hover:underline">
               Refund Policy
             </Link>
           </div></div>

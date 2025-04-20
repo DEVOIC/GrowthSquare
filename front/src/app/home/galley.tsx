@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import TopArrow from "./Vector 2.png";
 
 const Galley = () => {
   const images = [
@@ -11,17 +12,53 @@ const Galley = () => {
     "16MpVe3xEfjPAd1u0XNPh3UFcG-12zA2Q"
   ];
 
+  const arrowContents = ["Cohort Meet", "Event", "Collab Event", "Learn", "Upskill"];
+
+  const TopArrowContent = ({ content }: { content: string }) => (
+    <div className="m-2 bg-darkblue w-52 font-bold text-xl text-white flex justify-between align-middle relative">
+      <div className="bottom-0 left-0 absolute">
+        <Image alt="arrow" src={TopArrow} width={30} height={30} />
+      </div>
+      <div className="w-full ml-10 py-4">{content}</div>
+    </div>
+  );
+
   const ImageComponent = ({ id }: { id: string }) => (
     <div className="m-2">
       <Image
-        width={250}
-        height={100}
-        style={{ objectFit: "cover" }}
+        width={300}
+        height={200}
+        style={{
+          width: '300px',
+          height: '200px',
+          objectFit: 'cover',
+          borderRadius: '5px'
+        }}
         src={`https://drive.google.com/uc?export=view&id=${id}`}
         alt="Gallery image"
       />
     </div>
   );
+
+  const renderImagesWithTopArrow = (images: string[], prefix: string) => {
+    return images.map((id, index) => {
+      const elements = [
+        <ImageComponent key={`${prefix}-${index}`} id={id} />
+      ];
+      
+      if ((index + 1) % 3 === 0) {
+        const contentIndex = Math.floor(index / 3) % arrowContents.length;
+        elements.push(
+          <TopArrowContent 
+            key={`${prefix}-arrow-${index}`} 
+            content={arrowContents[contentIndex]} 
+          />
+        );
+      }
+      
+      return elements;
+    }).flat();
+  };
 
   return (
     <div className="w-screen bg-lightblue relative overflow-hidden">
@@ -34,15 +71,10 @@ const Galley = () => {
           <div className="bg-white bg-opacity-10 w-full">
             <div className="overflow-hidden before-marquee">
               <div className="flex w-fit space-x-3 animate-marquee">
-                {images.map((id, index) => (
-                  <ImageComponent key={`marquee1-${index}`} id={id} />
-                ))}
-                {/* Keep existing commented code blocks */}
+                {renderImagesWithTopArrow(images, 'marquee1')}
               </div>
               <div aria-hidden="true" className="flex w-fit space-x-3 animate-marquee">
-                {images.map((id, index) => (
-                  <ImageComponent key={`marquee1-clone-${index}`} id={id} />
-                ))}
+                {renderImagesWithTopArrow(images, 'marquee1-clone')}
               </div>
             </div>
           </div>
@@ -51,14 +83,10 @@ const Galley = () => {
           <div className="bg-white bg-opacity-10 w-full">
             <div className="overflow-hidden before-marquee-reverse">
               <div className="w-fit animate-marquee-reverse">
-                {images.map((id, index) => (
-                  <ImageComponent key={`marquee2-${index}`} id={id} />
-                ))}
+                {renderImagesWithTopArrow(images, 'marquee2')}
               </div>
               <div aria-hidden="true" className="w-fit animate-marquee-reverse">
-                {images.map((id, index) => (
-                  <ImageComponent key={`marquee2-clone-${index}`} id={id} />
-                ))}
+                {renderImagesWithTopArrow(images, 'marquee2-clone')}
               </div>
             </div>
           </div>
