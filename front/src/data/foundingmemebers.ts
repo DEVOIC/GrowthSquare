@@ -6,6 +6,7 @@ interface Member {
     github?: string;
     twitter?: string;
     instagram?: string;
+    website?: string;
   }
 const foundingMemebers: Member[] = [
     {
