@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { MoveUpRight } from "lucide-react";
-import { FaGithub, FaLinkedin, FaTwitter, FaUser } from "react-icons/fa";
+import { FaLinkedin, FaUser } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import foundingMemebers from "@/data/foundingmemebers";
 
