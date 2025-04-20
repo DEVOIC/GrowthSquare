@@ -154,10 +154,7 @@ body {
 
 .before-marquee {
   font-size: 15px;
-
-  
   user-select: none;
-
   --gap: 60px;
   display: flex;
   gap: var(--gap);
