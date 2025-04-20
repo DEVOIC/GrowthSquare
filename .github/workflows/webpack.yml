@@ -1,0 +1,43 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'front/package-lock.json'  # Add this line
+
+    - name: Debug env variables
+      run: |
+        echo "BACK_API: ${{ secrets.API_BASE_UR }}"
+        echo "PORT: ${{ secrets.API_PORT }}"
+        echo "ROUTE: ${{ secrets.API_ROUTE }}"
+        
+    - name: Install dependencies
+      working-directory: ./front  # Better than cd
+      run: npm ci  # Better than npm install for CI
+
+    - name: Build project
+      working-directory: ./front
+      run: npm run build
+      env:
+        NEXT_PUBLIC_BACK_API: ${{ secrets.API_BASE_UR || 'http://localhost' }}
+        NEXT_PUBLIC_PORT: ${{ secrets.API_PORT || '3001' }}
+        NEXT_PUBLIC_ROUTE: ${{ secrets.API_ROUTE || 'api/V1' }}

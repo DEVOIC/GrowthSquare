@@ -118,8 +118,6 @@ const Testimonial = () => {
   //     return <div></div>;
 
   //   }
-
-
   return (
     <div className="w-screen relative">
       <div className=" ellipse top-right"></div>
@@ -127,7 +125,7 @@ const Testimonial = () => {
       <div className=" ellipse bottom-right"></div>
 
       <section className="container z-10 mx-auto px-4 py-20 bg-darkblue ">
-        <h2 className="text-3xl font-bold text-white font-transforma mb-12 p-9">
+        <h2 className="text-3xl font-bold text-white font-transforma mb-12">
           <p>Voices of Achievement</p>
         </h2>
 
