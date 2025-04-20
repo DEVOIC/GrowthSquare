@@ -16,21 +16,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-<<<<<<< HEAD
-    const getToken = () => {
-      const cookieToken = document?.cookie
-        ?.split('; ')
-        .find(row => row.startsWith('token='));
-      return cookieToken ? cookieToken.split('=')[1] : null;
-    };
-    setToken(getToken());
-  }, []);
-
-  const logout = () => {
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-    setToken(null);
-  };
-=======
     // Safely access cookies
     if (typeof document !== 'undefined') {
       const cookies = document.cookie;
@@ -47,7 +32,6 @@ const Navbar = () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/home";
     setToken(null);
   }
->>>>>>> dc95772975f9744e7217db2bbb71331ba115581b
 
   return (
     <>
