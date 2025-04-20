@@ -19,7 +19,7 @@ interface Collab {
         "https://sneaky-anteater-377.notion.site/image/attachment%3A886a68ab-a9db-406f-95e0-3858c0a5fd64%3Amechbuddy_(1).png?table=block&id=19c4c2d4-f054-8044-8978-db88b3966d25&spaceId=12677323-936c-41ff-8423-93a954215ff1&width=2000&userId=&cache=v2",
     },
     {
-      name: "Pixcel Panda",
+      name: "Pixel Panda",
       image:
         "https://sneaky-anteater-377.notion.site/image/attachment%3A22db14c9-92cf-4669-9d19-3fa6420c0c1a%3Apixel_pand.png?table=block&id=19c4c2d4-f054-80c6-8399-d52504a0bd0b&spaceId=12677323-936c-41ff-8423-93a954215ff1&width=2000&userId=&cache=v2",
     },

@@ -2,6 +2,10 @@ interface Member {
     image: string;
     name: string;
     role: string;
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
+    instagram?: string;
   }
 const foundingMemebers: Member[] = [
     {

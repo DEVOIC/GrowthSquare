@@ -1,32 +1,34 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Logo from "../../../public/gslogo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-// import { cookies } from 'next/headers';
-// import { redirect } from 'next/navigation';
+
 const Navbar = () => {
   const [click, setClick] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
 
   const handleClick = () => {
     setClick(!click);
   };
 
-  // commented this only for the purpose of testing the logout function
+  useEffect(() => {
+    const getToken = () => {
+      const cookieToken = document?.cookie
+        ?.split('; ')
+        .find(row => row.startsWith('token='));
+      return cookieToken ? cookieToken.split('=')[1] : null;
+    };
+    setToken(getToken());
+  }, []);
 
-  // const cookieStore = await cookies()
-  // const value = cookieStore.has('token')
-  // async function logout() {
-  //     const cookieStore = await cookies()
-  //     cookieStore.delete('token');
-  //     redirect('/')
-  //     // Redirect to login page or perform other actions after logout
-  // }
-
-  // const value = false;
+  const logout = () => {
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    setToken(null);
+  };
 
   return (
     <>
@@ -58,6 +60,19 @@ const Navbar = () => {
               <Link href="/contact" className="text-white ">
                 <Button variant={"default"}>Become A Member</Button>
               </Link>
+            </div>
+            <div className="hidden md:block ">
+              {token === null ?
+              <Link href="/login" className="text-white ">
+                <Button className="bg-transparent border border-white">Login</Button>
+              </Link>
+              :
+              <Link href="/home" className="text-white"><Button
+                className="bg-transparent border border-white"
+                onClick={logout}
+                >
+                Logout
+              </Button></Link>}
             </div>
             <GiHamburgerMenu
               className="md:hidden block text-[#015aff] h-8 w-8"
@@ -107,6 +122,21 @@ const Navbar = () => {
                 >
                   Become A Member
                 </Link>
+                {token === null ?
+                <Link
+                  href="/login"
+                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                  >
+                    Login
+                  </Link>
+                : 
+                 <Link 
+                  href="/home"
+                  className="text-white bg-white bg-opacity-20 px-8  py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
+                  onClick={logout}
+                  >
+                    Logout
+                  </Link>}
               </div>
             </div>
             <div

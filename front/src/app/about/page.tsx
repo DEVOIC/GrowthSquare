@@ -3,7 +3,7 @@ import Navbar from "@/components/parts/navbar";
 import Hero from "./hero";
 import Footer from "@/components/parts/footer";
 
-import Gsmarque from "../../components/parts/gsmarque";
+// import Gsmarque from "../../components/parts/gsmarque";
 import Founding from "./Founding";
 import Inovators from "./Inovators";
 import Services from "./Services";
