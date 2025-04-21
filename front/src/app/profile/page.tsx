@@ -16,7 +16,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`, {
+        const response = await axios.get(`/api/auth/check-auth`, {
           headers: {
             "Content-Type": "application/json",
           },
