@@ -148,7 +148,7 @@
 import React, { useActionState, useEffect } from 'react'
 import Link from "next/link"
 import Image from "next/image"
-import Logo from "../../../public/gslogo.svg"
+// import Logo from "../../../public/gslogo.svg"
 import theGsq from '../../../public/thedevoic_logo.jpeg'
 import Google from "../../../public/google.png"
 import GitHub from "../../../public/github.png"
