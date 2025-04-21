@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+    <body
         className={`${Transformabold.variable} ${Transformasemi.variable} antialiased overflow-x-hidden`}
       >
         {children}

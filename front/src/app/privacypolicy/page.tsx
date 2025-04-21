@@ -15,7 +15,7 @@ export default function PrivacypolicyPage() {
               <h2 className="font-semibold text-xl">1. Introduction</h2>
               <p>
                 This Privacy Policy outlines how GrowthSquare collects, uses, protects, and manages personal information. By using GrowthSquare’s services, you agree to comply with this policy.
-              </p>
+              </p> 
             </div>
 
             <div>
@@ -42,11 +42,11 @@ export default function PrivacypolicyPage() {
             <div>
               <h2 className="font-semibold text-xl">4. Data Transfers</h2>
               <p>Your data may be transferred and stored on systems outside your jurisdiction. We implement stringent security measures to ensure compliance with this policy.</p>
-            </div>
+            </div> 
 
             <div>
               <h2 className="font-semibold text-xl">5. User Rights</h2>
-              <ul className="list-disc ml-6">
+              <ul className="list-disc ml-6"> 
                 <li>Access, correct, or delete their personal data.</li>
                 <li>Request a portable copy of their data.</li>
                 <li>Object to certain data processing, which may affect service availability.</li>
