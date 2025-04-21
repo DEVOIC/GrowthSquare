@@ -159,7 +159,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
-  animation: scroll 40s linear infinite;
+  animation: scroll 50s linear infinite;
 }
 
 .before-marquee {
@@ -203,7 +203,7 @@ body {
   align-items: center;
   gap: var(--gap);
 
-  animation: scroll1 40s linear infinite;
+  animation: scroll1 50s linear infinite;
 }
 .animate-marquee-reverse {
   list-style: none;
