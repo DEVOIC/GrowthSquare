@@ -74,11 +74,17 @@ const Footer = () => {
                   >
                     About
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/courses"
                     className="block text-white hover:text-white"
                   >
                     Services
+                  </Link> */}
+                  <Link
+                    href="https://blog.growthsq.in/"
+                    className="block text-white hover:text-white"
+                  >
+                    Blog
                   </Link>
                   <Link
                     href="/contact"
@@ -103,12 +109,12 @@ const Footer = () => {
                   >
                     FAQs
                   </Link> */}
-                  <Link
+                  {/* <Link
                     href="https://blog.growthsq.in/"
                     className="block text-white hover:text-white"
                   >
                     Blog
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div>

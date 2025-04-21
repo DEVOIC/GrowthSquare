@@ -154,7 +154,7 @@ import Google from "../../../public/google.png"
 import GitHub from "../../../public/github.png"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { loginUser } from './actions'
+import { isCookie, loginUser } from './actions'
 import { useToast } from '@/hooks/use-toast'
 import Form from 'next/form'
 import { useRouter } from 'next/navigation'
@@ -165,10 +165,21 @@ const Page = () => {
   const [state, action, pending] = useActionState(loginUser, null)
   const { toast } = useToast()
   const router = useRouter()
-
+useEffect(() => {
+  const checkcookie = async () => {
+    const cookieStore = await isCookie()
+    if (cookieStore !=null ) {
+      router.replace("/home")
+    } else {
+ 
+    }
+  }
+  checkcookie();
+}, [])
   useEffect(() => {
+    
     if (state === "Logged in successfully") {
-      router.replace("/")
+      router.replace("/home")
     }
     if (state) {
       toast({ description: state })

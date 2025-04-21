@@ -151,6 +151,16 @@ body {
   gap: var(--gap);
   animation: scroll 30s linear infinite;
 }
+.animate-marquee1 {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll 40s linear infinite;
+}
 
 .before-marquee {
   font-size: 15px;
@@ -160,9 +170,9 @@ body {
   gap: var(--gap);
 }
 
-.before-marquee:hover .animate-marquee {
+.before-marquee:hover .animate-marquee .animate-marquee1 {
   animation-play-state: paused;
-}.before-marquee-reverse:hover .animate-marquee-reverse {
+}.before-marquee-reverse:hover .animate-marquee-reverse .animate-marquee-reverse1 {
   animation-play-state: paused;
 }
 
@@ -184,6 +194,17 @@ body {
   flex-direction: row-reverse;
   gap: var(--gap);
 }
+.animate-marquee-reverse1 {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+
+  animation: scroll1 40s linear infinite;
+}
 .animate-marquee-reverse {
   list-style: none;
   flex-shrink: 0;
@@ -193,7 +214,7 @@ body {
   align-items: center;
   gap: var(--gap);
 
-  animation: scroll1 20s linear infinite;
+  animation: scroll1 30s linear infinite;
 }
 
 @keyframes scroll1 {

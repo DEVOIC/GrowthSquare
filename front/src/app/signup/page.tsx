@@ -161,13 +161,26 @@ import { Otp } from "@/components/parts/otp"
 import theGsq from '../../../public/thedevoic_logo.jpeg'
 import Google from "../../../public/google.png"
 import GitHub from "../../../public/github.png"
+import { useRouter } from 'next/navigation'
+import { isCookie } from '../login/actions'
 
 export const dynamic = "force-dynamic";
 
 export default function SignupPage() {
   const [state, action, pending] = useActionState(createUser, null)
   const { toast } = useToast()
-
+  const router = useRouter()
+useEffect(() => {
+  const checkcookie = async () => {
+    const cookieStore = await isCookie()
+    if (cookieStore !=null ) {
+      router.replace("/home")
+    } else {
+ 
+    }
+  }
+  checkcookie();
+}, [])
   useEffect(() => {
     if (state) {
       toast({ description: state })
