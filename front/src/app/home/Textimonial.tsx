@@ -135,7 +135,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[0]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center">
-            <img src="../whitelogo.png" alt="logo" />
+            <img src="../whitegsqlogo.png" alt="logo" />
           </div>
             {/* <div className="h-full">
             <iframe
@@ -152,7 +152,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[2]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center ">
-          <img src="../whiteLogo.png" alt="logo" />
+          <img src="../whitegsqlogo.png" alt="logo" />
           </div>
           {/* <div className="h-full  ">
             <iframe
@@ -172,8 +172,8 @@ const Testimonial = () => {
               title="Testimonial Video"
             ></iframe> */}
 
-          <div className=" bg-lightblue  ">
-          <img src="../whiteLogo.png" alt="logo" />
+          <div className=" bg-lightblue flex justify-center items-center ">
+          <Image src="../whitegsqlogo.png" alt="logo" width={100} height={100} />
           </div>
         
          {/* <div className="h-full">
@@ -188,7 +188,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[3]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center  ">
-          <img src="" alt="logo" />
+          <img src="../whitegsqlogo.png" alt="logo" />
           </div>
           {/* <div className="h-full">
             <iframe
@@ -197,7 +197,7 @@ const Testimonial = () => {
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             ></iframe>
-            </div> */}
+            </div> */} 
           <div className="col-span-2 ">
             <TestCard data={testimonials[4]} />
           </div>
