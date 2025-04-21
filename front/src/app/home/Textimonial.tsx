@@ -135,7 +135,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[0]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center">
-            <img src="../whiteLogo.png" alt="logo" />
+            <img src="../whitelogo.png" alt="logo" />
           </div>
             {/* <div className="h-full">
             <iframe
@@ -188,7 +188,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[3]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center  ">
-          <img src="../whiteLogo.png" alt="logo" />
+          <img src="" alt="logo" />
           </div>
           {/* <div className="h-full">
             <iframe
