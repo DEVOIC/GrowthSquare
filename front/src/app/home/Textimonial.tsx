@@ -135,7 +135,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[0]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center">
-            <img src="../whitegsqlogo.png" alt="logo" />
+          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
             {/* <div className="h-full">
             <iframe
@@ -152,7 +152,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[2]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center ">
-          <img src="../whitegsqlogo.png" alt="logo" />
+          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className="h-full  ">
             <iframe
@@ -173,7 +173,7 @@ const Testimonial = () => {
             ></iframe> */}
 
           <div className=" bg-lightblue flex justify-center items-center ">
-          <Image src="../whitegsqlogo.png" alt="logo" width={100} height={100} />
+          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
         
          {/* <div className="h-full">
@@ -188,7 +188,7 @@ const Testimonial = () => {
             <TestCard data={testimonials[3]} />
           </div>
           <div className=" bg-lightblue flex justify-center items-center  ">
-          <img src="../whitegsqlogo.png" alt="logo" />
+          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className="h-full">
             <iframe
