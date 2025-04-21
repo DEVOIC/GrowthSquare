@@ -11,7 +11,7 @@ export async function createContact(prestate: string, formData: FormData) {
   
   }
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/contact/create-contact`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/contact/create-contact`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

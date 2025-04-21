@@ -19,6 +19,15 @@ const foundingMemebers: Member[] = [
       website: "http://whatshivamdo.designfolio.me"
     },
     {
+      image:"https://drive.google.com/uc?id=1cK9tKKdh1q6GwIvuAZr2_O8aEKMD0Zx-",
+      name:"Madhvendra Pratap Singh",
+      role:"Project Manager",
+      linkedin: "https://www.linkedin.com/in/madhvendra-connects/",
+      github: "https://github.com/username",
+      twitter: "https://x.com/madhav_0399",
+      instagram: "https://instagram.com/username"
+    },
+    {
         image: "https://drive.google.com/uc?id=1wCwx6PxQD1KT2OcpqAzsfSZHXg0edQHH",
         name: "Utkarsh Gupta",
         role: "Human Resource Manager",
