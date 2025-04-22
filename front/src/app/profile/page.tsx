@@ -6,12 +6,33 @@ import { Button } from "@/components/ui/button";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Navbar from "@/components/parts/navbar";
+import { useRouter } from 'next/navigation'
 
 const ProfilePage = () => {
   const [editMode, setEditMode] = useState(false);
   const [profileData, setProfileData] = useState<any>(null);
   const [tempSkills, setTempSkills] = useState<string[]>([]);
   const [tempSocials, setTempSocials] = useState<{ [key: string]: string }>({});
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const checkCookie = () => {
+      const token = getCookie("token")
+      if (!token) {
+        router.replace("/home")
+      }
+    }
+    const getCookie = (name) => {
+      const value = `; ${document.cookie}`
+      const parts = value.split(`; ${name}=`)
+      if (parts.length === 2) return parts.pop().split(";").shift()
+    }
+
+    checkCookie()
+  }, [router])
+
+
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -60,7 +81,7 @@ const ProfilePage = () => {
           withCredentials: true, // Send cookies (e.g. JWT token)
         }
       );
-  
+
       const updatedUser = response.data.data;
       setProfileData(updatedUser);
       setEditMode(false);
@@ -69,7 +90,7 @@ const ProfilePage = () => {
       alert("Failed to update profile. Please try again.");
     }
   };
-  
+
   if (!profileData) return <div className="text-center py-10 text-white">Loading...</div>;
 
   return (
