@@ -12,7 +12,6 @@ import theGsq from '../../../public/thedevoic_logo.jpeg'
 import Google from "../../../public/google.png"
 import GitHub from "../../../public/github.png"
 import { useRouter } from 'next/navigation'
-import { isCookie } from '../login/actions'
 
 export const dynamic = "force-dynamic";
 
