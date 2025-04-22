@@ -10,16 +10,18 @@ import {
 import Image from "next/image";
 
 // Local quotes array to avoid CORS issues
+
 const quotes = [
-  { text: "Alone, we can do so little; together, we can do so much.", author: "Helen Keller" },
-  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
-  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
-  { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
-  { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" },
-  { text: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
-  { text: "What you get by achieving your goals is not as important as what you become.", author: "Zig Ziglar" }
+  { text: "Dreams are not what you see in sleep, dreams are those that do not let you sleep.", author: "Dr. A.P.J. Abdul Kalam" },
+  { text: "Arise, awake, and stop not till the goal is reached.", author: "Swami Vivekananda" },
+  { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
+  { text: "Don’t take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.", author: "Dr. A.P.J. Abdul Kalam" },
+  { text: "Take risks in your life. If you win, you can lead; if you lose, you can guide.", author: "Swami Vivekananda" },
+  { text: "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.", author: "Vince Lombardi" },
+  { text: "Be the change that you wish to see in the world.", author: "Mahatma Gandhi" },
+  { text: "Your time is limited, so don’t waste it living someone else’s life.", author: "Steve Jobs" }
 ];
+
 
 const Footer = () => {
   const [quote, setQuote] = useState(quotes[0]);
@@ -72,11 +74,17 @@ const Footer = () => {
                   >
                     About
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/courses"
                     className="block text-white hover:text-white"
                   >
                     Services
+                  </Link> */}
+                  <Link
+                    href="https://blog.growthsq.in/"
+                    className="block text-white hover:text-white"
+                  >
+                    Blog
                   </Link>
                   <Link
                     href="/contact"
@@ -89,7 +97,7 @@ const Footer = () => {
               </div>
               <div className=" pr-2">
                 <div className="space-y-2">
-                  <Link
+                  {/* <Link
                     href="#"
                     className="block text-white hover:text-white"
                   >
@@ -100,13 +108,13 @@ const Footer = () => {
                     className="block text-white hover:text-white"
                   >
                     FAQs
-                  </Link>
-                  <Link
+                  </Link> */}
+                  {/* <Link
                     href="https://blog.growthsq.in/"
                     className="block text-white hover:text-white"
                   >
                     Blog
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div>
@@ -123,12 +131,12 @@ const Footer = () => {
                   >
                     Web Dev
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/courses"
                     className="block text-white hover:text-white"
                   >
                     App Dev
-                  </Link>
+                  </Link> */}
                   <Link
                     href="/courses"
                     className="block text-white hover:text-white"
@@ -170,15 +178,15 @@ const Footer = () => {
         <div className="mx-auto w-10/12 container flex lg:flex-row flex-col-reverse items-center gap-4 lg:gap-0 lg:justify-between">
           <p className="text-center">&copy; {new Date().getFullYear()} Copyright. All Rights Reserved</p>
           <div className="flex flex-wrap items-center justify-center space-x-6 mt-4 md:mt-0">
-            <Link href="/termsncondition" className="text-white hover:underline">
+            {/* <Link href="/termsncondition" className="text-white hover:underline">
               Terms & Conditions
-            </Link>
+            </Link> */}
             <Link href="/privacypolicy" className="text-white hover:underline">
               Privacy Policy
             </Link>
-            <Link href="/refundpolicy" className="text-white hover:underline">
+            {/* <Link href="/refundpolicy" className="text-white hover:underline">
               Refund Policy
-            </Link>
+            </Link> */}
           </div></div>
       </div>
     </div>

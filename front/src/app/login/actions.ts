@@ -31,6 +31,15 @@ export async function loginUser(prestate:string,formData: FormData) {
 
     
 }
+export async function isCookie(){
+  const cookieStore = await cookies()
+  const token = cookieStore.get('token')
+  if (token !=null ) {
+    return true
+  } else {
+    return false
+  }
+}
 
 export async function verifyUser(prestate:string,number:string) {
     

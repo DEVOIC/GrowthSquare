@@ -20,7 +20,7 @@ const Inovators = () => {
           ready to take on new challenges and grow together.
         </p>
         <div className='before-marquee'>
-          <div className="flex  my-6 animate-marquee">
+          <div className="flex  my-6 animate-marquee1">
             {part1.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className="md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
@@ -61,7 +61,7 @@ const Inovators = () => {
               </div>
             ))}
           </div>
-          <div className="flex  my-6  animate-marquee">
+          <div className="flex  my-6  animate-marquee1">
             {part1.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className="md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
@@ -104,7 +104,7 @@ const Inovators = () => {
           </div>
         </div>
         <div className='before-marquee-reverse'>
-          <div className="flex my-6  animate-marquee-reverse">
+          <div className="flex my-6  animate-marquee-reverse1">
             {part2.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
@@ -145,7 +145,7 @@ const Inovators = () => {
               </div>
             ))}
           </div>
-          <div className="flex my-6  animate-marquee-reverse">
+          <div className="flex my-6  animate-marquee-reverse1">
             {part2.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
