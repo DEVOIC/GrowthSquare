@@ -8,15 +8,15 @@ import Image from 'next/image';
 const Hero = () => {
   return (
 
-    <section className=" h-full bg-darkblue  pb-10  ">
-      <div className=' container mx-auto px-4 py-10 lg:py-20 text-center  relative'>
+    <section className=" h-full bg-darkblue pb-10  ">
+      <div className=' container mx-auto px-4 py-10 lg:pt-32 lg:pb-20 text-center  relative'>
         <div className="ellipse top-right"></div>
         <div className="ellipse bottom-left"></div>
 
-        <h1 className=" lg:text-6xl text-3xl md:text-4xl font-transforma font-semibold text-white mb-6">
+        <h1 className=" lg:text-6xl max-w-6xl mx-auto text-3xl md:text-4xl font-transforma font-semibold text-white mb-6 relative">
           Unlock Your <span className="text-blue-500">Potential</span> with a Community
           <br />
-          That&#39;s Got Your <span className="border-b-4 border-blue-500">Back</span>
+          That&#39;s Got Your <span className="relative inline-block"><span className="">Back</span><span className="absolute left-0 bottom-0 w-full h-1 bg-blue-500"></span></span>
         </h1>
         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
           Collaborate, innovate, and level up with experts in design,

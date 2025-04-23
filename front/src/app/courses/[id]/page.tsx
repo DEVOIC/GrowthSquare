@@ -20,7 +20,8 @@ export default function CoursePage() {
 
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/course/get-course/67606f38380af83652ae5c6f`)
+        const res = await fetch(`/api/auth/course/get-course/67da3edaf4e202d17de54de3
+`)
         // const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/course/get-course/?=${id}`)
 
         if (res.status !== 200) {
@@ -28,7 +29,8 @@ export default function CoursePage() {
           return
         }
         const rawData = await res.json()
-        const courses: Course[] = rawData.data.courses
+        console.log(rawData)
+        const courses: Course[] = rawData.data.course
         console.log(courses);
 
 

@@ -7,7 +7,7 @@ export async function createUser(prestate: string, formData: FormData) {
     email: formData.get('email') as string,
     password: formData.get('password') as string,
   }
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_ROUTE}/auth/signup`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export async function createUser(prestate: string, formData: FormData) {
 
 export async function verifyUser(prestate: string, number: string) {
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}:${process.env.NEXT_PUBLIC_PORT}/auth/verify-email`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/verify-email`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

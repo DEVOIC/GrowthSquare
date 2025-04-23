@@ -30,9 +30,7 @@ const Why = () => {
         <div className="">
           <h2 className="text-3xl font-bold text-white mb-4">Wha&#39;s Next</h2>
           <p className="text-white/80">
-            GrowthSquare aims to build a collaborative ecosystem where students
-            support each other and grow together, fueling a future-ready
-            workforce for businesses nationwide.
+          Moving forward, we aim to expand our reach, introduce new hands-on programs, and build stronger collaborations with industry leaders. Our goal is to empower individuals and businesses alike, fostering a space where growth, learning, and opportunities come together. 
           </p>
         </div>
       </div>
@@ -42,10 +40,7 @@ const Why = () => {
             Why It Matters
           </h2>
           <p className="text-white/80">
-            For students, companies, mentors, projects, and everyone in
-            between and job-ready skills. For startups, it offers access to
-            talented student teams prepared to work across tech disciplines.
-          </p>
+          By being a part of GrowthSquare, you’re not just learning; you’re preparing for career success, industry connections, and long-term growth. Whether you’re a student, a professional looking to upskill, or a company seeking talent, GrowthSquare is the place where skills translate into action  </p>
         </div>
 
         <div className="hidden md:flex items-center mx-5 justify-start">

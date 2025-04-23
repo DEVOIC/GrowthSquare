@@ -15,7 +15,9 @@ const Hero = () => {
         Your progress begins  <span className="text-lightblue">here</span>
         </h1>
         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-        Your First Step Toward a Future of  <span className="border-b-4 border-lightblue">Limitless Opportunities</span>
+        Your First Step Toward a Future of  {" "}
+        <span className="relative inline-block"><span className=" ">Limitless Opportunities</span><span className="absolute left-0 bottom-0 w-full h-[1px] bg-blue-500"></span></span>
+
         </p>
         
         {/* <div className='absolute  -bottom-24'>
