@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+// import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import members from '@/data/members';
 
 //temporary things
@@ -205,7 +205,7 @@ const Inovators = () => {
                     )}
                   </div> */}
 
-                  
+
                 </div>
               </div>
             ))}
