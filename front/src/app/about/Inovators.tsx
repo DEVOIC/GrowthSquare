@@ -35,7 +35,11 @@ const Inovators = () => {
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+
+{/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -56,7 +60,10 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
+
                 </div>
               </div>
             ))}
@@ -76,7 +83,11 @@ const Inovators = () => {
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+
+{/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -97,7 +108,9 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
                 </div>
               </div>
             ))}
@@ -119,7 +132,11 @@ const Inovators = () => {
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+
+{/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -140,7 +157,9 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
                 </div>
               </div>
             ))}
@@ -160,7 +179,10 @@ const Inovators = () => {
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+                  {/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -181,7 +203,9 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+                  
                 </div>
               </div>
             ))}
