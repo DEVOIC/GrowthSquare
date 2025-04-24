@@ -260,18 +260,19 @@ body {
 }
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
+  margin-left: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00123370;
+  background: #ffffff70;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00123370;
+  background: #0059ffd6;
 }
