@@ -82,7 +82,7 @@ const ProfilePage = () => {
 
   if (!profile) return <div className="text-center text-white py-10">Loading...</div>;
 
-  const { name, email } = profile;
+  const { name } = profile;
   const userProfile = profile.profile || {};
 
   return (
