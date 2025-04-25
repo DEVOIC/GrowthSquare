@@ -16,19 +16,12 @@ export const getUserProfile = async () => {
     return response.data.data;
 }
 
-export const updateUserProfile = async (updatedProfile: {
-    bio: string;
-    contactNo: string;
-    dob: string;
-    location: string;
-}) => {
+
+export const updateUserProfile = async (updatedProfile: FormData) => {
     const response = await axios.put(
         `${API_BASE}/auth/edit-profile`,
         updatedProfile,
         {
-            headers: {
-                "Content-Type": "application/json",
-            },
             withCredentials: true,
         }
     );

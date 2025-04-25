@@ -55,24 +55,23 @@ const ProfilePage = () => {
   useEffect(() => {
     fetchProfile();
   }, []);
-
   const handleSave = async () => {
-    const cleanPayload = {
-      bio: tempProfile.bio || "",
-      contactNo: tempProfile.contactNo || "",
-      dob: tempProfile.dob || "",
-      location: tempProfile.location || "",
-      skills: tempProfile.skills || [],
-      profilePicture: tempProfile.image || "",
-      socialLinks: tempProfile.socialLinks || {}
-    };
-
     try {
-      const updated = await updateUserProfile(cleanPayload);
-      setProfile((prev: any) => ({
-        ...prev,
-        profile: { ...updated }
-      }));
+      const formData = new FormData();
+      formData.append("bio", tempProfile.bio || "");
+      formData.append("contactNo", tempProfile.contactNo || "");
+      formData.append("dob", tempProfile.dob || "");
+      formData.append("location", tempProfile.location || "");
+
+      formData.append("skills", JSON.stringify(tempProfile.skills || []));
+      formData.append("socialLinks", JSON.stringify(tempProfile.socialLinks || []));
+
+      if (tempProfile.image) {
+        formData.append("file", tempProfile.image);
+      }
+
+      await updateUserProfile(formData);
+      fetchProfile()
       setShowModal(false);
     } catch (err) {
       console.error("Update failed:", err);
@@ -83,13 +82,12 @@ const ProfilePage = () => {
   if (!profile) return <div className="text-center text-white py-10">Loading...</div>;
 
   const { name } = profile;
-  const userProfile = profile.profile || {};
 
   return (
     <div className="bg-darkblue h-full md:h-screen">
       <Navbar />
       <div
-        className="container h-1/2 mx-auto p-4"
+        className="container h-full bg-darkblue mx-auto px-1 md:px-4"
         onMouseMove={handleMouseMove}
         ref={cardRef}
         style={{
@@ -99,14 +97,17 @@ const ProfilePage = () => {
         <div className="ellipse2 top-right"></div>
 
         <div className="rounded-3xl p-8 text-center">
-          {userProfile.image ? (
-            <Image
-              src={userProfile.image}
-              alt="Profile Picture"
-              width={100}
-              height={100}
-              className="rounded-full mx-auto"
-            />
+
+          {tempProfile.profilePicture ? (
+            <div className="object-fit border-2 overflow-hidden rounded-lg w-28 h-28 mx-auto mb-4">
+              <Image
+                src={tempProfile.profilePicture}
+                alt="Profile Picture"
+                width={220}
+                height={220}
+                className="rounded-lg hover:scale-105 mx-auto"
+              />
+            </div>
           ) : (
             <User className="w-28 h-28 text-white mx-auto" />
           )}
@@ -131,22 +132,22 @@ const ProfilePage = () => {
             <div className="space-y-4">
               <div className="text-white/90">
                 <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Contact Number</h3>
-                <p className="break-words">{tempProfile.contactNo || "N/A"}</p>
+                <p className="break-words">{tempProfile?.contactNo || "N/A"}</p>
               </div>
               <div className="text-white/90">
                 <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Location</h3>
-                <p className="break-words">{tempProfile.location || "N/A"}</p>
+                <p className="break-words">{tempProfile?.location || "N/A"}</p>
               </div>
               <div className="text-white/90">
                 <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Date of Birth</h3>
-                <p>{tempProfile.dob ? new Date(tempProfile.dob).toLocaleDateString() : "N/A"}</p>
+                <p>{tempProfile.dob ? new Date(tempProfile?.dob).toLocaleDateString() : "N/A"}</p>
               </div>
             </div>
             <div className="space-y-4">
               <div className="text-white/90">
                 <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Skills</h3>
                 <div className="flex flex-wrap gap-2">
-                  {tempProfile.skills.map((skill: any, index: any) => (
+                  {tempProfile?.skills?.map((skill: any, index: any) => (
                     <span
                       key={index}
                       className="bg-white text-darkblue border border-white/20 px-3 py-1 text-sm"
@@ -159,7 +160,7 @@ const ProfilePage = () => {
               <div>
                 <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Connect</h3>
                 <div className="flex flex-wrap gap-3">
-                  {tempProfile.socialLinks.map((link: any) => {
+                  {tempProfile?.socialLinks?.map((link: any) => {
                     const platformIcon = {
                       Twitter: <Twitter className="w-5 h-5" />,
                       LinkedIn: <Linkedin className="w-5 h-5" />,

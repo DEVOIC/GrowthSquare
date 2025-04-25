@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         {children}
         <Toaster />
-        <span className="fixed h-[3.5rem] w-[3.5rem] rounded-full bg-white z-[100] bottom-[3rem] right-[3rem] flex items-center justify-center"><img src="https://th.bing.com/th/id/OIP.ztn9aYI3yR4V8hd6yMELZAHaHb?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" className="rounded-full h-[3rem] w-[3rem]" /></span>
+        <span className="fixed md:h-[3.5rem] h-[2.5rem] w-[2.5rem] md:w-[3.5rem] rounded-full bg-white z-[100] bottom-[1rem] right-[1rem] md:bottom-[2rem] md:right-[2rem] flex items-center justify-center"><img src="https://th.bing.com/th/id/OIP.ztn9aYI3yR4V8hd6yMELZAHaHb?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" className="rounded-full md:h-[3rem] w-[2rem] h-[2rem] md:w-[3rem]" /></span>
       </body>
     </html>
   );
