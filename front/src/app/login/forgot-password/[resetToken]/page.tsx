@@ -29,7 +29,10 @@ export default function ResetPasswordPage() {
             formData.append("newPassword", newPassword)
             formData.append("resetToken", resetToken as string)
             return await resetPassword(formData)
-        }, {}
+        }, {
+        status:null,
+        data: null,
+    }
     )
 
     useEffect(() => {
