@@ -120,13 +120,15 @@ const Footer = () => {
               <div>
                 <div className="space-y-2">
                   <Link
-                    href="/courses"
+                    href="https://blog.growthsq.in/ui-ux-design/"
+                    target="_blank"
                     className="block text-white hover:text-white"
                   >
                     UI/UX Design
                   </Link>
                   <Link
-                    href="/courses"
+                    href="https://blog.growthsq.in/web-development/"
+                    target="_blank"
                     className="block text-white hover:text-white"
                   >
                     Web Dev
@@ -138,7 +140,8 @@ const Footer = () => {
                     App Dev
                   </Link> */}
                   <Link
-                    href="/courses"
+                    href="https://blog.growthsq.in/video-editing"
+                    target="_blank"
                     className="block text-white hover:text-white"
                   >
                     Video Editing
