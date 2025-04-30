@@ -31,6 +31,8 @@ const Founding = () => {
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
@@ -114,6 +116,7 @@ const Founding = () => {
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
                   />
                 </div>
                 <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">

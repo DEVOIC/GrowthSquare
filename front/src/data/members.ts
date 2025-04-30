@@ -182,7 +182,7 @@ const members: Member[] = [
   instagram: "https://instagram.com/username"
     },
     {
-      image: "https://drive.google.com/uc?id=1g20vs6nYdcrk7akaWCzwz98Sh5JHp7nu",
+      image: "https://drive.google.com/uc?id=1qXDkfN2JbX3X-DX0U_jm2Bqv6-sgdffD",
       name: "Manyata Singh",
       role: "PR and OP Team",
        linkedin: "https://linkedin.com/in/username",
