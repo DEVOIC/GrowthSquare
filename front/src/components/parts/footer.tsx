@@ -39,7 +39,7 @@ const Footer = () => {
       <div className="ellipse mid-left"></div>
 
       {/* CTA Section */}
-      <section className="  border-b-2 justify-center px-8 md:px-0  py-20 text-center">
+      <section className="  border-b-2 justify-center px-8 md:px-0 py-10 md:py-20 text-center">
         <div className=" flex justify-center w-full   md:space-x-6 items-center">
           <h2 className="md:text-6xl items-center  text-start text-4xl font-bold  text-white mb-2">
             Let&#39;s work together
@@ -151,10 +151,10 @@ const Footer = () => {
             </div>
             <div className="flex lg:w-1/2 flex-col">
 
-              <div className="border-b-2 p-4">
-                <div className="w-2/3 mx-auto py-4 my-auto">
+              <div className="border-b-2 md:flex md:justify-center md:p-4 ">
+                <div className=" px-4 md:px-0  md:w-2/3 md:mx-auto py-4 my-auto">
                   <p>"{quote.text}"</p>
-                  <p>~ {quote.author}</p>
+                  <p className="text-end">~ {quote.author}</p>
                 </div>
               </div>
 

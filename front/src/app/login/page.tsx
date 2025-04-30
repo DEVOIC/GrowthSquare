@@ -12,11 +12,13 @@ import { loginUser } from './actions'
 import { useToast } from '@/hooks/use-toast'
 import Form from 'next/form'
 import { useRouter } from 'next/navigation'
+import { Eye, EyeOff } from 'lucide-react'
 
 export const dynamic = "force-dynamic";
 
 const Page = () => {
   const [state, action, pending] = useActionState(loginUser, null)
+  const [showpassword, setShowPassword] = React.useState(false)
   const { toast } = useToast()
   const router = useRouter()
 
@@ -93,13 +95,26 @@ const Page = () => {
                 Forgot password?
               </Link>
             </div>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="••••••••"
-              className="border-lightblue/30 focus-visible:ring-lightblue focus-visible:ring-2"
-            />
+      
+            <div className="relative">
+              <Input
+                type={showpassword ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                className="border-lightblue/30 focus-visible:ring-lightblue focus-visible:ring-2"
+                required
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                onClick={() => setShowPassword(prev => !prev)}
+                tabIndex={-1}
+              >
+                {showpassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </button>
+            </div>
+
           </div>
 
           <Button

@@ -130,14 +130,13 @@ const Testimonial = () => {
         </h2>
 
         <div className="  grid grid-cols-1 md:grid-rows-3  md:grid-cols-6 gap-5 ">
-          
-          <div className="col-span-2 row-span-2 ">
+          <div className="col-span-4 lg:col-span-2 lg:row-span-2 row-span-1 ">
             <TestCard data={testimonials[0]} />
           </div>
-          <div className=" bg-lightblue hidden md:flex justify-center items-center">
-          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
+          <div className="col-span-2 lg:col-span-1 bg-lightblue hidden md:flex justify-center items-center">
+            <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
-            {/* <div className="h-full">
+          {/* <div className="h-full">
             <iframe
               className="w-[234px] h-[250px]"
               src="https://drive.google.com/file/d/1n9iDJPE7AVvPK69zTlWpWrYu2k3do9EW/preview"
@@ -145,14 +144,14 @@ const Testimonial = () => {
               allowFullScreen
             ></iframe>
             </div> */}
-          <div className="col-span-2 lg:col-span-3 ">
+          <div className=" col-span-4  md:col-span-3  ">
             <TestCard data={testimonials[1]} />
           </div>
-          <div className="col-span-2 lg:col-span-3">
+          <div className="col-span-4  md:col-span-3 ">
             <TestCard data={testimonials[2]} />
           </div>
-          <div className=" bg-lightblue hidden md:flex justify-center items-center ">
-          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
+          <div className="col-span-2 lg:col-span-1 bg-lightblue hidden md:flex justify-center items-center ">
+            <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className="h-full  ">
             <iframe
@@ -172,11 +171,11 @@ const Testimonial = () => {
               title="Testimonial Video"
             ></iframe> */}
 
-          <div className=" bg-lightblue hidden md:flex justify-center items-center ">
-          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
+          <div className=" bg-lightblue hidden lg:flex justify-center items-center ">
+            <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
-        
-         {/* <div className="h-full">
+
+          {/* <div className="h-full">
             <iframe
               className="w-[234px] h-[250px]"
               src="https://drive.google.com/file/d/1n9iDJPE7AVvPK69zTlWpWrYu2k3do9EW/preview"
@@ -184,11 +183,12 @@ const Testimonial = () => {
               allowFullScreen
             ></iframe>
             </div> */}
-          <div className="col-span-2">
+
+          <div className="col-span-4 lg:col-span-2  ">
             <TestCard data={testimonials[3]} />
           </div>
-          <div className=" bg-lightblue hidden md:flex justify-center items-center  ">
-          <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
+          <div className="  bg-lightblue hidden lg:flex justify-center items-center  ">
+            <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className="h-full">
             <iframe
@@ -197,13 +197,15 @@ const Testimonial = () => {
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             ></iframe>
-            </div> */} 
-          <div className="col-span-2 ">
+            </div> */}
+          <div className="col-span-4 lg:col-span-2 ">
             <TestCard data={testimonials[4]} />
+          </div>
+          <div className=" md:col-span-2  bg-lightblue hidden md:flex lg:hidden justify-center items-center  ">
+            <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className=" bg-lightblue hidden md:">
           </div> */}
-
 
         </div>
         {/* <div className=" bg-lightblue hidden md:"></div> */}

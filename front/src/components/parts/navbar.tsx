@@ -14,7 +14,7 @@ const Navbar = () => {
   const [token, setToken] = useState<string | null>(null);
 
   const handleClick = () => setClick(!click);
-    const router = useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -103,13 +103,17 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className="w-[100vw] h-[100vh] left-0 top-0 absolute flex z-40"
+          className="w-[100vw] h-[100vh] right-0 top-0 absolute flex z-40"
           style={{
             opacity: click ? 1 : 0,
             visibility: click ? "visible" : "hidden",
           }}
         >
-          <div className="w-[60%] h-[100vh] bg-darkblue px-12 py-8">
+          <div
+            className=" w-[40%] bg-black bg-opacity-50"
+            onClick={handleClick}
+          ></div>
+          <div className="w-[60%] h-[100vh] bg-darkblue pl-4 md:px-12 py-8">
             <div className="w-[95%] flex justify-between">
               <Image src={Logo} alt="logo" />
               <IoCloseSharp
@@ -118,7 +122,7 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-6 py-12">
+            <div className="flex flex-col gap-6 py-12 pr-4">
               <Link
                 href="/home"
                 className="text-white bg-white bg-opacity-20 px-8 py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
@@ -141,7 +145,7 @@ const Navbar = () => {
                 href="/contact"
                 className="text-white bg-white bg-opacity-20 px-8 py-2 hover:bg-opacity-100 hover:text-darkblue text-xl"
               >
-                Become A Member
+                Join Us
               </Link>
               {!token ? (
                 <Link
@@ -171,10 +175,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
-          <div
-            className="flex-[0.4] bg-black bg-opacity-50"
-            onClick={handleClick}
-          ></div>
+
         </div>
       </nav>
     </>
