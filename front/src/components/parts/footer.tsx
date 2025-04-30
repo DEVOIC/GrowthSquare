@@ -153,7 +153,7 @@ const Footer = () => {
 
               <div className="border-b-2 md:flex md:justify-center md:p-4 ">
                 <div className=" px-4 md:px-0  md:w-2/3 md:mx-auto py-4 my-auto">
-                  <p>"{quote.text}"</p>
+                  <p className="text-center">"{quote.text}"</p>
                   <p className="text-end">~ {quote.author}</p>
                 </div>
               </div>
