@@ -134,7 +134,7 @@ const Testimonial = () => {
           <div className="col-span-2 row-span-2 ">
             <TestCard data={testimonials[0]} />
           </div>
-          <div className=" bg-lightblue flex justify-center items-center">
+          <div className=" bg-lightblue hidden md:flex justify-center items-center">
           <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
             {/* <div className="h-full">
@@ -151,7 +151,7 @@ const Testimonial = () => {
           <div className="col-span-2 lg:col-span-3">
             <TestCard data={testimonials[2]} />
           </div>
-          <div className=" bg-lightblue flex justify-center items-center ">
+          <div className=" bg-lightblue hidden md:flex justify-center items-center ">
           <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className="h-full  ">
@@ -172,7 +172,7 @@ const Testimonial = () => {
               title="Testimonial Video"
             ></iframe> */}
 
-          <div className=" bg-lightblue flex justify-center items-center ">
+          <div className=" bg-lightblue hidden md:flex justify-center items-center ">
           <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
         
@@ -187,7 +187,7 @@ const Testimonial = () => {
           <div className="col-span-2">
             <TestCard data={testimonials[3]} />
           </div>
-          <div className=" bg-lightblue flex justify-center items-center  ">
+          <div className=" bg-lightblue hidden md:flex justify-center items-center  ">
           <img src="../whitegsqlogo.png" alt="logo" width={150} height={150} />
           </div>
           {/* <div className="h-full">
@@ -201,12 +201,12 @@ const Testimonial = () => {
           <div className="col-span-2 ">
             <TestCard data={testimonials[4]} />
           </div>
-          {/* <div className=" bg-lightblue ">
+          {/* <div className=" bg-lightblue hidden md:">
           </div> */}
 
 
         </div>
-        {/* <div className=" bg-lightblue "></div> */}
+        {/* <div className=" bg-lightblue hidden md:"></div> */}
       </section>
     </div>
   );
