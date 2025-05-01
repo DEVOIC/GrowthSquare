@@ -15,11 +15,16 @@ const ProfilePage = () => {
   const [tempSocials, setTempSocials] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
+
+      const cookies = document.cookie;
+      const tokenCookie = cookies.split(';').find(row => row.trim().startsWith('token='));
+      const token = tokenCookie.split("=")[1]
     const fetchProfile = async () => {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`, {
           headers: {
             "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`
           },
           withCredentials: true,
         });
@@ -86,11 +91,11 @@ const ProfilePage = () => {
             className="rounded-full mx-auto"
           />
           <h1 className="text-2xl font-bold text-darkblue mt-4">
-            {profileData?.name || "John Doe"}
+            {profileData?.name || "Not Found"}
           </h1>
           <p className="text-blue-700 italic">
             {profileData?.bio ||
-              "Passionate Full Stack Developer specializing in the MERN stack with 5 years of experience in building scalable web applications."}
+              "Not Found"}
           </p>
         </div>
 
