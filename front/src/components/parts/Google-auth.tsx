@@ -3,6 +3,7 @@ import { app } from "@/lib/firebase";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Button } from "../ui/button";
 import { FcGoogle } from "react-icons/fc";
+import axios from "axios";
 
 
 const googleAuth = () => {
@@ -12,15 +13,19 @@ const googleAuth = () => {
      try{
         const results = await signInWithPopup(auth, provider)
         console.log(results)
-        try{
-            //api call
-        }
-        catch(error){
-            console.log(error)
-        }
+        const token = await results.user.getIdToken()
+
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/google-login`,{
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: token
+            }
+     })
+
+     console.log(response.data)
      }
      catch(error){
-        console.log(error)
+        console.error("Error during sign-in:",error)
     }
   }
    
