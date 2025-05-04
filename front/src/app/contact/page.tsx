@@ -28,7 +28,7 @@ export default function ContactPage() {
 
 
       {/* gsmarque  */}
-      <div>
+      <div className='relative overflow-hidden'>
         <Gsmarque />
       </div>
 

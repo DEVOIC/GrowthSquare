@@ -37,14 +37,11 @@ const EditProfileModal = ({
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        handleChange("image", reader.result);
-        setPreviewImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+      setPreviewImage(URL.createObjectURL(file)); // For preview
+      handleChange("image", file); // Store actual File object
     }
   };
+
 
   const handleSocialLinkChange = (index: number, key: string, value: string) => {
     const newLinks = [...(tempProfile.socialLinks || [])];
@@ -63,14 +60,14 @@ const EditProfileModal = ({
   };
 
   return (
-    <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="backdrop-blur-md mt-12 bg-white/10 text-white border border-white/30 rounded-2xl max-w-2xl  shadow-lg max-h-[80vh] px-2 ">
+    <Dialog open={open} onOpenChange={onClose} >
+      <DialogContent className="backdrop-blur-md mt-4 md:mt-12 w-[90%] bg-white/10 text-white border border-white/30 rounded-2xl   shadow-lg max-h-[80vh] px-2 ">
         <h2 className="text-xl font-semibold text-center mb-0">Edit Profile</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[60vh] overflow-y-auto px-2 md:py-6 md:px-6 ">
           <div>
             <Label className="text-white/70">Contact No</Label>
             <Input
-            type="number"
+              type="number"
               className="bg-white/10 border-white/20 text-white"
               value={tempProfile.contactNo || ""}
               onChange={(e) => handleChange("contactNo", e.target.value)}
@@ -90,7 +87,7 @@ const EditProfileModal = ({
           <div>
             <Label className="text-white/70">Location</Label>
             <Input
-                type="text"
+              type="text"
               className="bg-white/10 border-white/20 text-white"
               value={tempProfile.location || ""}
               onChange={(e) => handleChange("location", e.target.value)}
@@ -127,7 +124,7 @@ const EditProfileModal = ({
           <div className="md:col-span-2">
             <Label className="text-white/70">Skills (comma-separated)</Label>
             <Input
-                type="text"
+              type="text"
               className="bg-white/10 border-white/20 text-white"
               value={tempProfile.skills?.join(", ") || ""}
               onChange={(e) =>
@@ -144,7 +141,7 @@ const EditProfileModal = ({
                   value={link.platform}
                   onValueChange={(value) => handleSocialLinkChange(index, "platform", value)}
                 >
-                  <SelectTrigger className="bg-white/10 text-white border-white/20 w-40">
+                  <SelectTrigger className="bg-white/10 text-white border-white/20 w-16 md:w-40">
                     <SelectValue placeholder="Platform" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#1e293b] text-white">
@@ -156,7 +153,7 @@ const EditProfileModal = ({
                   </SelectContent>
                 </Select>
                 <Input
-                    type="text"
+                  type="text"
                   placeholder="https://"
                   className="bg-white/10 border-white/20 text-white flex-1"
                   value={link.url}
@@ -172,7 +169,7 @@ const EditProfileModal = ({
               </div>
             ))}
             <Button
-              className="bg-white/10 hover:bg-white/20 text-white block" 
+              className="bg-white/10 hover:bg-white/20 text-white block"
               onClick={addSocialLink}
             >
               + Add Social Link

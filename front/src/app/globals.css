@@ -31,6 +31,17 @@ body {
   z-index: 0;
 }
 
+.ellipse-mobile {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  background-color: #015AFF;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: calc(100% - 10%);
+  z-index: 0;
+}
+
 @media (max-width: 1200px) {
   .ellipse2 {
     display: none;

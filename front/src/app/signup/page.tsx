@@ -12,11 +12,13 @@ import theGsq from '../../../public/thedevoic_logo.jpeg'
 import Google from "../../../public/google.png"
 import GitHub from "../../../public/github.png"
 import { useRouter } from 'next/navigation'
+import { Eye, EyeOff } from 'lucide-react'
 
 export const dynamic = "force-dynamic";
 
 export default function SignupPage() {
   const [state, action, pending] = useActionState(createUser, null)
+  const [showpassword, setShowPassword] = React.useState(false)
   const { toast } = useToast()
   const router = useRouter()
 
@@ -104,14 +106,24 @@ export default function SignupPage() {
 
           <div className="space-y-1">
             <label htmlFor="password" className="text-sm font-medium text-lightblue">Password</label>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="••••••••"
-              className="border-lightblue/30 focus-visible:ring-lightblue focus-visible:ring-2"
-              required
-            />
+            <div className="relative">
+              <Input
+                type={showpassword ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                className="border-lightblue/30 focus-visible:ring-lightblue focus-visible:ring-2"
+                required
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                onClick={() => setShowPassword(prev => !prev)}
+                tabIndex={-1}
+              >
+                {showpassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
 
           <Button
