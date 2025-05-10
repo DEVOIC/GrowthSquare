@@ -1,182 +1,211 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useRouter } from "next/navigation";
+import Navbar from "@/components/parts/navbar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import Navbar from "@/components/parts/navbar";
+import { Card } from "@/components/ui/card";
+import { getUser, getUserProfile, updateUserProfile } from "./action";
+import { Edit, User } from "lucide-react";
+import {
+  Twitter,
+  Linkedin,
+  Github,
+  Instagram,
+  Facebook,
+  Globe
+} from "lucide-react";
+
+import EditProfileModal from "@/components/parts/profilemodel";
+import Loading from "./loading";
 
 const ProfilePage = () => {
-  const [editMode, setEditMode] = useState(false);
-  const [profileData, setProfileData] = useState<any>(null);
-  const [tempSkills, setTempSkills] = useState<string[]>([]);
-  const [tempSocials, setTempSocials] = useState<{ [key: string]: string }>({});
+  const [profile, setProfile] = useState<any>(null);
+  const [tempProfile, setTempProfile] = useState<any>({});
+  const [showModal, setShowModal] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoading, setIsLoading] = useState(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setMousePosition({ x, y });
+  };
 
   useEffect(() => {
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("token="));
+    if (!token) router.replace("/home");
+  }, [router]);
 
-      const cookies = document.cookie;
-      const tokenCookie = cookies.split(';').find(row => row.trim().startsWith('token='));
-      const token = tokenCookie.split("=")[1]
-    const fetchProfile = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/check-auth`, {
-          headers: {
-            "Content-Type": "application/json",
-            'Authorization': `Bearer ${token}`
-          },
-          withCredentials: true,
-        });
+  const fetchProfile = async () => {
+    try {
+      const data = await getUser();
+      const userProfile = await getUserProfile();
+      setProfile(data.user);
+      setTempProfile(userProfile.user || {});
+    } catch (err) {
+      console.error("Failed to load profile", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-        const user = response.data.data.user;
-        setProfileData(user);
-        setTempSocials(user?.socialLinks || {});
-        setTempSkills(user?.skills || []);
-      } catch (error) {
-        console.error("Error fetching profile:", error);
-      }
-    };
-
+  useEffect(() => {
+    setIsLoading(true);
     fetchProfile();
   }, []);
 
-  const handleSkillChange = (index: number, value: string) => {
-    const updated = [...tempSkills];
-    updated[index] = value;
-    setTempSkills(updated);
-  };
-
-  const handleSocialChange = (key: string, value: string) => {
-    setTempSocials({ ...tempSocials, [key]: value });
-  };
-
   const handleSave = async () => {
     try {
-      const response = await axios.put(
-        `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}/auth/edit-profile`,
-        {
-          skills: tempSkills,
-          socialLinks: tempSocials,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true, // Send cookies (e.g. JWT token)
-        }
-      );
-  
-      const updatedUser = response.data.data;
-      setProfileData(updatedUser);
-      setEditMode(false);
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      alert("Failed to update profile. Please try again.");
+      const formData = new FormData();
+      formData.append("bio", tempProfile.bio || "");
+      formData.append("contactNo", tempProfile.contactNo || "");
+      formData.append("dob", tempProfile.dob || "");
+      formData.append("location", tempProfile.location || "");
+
+      formData.append("skills", JSON.stringify(tempProfile.skills || []));
+      formData.append("socialLinks", JSON.stringify(tempProfile.socialLinks || []));
+
+      if (tempProfile.image) {
+        formData.append("file", tempProfile.image);
+      }
+
+      await updateUserProfile(formData);
+      fetchProfile()
+      setShowModal(false);
+    } catch (err) {
+      console.error("Update failed:", err);
+      alert("Failed to update profile.");
     }
   };
-  
-  if (!profileData) return <div className="text-center py-10 text-white">Loading...</div>;
+
+  if (isLoading || !profile) return <Loading />;
+  const { name } = profile;
 
   return (
-    <div>
+    <div className="bg-darkblue h-[100vmax] md:h-screen">
       <Navbar />
-      <div className="container mx-auto p-4">
-        <div className="bg-gradient-to-b from-blue-200 to-blue-100 rounded-3xl p-8 text-center">
-          <Image
-            src={profileData?.profilePicture}
-            alt="Profile"
-            width={100}
-            height={100}
-            className="rounded-full mx-auto"
-          />
-          <h1 className="text-2xl font-bold text-darkblue mt-4">
-            {profileData?.name || "Not Found"}
-          </h1>
-          <p className="text-blue-700 italic">
-            {profileData?.bio ||
-              "Not Found"}
-          </p>
-        </div>
+      {
+        isLoading ?
+          <Loading /> :
+          <div
+            className="container h-full bg-darkblue mx-auto px-1 md:px-4"
+            onMouseMove={handleMouseMove}
+            ref={cardRef}
+            style={{
+              backgroundImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgb(255, 255, 255, 0.1) , transparent 10%)`,
+            }}
+          >
+            <div className="ellipse2 top-right"></div>
 
-        <div className="mt-6 bg-white rounded-3xl p-6 shadow-sm flex flex-col md:flex-row md:justify-between">
-          <div className="space-y-4 md:w-1/2">
-            <h2 className="text-xl font-semibold">Contact Information</h2>
-            <p>Date of Birth: {profileData?.dob || "Can't find dob"}</p>
-            <p>Contact: {profileData?.contact || "Can't find number"}</p>
-            <div className="flex gap-4 mt-4">
-              <Button variant="secondary" className="flex items-center gap-2">
-                <FaGithub /> GitHub
-              </Button>
-              <Button variant="secondary" className="flex items-center gap-2">
-                <FaLinkedin /> LinkedIn
-              </Button>
-              <Button variant="secondary" className="flex items-center gap-2">
-                <MdEmail /> Email
-              </Button>
-            </div>
-          </div>
+            <div className="rounded-3xl p-8 text-center">
 
-          <div className="space-y-4 md:w-1/2 mt-6 md:mt-0">
-            <h2 className="text-xl font-semibold">Skills</h2>
-            <div className="flex flex-wrap gap-2">
-              {tempSkills?.map((skill, idx) =>
-                editMode ? (
-                  <input
-                    key={idx}
-                    value={skill}
-                    onChange={(e) => handleSkillChange(idx, e.target.value)}
-                    className="px-2 py-1 rounded bg-blue-100 text-sm"
+              {tempProfile.profilePicture ? (
+                <div className="object-fit border-2 overflow-hidden rounded-lg w-28 h-28 mx-auto mb-4">
+                  <Image
+                    src={tempProfile.profilePicture}
+                    alt="Profile Picture"
+                    width={220}
+                    height={220}
+                    className="rounded-lg hover:scale-105 mx-auto"
                   />
-                ) : (
-                  <span
-                    key={idx}
-                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm"
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
-            </div>
-
-            <h2 className="text-xl font-semibold">Social Links</h2>
-            <div className="flex flex-col gap-3">
-              {Object.entries(tempSocials || {}).map(([platform, link], idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <span className="text-gray-700">{platform}:</span>
-                  {editMode ? (
-                    <input
-                      type="text"
-                      value={link}
-                      onChange={(e) => handleSocialChange(platform, e.target.value)}
-                      className="px-2 py-1 border rounded text-sm"
-                    />
-                  ) : (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline text-sm"
-                    >
-                      {link}
-                    </a>
-                  )}
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-6">
-              {!editMode ? (
-                <Button onClick={() => setEditMode(true)}>Edit Profile</Button>
               ) : (
-                <Button onClick={handleSave} className="bg-green-600 hover:bg-green-700">
-                  Save Changes
-                </Button>
+                <User className="w-28 h-28 text-white mx-auto" />
               )}
+              <h1 className="text-2xl font-bold text-white mt-4">{name}</h1>
+              <p className="text-white/80 italic">
+                {tempProfile.bio || "No bio provided."}
+              </p>
             </div>
+            <Card className="bg-white/10 w-full backdrop-blur-lg  p-6 sm:p-8 mt-6 border border-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(155,135,245,0.12)]">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                <h2 className="text-xl sm:text-2xl font-semibold text-white">Profile Details</h2>
+                <Button
+                  onClick={() => setShowModal(true)}
+                  variant="outline"
+                  className="bg-lightblue text-white border-white/10"
+                >
+                  <Edit className="mr-2 h-4 w-4" />
+                  Edit Profile
+                </Button>
+              </div>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-4">
+                  <div className="text-white/90">
+                    <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Contact Number</h3>
+                    <p className="break-words">{tempProfile?.contactNo || "N/A"}</p>
+                  </div>
+                  <div className="text-white/90">
+                    <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Location</h3>
+                    <p className="break-words">{tempProfile?.location || "N/A"}</p>
+                  </div>
+                  <div className="text-white/90">
+                    <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Date of Birth</h3>
+                    <p>{tempProfile.dob ? new Date(tempProfile?.dob).toLocaleDateString() : "N/A"}</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-white/90">
+                    <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Skills</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {tempProfile?.skills?.map((skill: any, index: any) => (
+                        <span
+                          key={index}
+                          className="bg-white text-darkblue border border-white/20 px-3 py-1 text-sm"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-sm text-white/60 mb-1 sm:mb-2">Connect</h3>
+                    <div className="flex flex-wrap gap-3">
+                      {tempProfile?.socialLinks?.map((link: any) => {
+                        const platformIcon = {
+                          Twitter: <Twitter className="w-5 h-5" />,
+                          LinkedIn: <Linkedin className="w-5 h-5" />,
+                          GitHub: <Github className="w-5 h-5" />,
+                          Instagram: <Instagram className="w-5 h-5" />,
+                          Facebook: <Facebook className="w-5 h-5" />,
+                          Other: <Globe className="w-5 h-5" />,
+                        };
+                        return (
+                          <a
+                            key={link._id}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center bg-lightblue p-2 text-white  underline hover:text-white transition break-all"
+                          >
+                            {platformIcon[link.platform] || <Globe className="w-12 h-12 mr-1" />}
+                            {/* {link.platform} */}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
-        </div>
-      </div>
+      }
+
+      <EditProfileModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        tempProfile={tempProfile}
+        setTempProfile={setTempProfile}
+        onSave={handleSave}
+      />
     </div>
   );
 };
