@@ -6,6 +6,7 @@ import Image from "next/image";
 import Logo from "../../../public/gslogo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import Cookies from 'js-cookie';
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   const logout = () => {
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/home";
+    Cookies.remove("token")
     setToken(null);
   }
 

@@ -8,6 +8,8 @@ import { createUser } from "./actions"
 import { useToast } from "@/hooks/use-toast"
 import { useActionState, useEffect } from "react"
 import { Otp } from "@/components/parts/otp"
+import GoogleAuth from "@/components/parts/Google-auth"
+import GithubAuth from "@/components/parts/Github-auth"
 export const dynamic = "force-dynamic";
 
 export default function SignupPage() {
@@ -103,24 +105,8 @@ export default function SignupPage() {
             <div className="space-y-4">
               <p className="text-center text-sm text-lightblue">Sign Up with</p>
               <div className="flex justify-center gap-4">
-                <button className="p-2 border rounded-full hover:bg-gray-50">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Google"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
-                </button>
-                <button className="p-2 border rounded-full hover:bg-gray-50">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="GitHub"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
-                </button>
+                <GoogleAuth />
+                <GithubAuth />
                 <button className="p-2 border rounded-full hover:bg-gray-50">
                   <Image
                     src="/placeholder.svg"

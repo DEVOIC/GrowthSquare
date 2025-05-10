@@ -8,6 +8,8 @@ import { loginUser } from './actions'
 import { useToast } from '@/hooks/use-toast'
 import Form from 'next/form'
 import { useRouter } from 'next/navigation'
+import GoogleAuth from '@/components/parts/Google-auth'
+import GithubAuth from '@/components/parts/Github-auth'
 
 export const dynamic = "force-dynamic";
 
@@ -77,7 +79,7 @@ const Page = () => {
             </div>
 
             <Button disabled={pending} className="w-full bg-lightblue hover:bg-blue-700" size="lg">
-              {pending ? "Logining in" : "Login"}
+              {pending ? "Logging in" : "Login"}
             </Button>
           </Form>
 
@@ -95,24 +97,8 @@ const Page = () => {
           <div className="space-y-4">
             <p className="text-center text-sm text-lightblue">Login with</p>
             <div className="flex justify-center gap-4">
-              <button className="p-2 border rounded-full hover:bg-gray-50">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Google"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
-              </button>
-              <button className="p-2 border rounded-full hover:bg-gray-50">
-                <Image
-                  src="/placeholder.svg"
-                  alt="GitHub"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
-              </button>
+                <GoogleAuth />
+                <GithubAuth />
               <button className="p-2 border rounded-full hover:bg-gray-50">
                 <Image
                   src="/placeholder.svg"
@@ -124,7 +110,6 @@ const Page = () => {
               </button>
             </div>
           </div>
-
           <p className="text-center text-sm">
             Don&apos;t have an account?{" "}
             <Link href="/signup" className="text-lightblue hover:underline">
