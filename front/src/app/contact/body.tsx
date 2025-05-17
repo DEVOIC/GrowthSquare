@@ -56,19 +56,15 @@ const Body = () => {
 
               <div className="bg-lightblue h-[400px] lg:h-auto lg:w-[40%] my-16 mx-4 lg:m-8 text-white hidden lg:block xl:block md:block">
                 <div className="relative  text-center h-[100%] lg:h-[80%]">
-                  <div className="absolute inset-0 opacity-30  ">
+                  <div className="absolute inset-0 opacity-80  ">
                     <Image
-                      src="https://s3-alpha-sig.figma.com/img/8cd1/5b08/7e0ae7c6261d4858ec6f1442bd293012?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fgvrFnJ228v516wiAueGPQoec4hwoVArIWJJAjMzTa4675I~hf~jFvlS97jGvHIxGkqp97~e918Dgqcd-HrsiKjHjc13NTAD7qTZRrmfZ8QmGTAyWicRXruHAopFXq8Btr39Tx14YKt-rUB5ujJPAy2QckJ2zaBFUVSjym28sjCC0CDJYu9rcIr0AdIgjVwZ009bBB3AeGXs0fl5ZwWBxsKDGbRDEBDy9JmybvEJu5xYJC2BOwanS~onHZfMBL0GpU1K2rifw9~obozYvAeY54HUGT17qIqB8ZSmTBtfzcFRnb04dcZ7zAxkFm9AlQb5nG~linE-vAL~L0s4-1GTQw__"
-                      layout="fill"
+                      src="https://drive.google.com/uc?id=1ZnXapmKdIrZL6lZZ1RkZQeyIXVrlDHA2"   layout="fill"
                       // objectFit="cover"
                       alt="Contact Us"
                       className='object-cover'
                     />
                   </div>
-                  <h2 className="relative z-10 text-2xl font-bold py-10 px-6 text-white">
-                    Let's Start a Conversation
-
-                  </h2>
+                  
                 </div>
                 <div className='bg-lightblue py-4 lg:py-0 w-full flex justify-center'>
                   <div className="flex space-x-8 bg-darkblue py-4 lg:my-6 justify-center px-10 ">
@@ -179,4 +175,3 @@ const Body = () => {
 }
 
 export default Body
-

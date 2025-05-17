@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+// import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import members from '@/data/members';
 
 //temporary things
@@ -20,22 +20,30 @@ const Inovators = () => {
           ready to take on new challenges and grow together.
         </p>
         <div className='before-marquee'>
-          <div className="flex  my-6 animate-marquee">
+          <div className="flex  my-6 animate-marquee1">
             {part1.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className="md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
+                  
+
+                  
                     src={member.image}
                     alt="Team member"
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
                   />
                 </div>
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+
+{/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -56,27 +64,38 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
+
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex  my-6  animate-marquee">
+          <div className="flex  my-6  animate-marquee1">
             {part1.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className="md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
+                  
+
+                  
                     src={member.image}
                     alt="Team member"
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
                   />
                 </div>
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+
+{/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -97,29 +116,39 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
                 </div>
               </div>
             ))}
           </div>
         </div>
         <div className='before-marquee-reverse'>
-          <div className="flex my-6  animate-marquee-reverse">
+          <div className="flex my-6  animate-marquee-reverse1">
             {part2.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
+                  
+
+                  
                     src={member.image}
                     alt="Team member"
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
                   />
                 </div>
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+
+{/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -140,27 +169,36 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex my-6  animate-marquee-reverse">
+          <div className="flex my-6  animate-marquee-reverse1">
             {part2.map((member, index) => (
               <div key={index} className=" relative group transform transition-transform duration-300 hover:scale-110">
                 <div className=" md:w-[240px] md:h-[320px] w-[140px] h-[180px]">
                   <Image
+                  
+
+                  
                     src={member.image}
                     alt="Team member"
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
                   />
                 </div>
                 <div className="absolute bottom-0 w-full left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold text-[1vmax]">{member.name}</h3>
                   <p className="text-[1vmax]">{member.role}</p>
-                  <div className="flex gap-3 mt-2">
+
+                  {/*---------------- SOcial media links of inovators ----------------*/}
+
+                  {/* <div className="flex gap-3 mt-2">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-white hover:text-blue-400" size={16} />
@@ -181,7 +219,9 @@ const Inovators = () => {
                         <FaInstagram className="text-white hover:text-pink-400" size={16} />
                       </a>
                     )}
-                  </div>
+                  </div> */}
+
+
                 </div>
               </div>
             ))}

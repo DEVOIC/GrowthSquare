@@ -13,7 +13,7 @@ import Body from './body'
 export const dynamic = "force-dynamic";
 
 export default function ContactPage() {
- 
+
   return (
     <div className="min-h-screen bg-darkblue ">
       {/* Navigation */}
@@ -24,16 +24,16 @@ export default function ContactPage() {
 
       {/* Hero Section */}
 
-      <Body/>
+      <Body />
 
 
       {/* gsmarque  */}
-      <div>
+      <div className='relative overflow-hidden'>
         <Gsmarque />
       </div>
 
       {/* FAQ Section */}
-      <Faqs />
+      <Faqs page={"About"} />
       {/* Footer */}
 
       <div className='bg-darkblue'>

@@ -69,7 +69,7 @@ const Faqs = ({ page }: FaqsProps) => {
       <div className="ellipse top-right"></div>
       <div className="ellipse mid-left"></div>
 
-      <section className="lg:mx-auto px-12 py-20">
+      <section className="lg:mx-auto px-6 py-20">
         <div className="flex  flex-col md:flex-row gap-4 lg:gap-12">
           <div className="md:w-1/3">
             <h2 className="text-3xl z-20  font-bold text-darkblue font-transforma mb-12">

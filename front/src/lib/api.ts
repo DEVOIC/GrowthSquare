@@ -9,11 +9,11 @@ import {
 } from '@/types/api';
 
 // Base URL for API requests
-const BASE_URL = `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}`;
+//const BASE_URL = `${process.env.NEXT_PUBLIC_BACK_API}/${process.env.NEXT_PUBLIC_ROUTE}`;
 
 // Generic fetch function with error handling
 async function fetchAPI<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
-    const url = `${BASE_URL}${endpoint}`;
+    const url = `/api${endpoint}`;
     try {
         const response = await fetch(url, {
             ...options,

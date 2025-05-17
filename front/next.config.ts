@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
   /* config options here */
   images: {
     remotePatterns: [
@@ -9,9 +8,9 @@ const nextConfig: NextConfig = {
           protocol: "https",
           hostname: "**",
         },
-        
       ],
 },
+
 async rewrites() {
   return [
     {
@@ -21,5 +20,4 @@ async rewrites() {
   ];
 },
 };
-
 export default nextConfig;

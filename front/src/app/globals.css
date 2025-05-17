@@ -31,6 +31,17 @@ body {
   z-index: 0;
 }
 
+.ellipse-mobile {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  background-color: #015AFF;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: calc(100% - 10%);
+  z-index: 0;
+}
+
 @media (max-width: 1200px) {
   .ellipse2 {
     display: none;
@@ -151,21 +162,28 @@ body {
   gap: var(--gap);
   animation: scroll 30s linear infinite;
 }
+.animate-marquee1 {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll 50s linear infinite;
+}
 
 .before-marquee {
   font-size: 15px;
-
-  
   user-select: none;
-
   --gap: 60px;
   display: flex;
   gap: var(--gap);
 }
 
-.before-marquee:hover .animate-marquee {
+.before-marquee:hover .animate-marquee .animate-marquee1 {
   animation-play-state: paused;
-}.before-marquee-reverse:hover .animate-marquee-reverse {
+}.before-marquee-reverse:hover .animate-marquee-reverse .animate-marquee-reverse1 {
   animation-play-state: paused;
 }
 
@@ -187,6 +205,17 @@ body {
   flex-direction: row-reverse;
   gap: var(--gap);
 }
+.animate-marquee-reverse1 {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+
+  animation: scroll1 50s linear infinite;
+}
 .animate-marquee-reverse {
   list-style: none;
   flex-shrink: 0;
@@ -196,7 +225,7 @@ body {
   align-items: center;
   gap: var(--gap);
 
-  animation: scroll1 20s linear infinite;
+  animation: scroll1 30s linear infinite;
 }
 
 @keyframes scroll1 {
@@ -242,18 +271,44 @@ body {
 }
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
+  margin-left: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00123370;
+  background: #ffffff70;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00123370;
+  background: #0059ffd6;
+}
+
+
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px; /* Optional: for rounded corners */
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

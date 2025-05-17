@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { MoveUpRight } from "lucide-react";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaUser } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import foundingMemebers from "@/data/foundingmemebers";
 
 const Founding = () => {
@@ -30,12 +31,33 @@ const Founding = () => {
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold">{member.name}</h3>
                   <p className="text-sm">{member.role}</p>
                   <div className="flex gap-3 mt-2">
+                    
+
+
+                    {/*------------ Here is the Social media Links that will apear on hover----------- */}
+                    
+                    {member.website && (
+                      <a
+                        href={member.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaUser
+                          className="text-white hover:text-zinc-500"
+                          size={20}
+                        />
+                      </a>
+                    )}
+
+
                     {member.linkedin && (
                       <a
                         href={member.linkedin}
@@ -43,12 +65,12 @@ const Founding = () => {
                         rel="noopener noreferrer"
                       >
                         <FaLinkedin
-                          className="text-white hover:text-blue-400"
+                          className="text-white hover:text-blue-800"
                           size={20}
                         />
                       </a>
                     )}
-                    {member.github && (
+                    {/* {member.github && (
                       <a
                         href={member.github}
                         target="_blank"
@@ -59,31 +81,20 @@ const Founding = () => {
                           size={20}
                         />
                       </a>
-                    )}
+                    )} */}
                     {member.twitter && (
                       <a
                         href={member.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaTwitter
-                          className="text-white hover:text-blue-400"
+                        <FaXTwitter
+                          className="text-white hover:text-slate-400"
                           size={20}
                         />
                       </a>
                     )}
-                    {member.instagram && (
-                      <a
-                        href={member.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaInstagram
-                          className="text-white hover:text-pink-400"
-                          size={20}
-                        />
-                      </a>
-                    )}
+                  
                   </div>
                 </div>
                 <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">
@@ -105,12 +116,27 @@ const Founding = () => {
                     layout="fill"
                     objectFit="cover"
                     className="w-full h-full"
+                    quality={10}
                   />
                 </div>
                 <div className="absolute bottom-8 left-0 px-8 opacity-0 group-hover:opacity-100 bg-black/50 text-white p-2">
                   <h3 className="font-bold">{member.name}</h3>
                   <p className="text-sm">{member.role}</p>
                   <div className="flex gap-3 mt-2">
+                
+                  {member.website && (
+                      <a
+                        href={member.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaUser
+                          className="text-white hover:text-zinc-500"
+                          size={20}
+                        />
+                      </a>
+                    )}
+                            
                     {member.linkedin && (
                       <a
                         href={member.linkedin}
@@ -118,12 +144,12 @@ const Founding = () => {
                         rel="noopener noreferrer"
                       >
                         <FaLinkedin
-                          className="text-white hover:text-blue-400"
+                          className="text-white hover:text-blue-800"
                           size={20}
                         />
                       </a>
                     )}
-                    {member.github && (
+                    {/* {member.github && (
                       <a
                         href={member.github}
                         target="_blank"
@@ -134,31 +160,20 @@ const Founding = () => {
                           size={20}
                         />
                       </a>
-                    )}
+                    )} */}
                     {member.twitter && (
                       <a
                         href={member.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaTwitter
-                          className="text-white hover:text-blue-400"
+                        <FaXTwitter
+                          className="text-white hover:text-slate-400"
                           size={20}
                         />
                       </a>
                     )}
-                    {member.instagram && (
-                      <a
-                        href={member.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaInstagram
-                          className="text-white hover:text-pink-400"
-                          size={20}
-                        />
-                      </a>
-                    )}
+                  
                   </div>
                 </div>
                 <div className="w-10 h-10 absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 bg-darkblue border-2">

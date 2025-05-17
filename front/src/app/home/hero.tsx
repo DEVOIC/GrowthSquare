@@ -8,30 +8,44 @@ import Image from 'next/image';
 const Hero = () => {
   return (
 
-    <section className=" h-full bg-darkblue pb-10  ">
+    <section className=" h-[75vmax] flex items-center md:h-full bg-darkblue pb-10  ">
       <div className=' container mx-auto px-4 py-10 lg:pt-32 lg:pb-20 text-center  relative'>
-        <div className="ellipse top-right"></div>
-        <div className="ellipse bottom-left"></div>
+        <div className="ellipse md:block hidden  top-right"></div>
+        <div className="ellipse  bottom-left md:block hidden"></div>
 
-        <h1 className=" lg:text-6xl max-w-6xl mx-auto text-3xl md:text-4xl font-transforma font-semibold text-white mb-6 relative">
+        <div className="ellipse-mobile absolute -top-12  md:hidden"></div>
+        <div className="ellipse-mobile absolute -bottom-12 -right-0  md:hidden"></div>
+
+        <h1 className="  hidden md:block lg:text-6xl max-w-6xl mx-auto text-3xl md:text-4xl font-transforma font-semibold text-white mb-6 relative">
           Unlock Your <span className="text-blue-500">Potential</span> with a Community
           <br />
           That&#39;s Got Your <span className="relative inline-block"><span className="">Back</span><span className="absolute left-0 bottom-0 w-full h-1 bg-blue-500"></span></span>
         </h1>
-        <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+
+        <h1 className=" z-20 md:hidden lg:text-6xl max-w-6xl mx-auto text-3xl md:text-4xl font-transforma font-semibold text-white mb-6 relative">
+          Unlock Your <span className="text-blue-500">Potential</span> with a
+          <br />
+          Community
+          <br />
+          That&#39;s Got Your <span className="relative inline-block"><span className="">Back</span><span className="absolute left-0 bottom-0 w-full h-1 bg-blue-500"></span></span>
+        </h1>
+
+        <p className=" z-30 drop-shadow-xl text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
           Collaborate, innovate, and level up with experts in design,
           development, content, and more
         </p>
         <Link href="/contact">
-        <Button variant={'default'}>
-          <p className='text-xl font-bold'>
-            let&#39;s grow together
-          </p>
-          <div>
+          <Button variant={'default'}
+          className='z-40 drop-shadow-2xl'
+          >
+            <p className='text-xl font-bold '>
+              let&#39;s grow together
+            </p>
+            <div>
 
-          <Image src={gsqlogo} alt="logo" width={20} height={20} />
-          </div>
-        </Button>
+              <Image src={gsqlogo} alt="logo" width={20} height={20} />
+            </div>
+          </Button>
         </Link>
         {/* <div className='hidden lg:inline-block  absolute left-12 bottom-36'>
 
@@ -70,8 +84,8 @@ const Hero = () => {
           </Shortimg>
         </div>
          */}
-         </div>
-        
+      </div>
+
     </section>
   )
 }
