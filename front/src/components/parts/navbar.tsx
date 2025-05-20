@@ -6,6 +6,7 @@ import Image from "next/image";
 import Logo from "../../../public/gslogo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import Cookies from 'js-cookie';
 import { FaUserCircle } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
@@ -29,10 +30,7 @@ const Navbar = () => {
   }, []);
 
   const logout = () => {
-    // Remove the token cookie - setting path to '/' ensures it's removed from all paths
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-    console.log("Logout successful");
-    router.replace("/home");
+    Cookies.remove("token")
     setToken(null);
   };
 
