@@ -26,6 +26,13 @@ const GithubAuth = () => {
                 Authorization: token
             }
      })
+        if(response.status === 200){
+            console.log("User logged in successfully")
+        }
+        else{
+            console.error("Error logging in user")
+        }
+        console.log("User logged in successfully")
      router.push('/')
      }
      catch(error){

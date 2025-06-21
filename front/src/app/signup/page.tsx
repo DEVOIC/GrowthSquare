@@ -5,11 +5,12 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Form from 'next/form'
+import theGsq from '../../../public/thedevoic_logo.jpeg'
 import { createUser } from "./actions"
 import { useToast } from "@/hooks/use-toast"
 import { Otp } from "@/components/parts/otp"
-import GoogleAuth from "@/components/parts/Google-auth"
-import GithubAuth from "@/components/parts/Github-auth"
+//import GoogleAuth from "@/components/parts/Google-auth"
+//import GithubAuth from "@/components/parts/Github-auth"
 import { useRouter } from 'next/navigation'
 import { Eye, EyeOff } from 'lucide-react'
 export const dynamic = "force-dynamic";
@@ -134,7 +135,7 @@ export default function SignupPage() {
           </Button>
         </Form>
 
-        {/* OR Divider */}
+        {/* OR Divider
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-200" />
@@ -159,7 +160,7 @@ export default function SignupPage() {
                   />
                 </button>
               </div>
-            </div>
+            </div> */}
 
         {/* Login Prompt */}
         <p className="text-center text-sm text-muted-foreground">

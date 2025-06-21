@@ -8,14 +8,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import Cookies from 'js-cookie';
 import { FaUserCircle } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [token, setToken] = useState<string | null>(null);
 
   const handleClick = () => setClick(!click);
-  const router = useRouter()
+
 
   useEffect(() => {
     if (typeof document !== "undefined") {
